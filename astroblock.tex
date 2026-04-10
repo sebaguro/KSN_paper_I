@@ -1,0 +1,883 @@
+%%
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given file `manifest.txt'.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+%% SP 2008/03/01
+\documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{nameref}
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{rotating}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage{booktabs} % For formal tables
+\usepackage{adjustbox} % To adjust the table to column width
+\usepackage{amsmath}
+
+
+%\usepackage[czech]{babel} % recommended if you write in Czech
+\usepackage{lmodern}
+
+% DEVELOP ONLY COMMENT BEFORE SUBMIT
+\journal{Astronomy and Computing}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{The Kardashev Conundrum:\\ A straw-person P2P Electronic Cash System base-layer primer for the Open Development of Astronomy and Astrophysics via the open blockchain public ledger}
+%\subtitle{Towards the open development of astronomy through a Blockchain based smart token}
+ 
+    \author[iate,wsu]{S.Gurovich}\corref{mycorrespondingauthor}
+        \cortext[mycorrespondingauthor]{Corresponding author}
+        \ead{sgurovich@unc.edu.ar}
+  
+\address[iate]{
+   Instituto De Astronom\'ia Te\'orica y Experimental -
+   Observatorio Astron\'omico C\'ordoba (IATE--OAC--UNC--CONICET),
+   Laprida 854, X5000BGR, C\'ordoba, Argentina}
+\address[wsu]{
+   Western Sydney University, Kingswood campus, NSW, Australia (visiting fellow 2019-2020)
+}
+
+
+\begin{abstract}
+We test the standard Kardashev conjecture, which models the energy production
+of technologically advanced civilisations as growing at a fixed rate of one
+percent per year, against six decades of global energy production data
+(1965--2024) drawn from the Our World in Data energy dataset. The standard
+Kardashev one-percent exponential model is a poor fit to the data: the
+posterior growth rate obtained via Markov Chain Monte Carlo (MCMC) inference
+is $r = 1.85\% \pm 0.17\%\,\mathrm{yr}^{-1}$ (95\% credible interval
+$[1.53\%, 2.19\%]$), placing the Kardashev one-percent value outside the
+credible interval, and the fixed one-percent model residuals are substantially
+larger than those of the linear alternative. A linear Ordinary Least-Squares
+(OLS) model provides an exquisite fit ($R^2 = 0.983$) and is further
+supported by the normality of year-on-year energy differences
+(Shapiro--Wilk $W = 0.97$, $p = 0.23$), which is consistent with additive
+Gaussian noise and formally rejects the multiplicative error structure
+required by any exponential growth model. A free-parameter exponential model
+and the linear model are statistically indistinguishable on the observed data
+($\Delta\mathrm{WAIC} = 0.7$, $\Delta R^2 = 0.003$). However, extrapolation
+of the linear model to the Kardashev Type~II threshold --- the total
+bolometric luminosity of the Sun, $L_\odot = 3.828 \times
+10^{26}\,\mathrm{W}$ --- yields a civilisational transition timescale of
+$\sim 3.2 \times 10^{8}$ Hubble times: a physical reductio ad absurdum we
+term \textit{Kardashev's Conundrum}. We demonstrate that no functional form
+fitted to energy production alone can simultaneously satisfy statistical
+adequacy and physical coherence, because the Kardashev state variable is
+dimensionally incomplete as a measure of civilisational advancement. To
+resolve the Conundrum, we propose the
+\textit{Kardashev--Sagan--Nakamoto} (KSN) model, constructed by renormalising
+the energy production ordinate by the annual average Bitcoin network hashrate
+$H(t)$, yielding the KSN state variable $z = P/H$ in units of
+J\,Hash$^{-1}$ (the KarNak unit). This renormalisation adds no free
+parameters, is motivated by the Landauer limit connecting energy to
+irreversible computation, and fulfils the original requirement that the
+Kardashev scale be sensitive to the information richness of a civilisation.
+The KSN variable spans 14 orders of magnitude over 2009--2024, reflecting the
+dramatic improvement in the energy efficiency of Bitcoin proof-of-work
+computation; a formal functional fit to $z(t)$ is deferred to a future work.
+We further discuss the implications of the KSN model for open astronomy
+development via decentralised blockchain protocols, and propose the KarNak
+unit as a universal information-energy yardstick for the Kardashev scale.
+
+
+
+
+
+
+
+\end{abstract}
+
+
+
+% Techniques based on artificial intelligence or machine learning has meant that precise data feeds or meta data eg: IRAF II standard, has shown the importance of synergy between new (Centralized) and optionally (decentralized) Scientific Research endeavour. 
+%The current limitation of funding and crisis in Scientific development faced by the foot-soldiers or perhaps someone colloquially described "data slaves" motor of scientific technical development mostly brought to bear by Science Major Career graduates. Since Open Development rests on the Tenets of open source, and given a significant percentage of astronomers use Astropy for some data analysis so we propose an affiliated package of Astropy hereby called astroOD, to be used to create and permit actors to manage individual wallets and transactions of Fungeble and Non-funagable tokens that serve the Open Developemnt of astronomy.  Although initially astropy users and developers will be onboarded, a stagerred onboarding setup implementation across the more wider astronomical community is concieved. Many parts of the tokenomics model could be adapted directly from the so-called 'decentralized finance' movement that allows for the development of decentralized applications (DApps) on mobile devices to facilitate transactions, transparency and usage of protocols, say Astropy perhaps via astroOD Tx. This paper investigates possible protocol standards and glosses over cross chain technologies like Oracles as a technology applicable to validate transactions and safeguard value via data feeds (Eg ADS searches, citations, etc.) and explores the concept of guardian nodes. General background conditions that may motivate adoption by the astronomical community for such a system are discussed and some model component parameters. Other technical details are omitted and not fixed but could be soft or hard-wired after successful vetting from a representative governance vote by means of periodic voting based on staked amounts of astropy tokens? A staking system is discussed to finance successful projects and  potential governance actors with initial staking claims including members seemingly outside of the astropy development community: Universities, National observatory facilities and institution, amateur astronomical associations, International Astronomy bodies (eg: IVOA, IAU), primary and secondary schooling bodies and other official and unofficial actors that promote astronomy research, education and outreach are discussed.. 
+
+%data Tsunami (abstract)' that with federated Blockchain learning models are expected to provide a complementary method of data information extraction via appropriate incentive mechanisms for large astronomical survey observed, derived value-added or modelled data-sets.
+
+% level playing field and so for the advanced of science Astronomers must have similar access to similar resources and if science funding is solely reliant on centralized funding of governements with heavily devalued national currencies then Blockchain technological solutions must be recognized and developed, by the community, for the community.
+
+%More simply put it is a primer to Astronomy Open Development (OAD). OAD as proposed is essentially a complimentary system of development through open governance of existing astronomical organizations and institutions that adhere to the open-source paradigm for collaborative scientific research development with adequate incentive tokenomics regulated through decentralized governance.
+%Funding of OAD as proposed must be forthcoming at least initially from the 'Decentralized Finance' and the 'Decentralized Science' movements (DEFI, DESCI) with involvement by community vetted astronomical institutions and organizations adhering to the assumption that DEFI \& DESCI are key ideas of the Open Source and Open Blockchain stack that must offer liquidity when limitations in conventional funding at best stifles open development or at worst fail it. Three salient OAD use-cases are selected and examined: (i) Data-Tsunami ETL Optimization: including Velocity, Volume, Veracity and Variety of Astronomical data streams through Telescope broker Federated Learning incentive OB models (ii) Conserving plus value-adding of Astronomical Observatory patrimony via Blockchain primitives like NFT royalty transactions; (iii) Mitigating the financial impact of debasement of fiat currencies that impact on programs in Astronomy and Astrophysics to create a more even `playing field' via collaborations, liquidity pooling and other Blockchain tooling solutions. We start out identifying the evolution of the computer as a natural way to the Nakamoto consensus to reconcile the Kardashev Law. Finally, an attempt is made to identify elements for a path to OB development in Astronomy that includes on-boarding, discussion of community metrics in 'tooling tokenomics' and adoption of existing governance protocols including the role of prediction markets by community bodies like the IAU, IVOA, Public Universities etc, where astronomy is taught via public metrics. This paper is an attempt to kick-start this discussion in earnest to achieve a value-added programmable incentive layer upon Open Blockchain protocol standards for the advancement of Astronomy and Astrophysics. 
+
+
+\begin{keyword}
+   Kardashev scale \sep Astroinformatics \sep Baysian inference \sep Bitcoin
+\sep Blockchain \sep Open Development \sep Information theory \sep Civilization energy
+\end{keyword}
+\end{frontmatter}
+
+
+
+
+
+%This white paper (WP) examines open source public blockchain ledger technology (or OB) as a value optimisation and interoperability agent for Open Astronomy Development (OAD). A comprehensive review of OB technology: the evolution of protocols, key ideas \& primitives that lead to the so-called Nakamoto consensus effectively solving the Byzantine Generals problem is defined by \cite{Lamport1982TheBG} is treated in  \cite{arvindandclark2017} and references therein. Succinctly OB culminates in an attempt to define a universal transactional system of value to optimise open software development in Astronomy via the Kardashev-Sagan-Nakamoto model. In Sec. \ref{sec:intro} of this WP a connection is made between OB to the evolution of astrophysical discoveries and computer data science systems that also co-evolve with astronomy and astrophysics. In Sec. \ref{sec:bc_review} we dive further into Blockchain technology that may be visualised schematically in figure 1 of \cite{arvindandclark2017} that with the Nakamoto consensus must produce DEFI and DESCI, two key ideas based on the governance of decentralized autonomous organizations that are made explicit in this WP and added to their figure in
+%Fig. \ref{fig:narayanan}. In this WP an inexhaustive list of other native blockchains and their prodocols are mentioned based on some metrics, like market cap, history, and identified potential for use in OAD, and these questions ultimately must be supported by the representative community, through governance. A astronomy token for OAD is also not ruled out but is not much in the scope of this paper. However such a token could be pre-mined and distributed to IVOA, IAU, Astropy, and other identified community organizations where education and research in astronomy is conducted following existing governance structures in a decentralised fashion. Nevertheless, community transactions and their valuations must ultimately be tied to the bitcoin network value if the Kardashev-Sagan-Nakamoto model is approximately true, so treasuries may wish to accumulate and also re-distribute on the Bitcoin network. In Sec. \ref{sec:energy} considered central to this paper details are revealed for our analysis of the conundrum of the original Kardashev conjecture and a proposed solution given via the Kardashev-Sagan-Nakamoto model. The Kardashev conjecture, posited as a universal relation between total energy consumption rate versus time for all civilisations with radio communication capability is analyzed by comparing models to data (total global energy production), for The Earth from the literature. We show that the standard Kardashev "one-percent" model must be ruled out when the total global consumption, power metric as originally proposed is replaced by the total global energy production metric, our data: assumed a suitable upper-limit year-over-year proxy. We set the task to assess if the shortcomings of the original Kardashev model is rooted in the time evolution of the data variable by a constant positive percentage "x", at time "t" is given by: $(1+x)^{t}$, for $x<< 1$,  \cite{kar64} and later models,\citep[eg.,][]{sagan73} and \cite{gray2020}. We conclude that these approximately exponential models with monotonic increments are all models that diverge from real data with Gaussian variance because restricting the year-over-year change of a variable's distribution, say of a Power metric, to positive real values violates the memory conservation property of its underlying probability distribution that for the Kardashev model uses a point prior for the sample metric distribution of a civilisation's technological advancement and longevity, something that is implicit in all Kardashev models until now, given the evidence \textit{our hypothesis}. In this WP an attempt is made to resolve this discrepancy, a journey that reveals \textit{The Kardashev Conundrum}. The alternate linear model based on an exquisite ordinary least-squares fit that presents remarkably low dispersion to the data over six decades (in time) is itself untenable: It predicts a Kard$\,_{\textrm{type-ii}}$ `time-scale' (from 1964) of $\sim 10^{11} \textrm{yr} \gg {1/H_o}$, over an order of magnitude greater than the Age of The Universe or Hubble time given by $1/H{_0}$, where $H_{0}$ is the Hubble constant for the standard $\Lambda$CDM paradigm!\\ Thus, an alternative model is proposed to resolve \textbf{ The Kardashev Conundrum} by a simple re-normalisation of the total power production metric ordinate variable by the Bitcoin hash-rate year average in units hash/second. The decision to re-normalise the ordinate data by the Bitcoin hash-rate for the Kardashev model fulfills the requirement of information richness as originally proposed by \cite{kar64} necessary to: `Secure an enormous quantity of information.' The consideration on the Drake equation and its relation to the Kardashev conjecture is that the number of `advanced' civilizations in The Galaxy with radio communication capacity must be sensitive to the longevity factor $L$ that represents the average existence-timescale window of Drake's conjecture, a term considered to have a large relative uncertainty. The Kardashev-Sagan-Nakamoto model traces an uncensurable network state that ultimately purports to be a decentralised medium of exchange, unit of account, and store of value supported by the Bitcoin network, that we point out may be the `Amity' that Carl Sagan referred to in his 1985 US congressional testimony on  \href{https://www.youtube.com/watch?v=Wp-WiNXH6hI}{climate change}. Finally, the timely release of this WP has also been inspired by the Bulletin of the Atomic Scientists that in 2023 had forward the Doomsday Clock by ten seconds to 23h:58m:30s reaching 90 seconds to midnight, the closest it has come to midnight than in any other period in recorded human history and in 2024 despite the ongoing wars in Ukraine and the middle-east is `lockfast' at 23h:58m:30s. Hence, the Kardashev-Sagan-Nakamoto model may underpin a Universal Digital Gold Standard or `Amity' for OAD and beyond, one that paves the way for innovation via Universal protocols that are based on it that preserve information richness.  In Sec. \ref{sec:btc4} we examine the energy debate on Bitcoin and liquidity pool management through governance, and in Sects. 5 and 6 future application prospects and further discussion are considered, respectively.
+
+
+
+%This WP starts out discussing the half-life career function \cite{milo_2018} of US PhD Astronomy majors as a broad proxy metric of value for the global market, chosen because of the sheer size of the US research astronomy labour market. This function trends towards historical lows and given the resources it costs to produce a PhD astronomy major, must be analyzed in some con=text. Perhaps this could be sufficient motivation for the consideration of a complimentary development Blockchain based system for astronomy OD, itself. However, other issues that have lead to artificial barriers in Astronomy \& astrophysics development are also explored in other sections of this paper. Finally, other STEM communities may also find use in this white-paper since Open Source and Open Development standard protocols appear to experience common data-science constraints and a unifying and converging of methods across different scientific disciplines manifest, so sufficient motivation of Blockchain Open Development for other STEM fields may be warranted. %\cite{GITTER2008529} to prevent closed patent licensing] or Pandemic COVID 'data-science', see https://theintercept.com/2023/07/21/covid-origin-nih-lab-leak/.
+
+%In this paper, an attempt is made to bring to light into the debate interesting Blockchain primitives that have been largely unexplored but based on Open Source Development, to fork to existing protocols to promote interoperability through data-feeds, no doubt equivalent to  "ADS, Journal pub", IVOA protocols, etc identified in our case for Astronomy, to be seeded through "open-development", by the Community for the Community and through Layer 2 decentralized governance solutions.
+
+%Potentially Blockchain technology for open development will continues to be more important so it could be argued that "Computer Systems" hardware and software will continue t evolve because of Blockchain, as shown in ASIC hardware development, increase in Pico Hashes per second surpassing Moore's Law and by the fact that Blockchain technology is is heralded by its proponent as disrupting the global financial system as evidenced in the Coinbase reference to the Times of London reference in the first Bitcoin Block and through the last decade in price action. 
+
+
+%One of the problems of `Astropysics' which was an astronomy python package maintained by Eric Tollerud who is one of the OG of Astrpy, was that although projects were open there were many developers that maintained their own packages and had functions that often were similar or if not the same provided that same results but perhaps took more compute or memory. This meant a less than optimal efficiency of development of code could take place. 
+
+%In an TCG IVOA meeting. Erik presented some evidence that IVOA development is sometimes a bit skewed to the big projects like ESA, astrogrid (UK), perhaps two of the most influential International Members of IVOA. These projects even design space-born telescope/instruments with multi-billion dollar buldgets. Unfortunately at times some of the standards that emerge are not exactly optimal for the communtiy most of which (70 percent, Tollerud) as shown in a recent poll work as data analysis using Python and the astronomical libraries of Astropy.
+
+%Any complementary base layer model must be able to react to systemic risk factors to open development and sufficiently robust to build-up immunity to mitigate against counter-party risks that could be rooted in Financial; Health (Pandemics) ; or other political motivations that hinder Open Development in Astronomy. Some case-studies are discussed. 
+    
+
+% =============================================================================
+% SECTION INTRO
+% =============================================================================
+\section{Introduction}
+\label{sec:intro}
+%
+In a landmark 1964 paper, \citet{kar64} proposed a universal scale
+for classifying the technological advancement of civilisations based
+on their total rate of energy \emph{consumption}. On the Kardashev
+scale, a Type~I civilisation harnesses all energy available on its
+home planet --- at the time of writing, \citet{kar64} estimated
+Earth's total energy expenditure at $4 \times 10^{19}$\,erg\,s$^{-1}$
+($4 \times 10^{12}$\,W) --- a Type~II civilisation consumes the total
+energy output of its host star ($L_\odot \approx 3.828 \times
+10^{26}$\,W), and a Type~III civilisation commands the energy output
+of its entire host galaxy. \citet{kar64} noted that the annual
+increase in human energy expenditure was placed at 3--4\% over the
+following 60 years on the basis of statistical findings. However,
+adopting a conservative growth rate of $x = 1\%$ per year,
+\citet{kar64} calculated that human civilisation would reach Type~II
+status in approximately 3{,}200 years, and Type~III status in
+approximately 5{,}800 years. This conjecture has since informed the
+search for extraterrestrial intelligence \citep{gray2020} and broader
+discussions of civilisational sustainability.
+
+The notion that civilisational advancement is measured not only by
+energy throughput but by the \emph{efficiency} with which energy is
+converted into organised information is ancient. The Antikythera
+mechanism, discovered in 1901 among the remains of a first-century
+BC shipwreck, is widely recognised as the earliest known analogue
+computational device \citep{Freeth2021}. Constructed from bronze
+gears with tolerances remarkable for their era, it calculated the
+positions of the Sun, Moon, and planets --- converting mechanical
+energy into astronomical information with a sophistication not
+matched in Europe for over a millennium. From Babbage's difference
+engine through Turing's theoretical foundations of computation
+\citep{swa2017} to the Application-Specific Integrated Circuits
+(ASICs) that today secure the Bitcoin network, humanity has
+followed a continuous trajectory of reducing the energy cost per
+unit of computational work. The Kardashev--Sagan--Nakamoto model
+proposed here is the quantitative expression of this trajectory:
+it renormalises the Kardashev state variable by the energy cost
+per unit of proof-of-work computation, tracing civilisational
+advancement from the Antikythera mechanism to the present day.
+
+
+Despite its influence, the Kardashev scale carries a fundamental
+limitation that has received little quantitative attention. Both
+\citet{kar64} and \citet{sagan73} noted that an advanced civilisation
+must be characterised not only by its energy throughput but by the
+\emph{information richness} of what it does with that energy.
+\citet{sagan73} proposed that a civilisation's state should also
+reflect its capacity to secure and transmit vast quantities of
+information, and suggested a binary-tree data structure as a measure
+of informational complexity. However, neither author formalised this
+requirement as a quantitative variable within the Kardashev framework.
+A civilisation that wastes energy inefficiently scores identically on
+the Kardashev scale to one that channels equivalent power into
+sophisticated computation. The Kardashev state variable --- power in
+watts --- is therefore dimensionally incomplete as a measure of
+civilisational advancement: it captures the quantity of energy
+consumed but not the quality of its use.
+
+A second limitation emerges from direct comparison with data.
+When the standard one-percent exponential growth model of
+\citet{kar64} is compared against six decades of observed total
+global energy production \citep{owidenergy} --- used here as a
+valid upper-limit proxy for the consumption metric of \citet{kar64},
+following the argument that production necessarily equals or exceeds
+consumption at the civilisational scale and that the two track each
+other closely over decadal baselines --- the model diverges
+substantially from the data. A linear Ordinary Least-Squares (OLS)
+model fits the same data exquisitely, but when extrapolated to the
+Kardashev Type~II threshold it predicts a civilisational transition
+timescale of $\sim 3.2 \times 10^{8}$ Hubble times: a physical
+reductio ad absurdum. We term this conflict \textit{Kardashev's
+Conundrum}: no functional form fitted to energy production alone
+can simultaneously satisfy statistical adequacy and physical
+coherence.
+
+To resolve the Conundrum we propose the
+\textit{Kardashev--Sagan--Nakamoto} (KSN) model, constructed by
+renormalising the energy production ordinate by the annual average
+Bitcoin network hashrate $H(t)$ \citep{nak2009}. The resulting
+state variable $z = P/H$, measured in units of J\,Hash$^{-1}$
+--- which we term the \textit{KarNak unit} --- connects energy
+to irreversible computational work via the Landauer limit
+\citep{Landauer1961}, and fulfils the information-richness
+requirement identified but never quantified by \citet{kar64}
+and \citet{sagan73}. The Bitcoin network is selected because
+it provides the only publicly auditable, unforgeable, and
+continuously updated global measure of proof-of-work computation
+\citep{nak2009}, requiring no free parameters beyond those of
+the original Kardashev model. As the KSN variable spans
+14 orders of magnitude over 2009--2024, it traces the same
+trajectory of energy-to-computation efficiency that began with
+the Antikythera mechanism two millennia ago.
+
+This paper is organised as follows. In
+Section~\ref{sec:data} we describe the global energy production
+dataset and Bitcoin hashrate data. In
+Section~\ref{sec:kardashev_model} we assess the standard
+Kardashev model statistically. In Section~\ref{sec:linear_model}
+we present the linear OLS model and derive the Conundrum
+quantitatively. In Section~\ref{sec:model_comparison} we perform
+Bayesian model comparison via Markov Chain Monte Carlo (MCMC)
+inference and the Widely Applicable Information Criterion
+\citep{Watanabe2010}. In Section~\ref{sec:ksn} we introduce
+the KSN renormalization and its physical motivation. In
+Section~\ref{sec:timescales} we summarise civilisational
+timescales on the KSN scale. In Section~\ref{sec:memoryless}
+we present the memoryless property argument as a further
+statistical objection to exponential growth models. In
+Section~\ref{sec:discussion} we discuss falsifiability,
+limitations, and implications. Section~\ref{sec:conclusions}
+presents our conclusions.
+
+
+%Discovered in 1901 amidst the remains of an ancient shipwreck, the Antikythera mechanism is widely recognized by computer and data scientists as one of the earliest forms of an analogue computational device, often referred to as the precursor to modern computers. \cite{Freeth2021} and other studies therein have indicated that this intricate mechanism was designed to solve mostly astronomical problems, reflecting a sophisticated understanding of celestial movements rooted in the astronomical knowledge of ancient greek scholars like Hipparchus and Archimedes. The detailed scanning and modeling of the recovered 'jigsaw puzzle' relic by \cite{Freeth2021} reveal that the mechanism is over 2000 years old and contains at least three finely crafted rotating discs and more than thirty-odd cogs that were designed, forged, and crafted with adequate tolerances to calculate and predict the positions of astronomical sources including The Sun; The Moon; and some planets across space and time; calculations necessary for navigation, agriculture, cultural, and scientific/technological reckonings, here assumed to have been at the bequest of open human development.
+ 
+ \begin{figure}
+    \centering
+    \includegraphics[width=0.38\textwidth]{narayanan3.png}
+    \vspace*{-0.3cm}
+    \caption{Blockchain key ideas including Nakamoto consensus and DEFI (adapted from Narayaran and Clark, 2019)}
+    \label{fig:narayanan}
+\end{figure}
+ 
+ The ancient greek astronomers had defined the logarithmic magnitude system and introduced concepts of limits and infinitesimals that would become the basis of differential geometry, calculus and numerical methods; they had also paved the way for The Roman empire to define the Julian Day as a counting yardstick that they employed to define epochs, using the 28-year Solar, 19-year Metonic and 15-year Indiction tax cycle that resulted in a conjunction of sorts. Many of these advances are readily found today in open source toolkits or libraries for the development of astronomy, built by community efforts; eg Scipy, Astropy, IVOA. 
+ 
+ It is now known after a plethora of multidisciplinary studies including that of \cite{Freeth2021} that during the `decline' of Ancient Greece the first analogue `Computer' was temporally `lost' to most of the technological world, until when in the fourteenth century comparable `advanced' mechanisms were developed and used in Astronomical clock machinery in Europe. 
+ 
+ Roughly two-thousand years later, Charles Babbage and Alan Turin (AT) are widely recognised as the modern 'fathers' of the digital computer \citep{swa2017}. The pioneering work of AT paved the foundations of Artificial Intelligence (AI) and Cryptography. 
+ 
+Cryptography, the basis of OB ledger technology or distributed ledger technology (DLT), has until now not been much considered for astronomy development, as revealed in 'full-text' searches of astronomical peer-reviewed international journal papers, least as a potential interoperability catalysing agent. In fact, cryptography for Astronomy has its main use as an ancillary or technology layered on top of data transfer protocols TCP-IP, including TLS/SSL, IPSec, and SSH for compression, permission, (eg: ssh-rsa), routines, and programmes (eg: checksum) for software development etc.
+
+Conversely, Artificial Intelligence (AI) programs and techniques like `Machine Learning' and `Data Mining' have become increasingly relevant for Astronomy in the last few decades as measured by the increasing publication rate as found in studies within astronomy and astrophysics peer-reviewed international journals; see Fig \ref{fig:ai}.  Derived tools like publicly available 'Natural Large Language Models' are no doubt also relevant for astronomy development. Nevertheless, many studies that that depend on AI have mapped the physical parameter space of astronomical sources over the observable parameter space from large ensembles of data measurements and have led to the classification of astrophysical sources and relations or physical laws that govern The Universe. AI technology is proving fundamental in the so-called data tsunami era of astronomy through these data science techniques, partly as a necessity of data optimisation in mega-surveys and simulations that depend on: Velocity, Volume, Veracity, and data Variety constraints; each of these and their combination are sensitive to specific science cases. Short timescale astrophysical events with a cadence of 1 day or less for example for the study of Kilonova transients require multimessenger observations that depend on real-time AI alert systems to constrain Kilonova specto-photometric models have revealed only in the last few years that a significant percentage of the Lanthanide Universal abundance budget is produced from rapid neutron capture, or r-process nucleosynthesis reactions of neutron-rich material in ejecta caused by the collision of two neutron stars; see \cite{artola2020} and references therein. Many of the coordinated procedures required for these studies have made direct use of community-built Astropy and other Open Source library packages in Python, as well as protocols developed by the International Virtual Observatory Alliance (IVOA), Universities, and other entities that receive funding at a regional or federal level. Python packages include community-developed core packages, for example, $\textit{Numpy, Scipy, Matplotlib, Astropy., etc}$  and affiliated Astropy packages and others, submitted by users and vetted through the academic community development process. Other software based on other programming languages have also been developed with considerable success, and whether standards are converging or not, may well remain an open question. It is argued that this evolving ecosystem is proving to be increasingly relevant for the evolution of astronomy, not just because of the ease-of-use of the programming languages like Python and its accessibility but because of the nucleation of the community development model that minimizes redundancies and optimises understanding of assumptions, bias and sample selections, to best-practice procedures and selfless collaborative opportunities in which resources can be pooled and systems built, tested, modified, and enhanced. The Open Source development paradigm has proven and is likely to continue to be causal for many of the new tools and discoveries in astronomy, as is evidenced in Fig \ref{fig:astropy} that shows how Python as a programming language continues to play an increasingly significant role for data science in astronomy when the number of papers is taken as a metric.  Nevertheless although the Python community developement model, see AP0, and the IVOA software development model as well as perhaps others are considerably useful, by themselves, they may fall somewhat short in optimising OAD through interoperability if a digital gold standard for OAD transactions remains largely undefined and financing depends on political decisions from outside the community, by politicians that may in some cases be corrupted by hidden interests that go against that of the astronomical community.  
+ \begin{figure}
+    \centering
+    \includegraphics[width=0.48\textwidth]{figs/fulltextai.png}
+    \vspace*{-0.4cm}
+    \caption{Showing Full-text search for  full:"Artificial" and full:"intelligence" or full: "AI" or full: "machine learning")) AND year:1976-2022) returned query in NASA ADS}
+    \label{fig:ai}
+\end{figure}
+
+
+\subsection{ Brokers and Astronomical Surveys}
+
+The full Tsunami data-streams from surveys are not easily accessible for immediate reprocessing by the broader community, and data-access still depends on propriety periods and to a degree on in-house techniques. An examination of the Vera Rubin pre-processed photometric survey is now considered to illustrate this point. Data from the Vera C. Rubin Observatory, originally `The Legacy Survey of Space and Time' once observed is pre-processed and ingested into seven Brokers that have been selected in an Open Community competition call.  This call was made in an attempt to guarantee the data bandwidth and ingestion rate of the survey for a maximum of seven 'Community Brokers' as later selected: Alerce, Ampel, Antares, Babamul, Fink, Lasair, Pitt-Google. Some of these teams contain a degree of centralization since some are more weighted on members with specific science objectives and skill-sets and rely on a code-base and procedures that are not necessarily optimal and community driven across all possible science cases. OB could be used to fund a dedicated Astropy and IVOA community Broker where friction-less incentives could be rewarded to contributors via OB Oracles. An example selected to illustrate this point is from experience of the Vista Variables in the Via Lactea VVV survey. After the commissioning, an issue was found in the Cambridge Astronomical Survey Unit preprocessing algorithm by Victoria Santucho (VS) who was completing her licentiate thesis at the Observatory of Cordoba that depends on the public National University of Cordoba, Argentina, arguable the oldest scientific institution of Argentina, and one of the oldest Universities in Latin America, respectively. As part of the science team VS had 18 month proprietary access to the reprocessed data and VS determined in 2012 that the CASU 1.1 pawprint catalogs had systematic magnitude differences due to a 'grouting error' in the preprocessed data (Mike Irwin, priv comm), see Fig. \ref{fig:mapa_dif_Kvsa_Kcasu_grid80_1} from Vicky's thesis when compared to the Vista Science Achieve Catalogues. The effect was corrected after several months and incorporated in later CASU data releases as resolved internally by the collaboration. Most people outside of the proprietary team who base their studies on corrected magnitudes from pre-processed VVV or VVVx data are not familiar with VS work because by itself this contribution was not published in any peer reviewed journal. Expert problem solving that led to this solution is not in the public domain. Should it be? The Decentralized Science movement or DESCI via existing governance structures like IVOA \& IAU and the Astropy community could be used to address some of the subtleties of open development, mitigate issues in problem solving and lead to more open Astronomy development standards that through Federated learning models and appropriate incentive mechanisms based on OB protocol technologies add guardrails to increase the efficiency of the ELT (extract, load, transform) processes required for astrophysical discovery. For example, of the 7 community brokers of Rubin, some have different source-matching \citep{bellm19} algorithms. Across the wider community various groups have adopted different reduction and analysis methods and techniques for particular problem sets, in this case different source cross matching algorithms have been developed that offer clear advantages and biases on sample selection that are sensitive to source-type, source-colour, whether the sample is magnitude or volume limited, proximity to the galactic plane, etc,  within different band-pass filter sets. The FAIR principles for open astronomy science as reported in \cite{2022arXiv220310710O} and \cite{molinaro21} have also proved to be useful for astronomy software development; however, no 'best-practice' guideline pipeline for observers and data analysts with respect to the relative trade-offs between source matching algorithms with incentive mechanisms, has yet been developed by the community.
+ Could the data-streams use OB protocols to protect data provenance uniting analysis strength across brokers over different wavelengths, AI learning methods, and data models through different community institutions and organizations? In this whitepaper OB is proposed as this missing link in an environment where the half-life function of US PhD majors in astronomy is in steep decline and where projects are becoming much more reliant on team science and access to new technology developments, and infrastructure especially in developing countries becomes increasingly difficult since the burden of the opportunity cost to technological development or innovation is denominated in USD and for many countries inflation and public and private dollar-denominated debt is at an all time high with severe consequences, so technological developments are often encumbered and in some cases near prohibitive. With respect to the community broker for the Vera Rubin Survey, it is noted that an expected capacity of 10,000 alerts will be provided every 39 seconds so there is a need for short time-scale and semantically rich science. Triggering Difference Image source, 82 KB per alert means 5 GB per s per full stream. Sixty Second from read-out information needs to get to the Broker system, at least 5 full streams to alert brokers.   For example  Jakob Nordin of AMPEL, requests from the community a standard processing framework for Legacy Very Rubin data, a standard that would enable processing of data-sets irrespective of broker identically and as efficiently as possible, at the moment this is a challenge.  Mathew Graham of Babamul has considered that traditional approaches to handle event streams are sub-optimal and sees for back-end work a decentralized network of low-cost components employing commodity AI accelerators and reusable models plus an in-use science data platform for information management that any group can set up on their own at-scale broker for less than 1 USD per day, using Raspberry PI + USB TPUs (4 TOPS), optimal for deep learning models.  Federated Learning for example, which has been explored by Babamul devs is completely open sourced and eventually be required to complement open block chain protocol implementation. Several issues exist within federated learning systems including single-point failure type issues, but also a suitable incentive mechanism to mitigate against data falsification. Blockchain-enabled federated learning may solve these issues as described in \cite{zhu2023}. 
+
+\emph{Our goal then is to discuss the Bitcoin OB Nakamoto standard and to identify useful elements for a potential base-layer stack for the Open Development of Astronomy that also includes the onboarding of existing astronomical organizations and institutions.}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.38\textwidth]{figs/mapa_dif_Kvsa_Kcasu_grid80_1}
+    \vspace*{-0.2cm}
+    \caption{Binned Ks magnitude differences (in mags) between Vista Science Achieve and Cambridge Astronomical Survey Unit Catalogue data, caused by a grouting error in preprocessing, found during the VVV proprietary period of 18-month by Vicky Santucho and confirmed by Mike Irwin (priv communication)}
+    \label{fig:mapa_dif_Kvsa_Kcasu_grid80_1}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.38\textwidth]{figs/2206.14220.jpg}
+    \vspace*{-0.3cm}
+    \caption{Reproduced from Astropy Core paper showing Full-text search for 'programming language' returned query in NASA ADS}
+    \label{fig:astropy}
+\end{figure}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Bitcoin Mining Data Simulation}
+\begin{adjustbox}{width=\columnwidth,center}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Julian Day & Year Interval & Block Range & Reward (BTC) & BTC per halving & Mined Bitcoin \\ \midrule
+2454833    & 2009-2012     & 0-210000     & 50.000       & 10.5M         & 10.5M         \\
+2456294    & 2012-2016     & 210000-420000& 25.000       & 5.25M         & 15.75M        \\
+2457755    & 2016-2020     & 420000-630000& 12.500       & 2.63M         & 18.38M        \\
+2459216    & 2020-2024     & 630000-840000& 6.250        & 1.31M         & 19.69M        \\
+2460677    & 2024-2028     & 840000-1050000& 3.125       & 656K          & 20.34M        \\
+2462138    & 2028-2032     & 1050000-1260000& 1.562      & 328K          & 20.67M        \\
+2463599    & 2032-2036     & 1260000-1470000& 0.781      & 164K          & 20.84M        \\
+2465060    & 2036-2040     & 1470000-1680000& 0.391      & 82K           & 20.92M        \\
+\multicolumn{6}{c}{\dots} \\ % Continues the pattern
+2466521    & 2040-2044     & 1680000-1890000& 0.195      & 41K           & 20.96M        \\
+2467982    & 2044-2048     & 1890000-2100000& 0.098      & 20.5K         & 20.98M        \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\section{Open Blockchain as a corner-stone for Astronomy Open Development?}
+\label{sec:bc_review}
+
+As emphasized by Arvind Narayanan it will be within existing government structures and institutions and not by new blockchain ones that the data-revolution will occur based on Fig. \ref{fig:narayanan}, using DEFI and DESCI rooted OB protocols, that include Nakamoto consensus. Automatic liquidity pool governance mechanisms may need to be defined for DESCI and so an examination of a tool through liquidity pool management and governance. We discuss the future application prospects of blockchain technology in advancing astronomical research and development, highlighting its potential to drive innovation through universal protocols that preserve information richness. On-boarding challenges are not trivial and will likely depend on existing OB protocols and derived seed funding to permit liquidity in-flows from more general DEFI liquidity markets as determined through governance. OAD liquidity might also flow into more general DEFI liquidity markets (through staking, yield farming, loan contracts, prediction markets, etc), since Astronomy projects require multi-year planning, costing, so OB stable coins or FLAT OB coin contracts that by definition are 1-1 with FIAT coins indexed to inflation may also prove important for OAD protocols also as determined by governance and we now discuss governance voting as a fundamental element to DESCI. Those questions should be settled by governance. Voting could be done off-chain through a 'snapshot' \footnote{SNAPSHOT: https://docs.snapshot.org/} governance voting poll or via Layer2 and Layer3 OB to bypass fees for casting a vote on layer one, using the status-quo architecture and structure of governance where astronomy education and research is conducted. Protocols like those of Notes and Other Things on Relays (Nostr) are not blockchains but use private/public signature scheme similar to that of Bitcoin and have interesting layers for community web have a chance of working, seem promising. Nevertheless, it also seems reasonable that success or failure of OAD through the Nakamoto consensus will ultimately be determined by the wide-spread use of community-developed applications and the evolution of community defined governance metrics. On this \cite{arvindandclark2017} make the salient point that the main challenge for wide-spread adoption of decentralized OB ledger technology lies in its utilisation by existing users (and institutions) and not in new users from new blockchain institutions and so if we consider that modern Astronomy has been driven by hardware and software (eg: CCDs, Python, Astropy etc) developments, then it may be somewhat surprising to note that unlike AI, OB as a technology has heretherto not been much considered in the Astronomical literature even though funds for instrumentation development are scant, an obvious motivator of this WP. Nevertheless, Bitcoin is widely known to be the commodity and index with the highest ROI on timescales of three years or greater. A model heuristic of this WP centres on highlighting this discrepancy and proposing solutions in the context of the data Tsunami Era, one in which collaborative megaprojects require use of so-called Public Astronomy Brokers as open as possible to community development and when the necessity of technological cooperation in the search for Universal truth via the scientific method becomes increasingly important since corporate and political interests of a handful of actors may otherwise dominate the fate of societies.  
+
+The M2 world money supply which includes the most liquid assets, including deposits, cheques, cash, are not time-invariant conserved quantities like are other fundamental or physical constants in The Universe since they depend on centralized governance via central bank and treasury issuance and are correlated with highly centralized financial institutions, that include changing foreign policy that may directly affects sovereign institutions in other Nation States that may have significant denominated debt printed out of thin air and supported by the barrel of a gun \cite{chomsky2002understanding}. Sound money on the other hand, as a concept is rooted within the principles of Austrian Economics set by academics like Ludwig von Mises  \cite{Hansen2020Book} and although somewhat beyond the scope of this WP have set some fundamental constraints on OB ledger technology that hone in on the fact that the total money supply should be determined in a decentralized fashion.  
+DEFI and DESCI are self-consistent ideas or vehicles to this end. They depend on smart-contract automatic market making technology (AMM) to facilitate token swaps and more complex transactions without third-party intervention (e.g.: NFT royalty paying transactions) via DAPPs through Decentralized Exchanges (DEXs). AMMs were first implemented in the early 1990s by Shearson Lehman Brothers through the Automated Trading Desk (ATD), which was not too big to fail. These initial AMM systems were designed to address issues such as slippage and market manipulation that were inherent in traditional manual-operated order books. Before the development of AMMs, order books were used and trades were initiated by humans, a process that led to latency in price discovery and other inefficiencies. More information and a comparison about different DEFI protocols and primitives can be found in \cite{2023arXiv230805282J}. For this WP Uniswap is chosen fiducially because it was the first DEX to offer a massive governance `airdrop that to date maintains a significant amount of the locked Total Value (TVL) of all DEFI protocols, except native Bitcoin and perhaps Ethereum \footnote{\href{https://defillama.com/protocols/dexes}{DEFI LAMA}}. Its governance token UNI is based on the native Ethereum blockchain. It must be stressed that Ethereum is now a proof-of-stake system and critics have argued it is not as decentralized as Bitcoin. If exposed to a `Solar flair', and all nodes shut down, then the Ethereum network state could be lost forever \cite{Alden2023}.  Data provenance in a POS system therefore may not be guaranteed. Bitcoin on the other hand as a POW system has has been designed by academics to resist such an attack by providing a trustless network state at all times. The infamous blocksize wars by the Bitcoin community that saw a hard-fork was precisely fought and the battle won. On POS and governance although the Uni and ETH tokens are premined and their accumulation may have been `front runed' by Venture Capital and Angel investors no doubt possessing a high degree of centralization, some balance must be sought and reached so that locked liquidity in protocols may be put at the bequest of OAD even if to a degree centralization may have been or may be pertinent to some of these blockchain tokens, it stands to reason that this liquidity should not necessarily be precluded a priori from taking part in OAD if this finance comes with no-strings-attached provided no crimes committed by these addresses or laws broken. Security is a critical part of OAD. Attacks like 'dusting', a type of phishing attack, is possible in POW systems as well as POS ones, and it is technically difficult or may even be impossible to stop someone sending you POS and POW 'evil contract' tokens as is mixing. Therefore, much consideration and caution must be taken before inadvertently executing any contract, especially in highly valued wallets. Effective blockchain protocols must prioritise safe guards against hacks to OAD governance wallets. We now focus on cross chain protocols or WEB-5 protocols like Notes and Other Stuff Transmitted by Relay (Nostr), a decentralized social network set of protocols, that we choose as a case study.  It appears to solve many requirements for open-source OAD protocols, which are configurable, and recently made compatible with the lightning network for Bitcoin liquidity. Effective governance models are likely to converge on selected cross chain standards, and all technology options must be considered, built and tested by the community. Drivechains may also be selected for cross-chain transactions and prove useful.  So then it is argued that Nostr and Uniswap Dex via Uniswap v4 Trigger protocols that maintains about 4 billion USD in Total Value Locked (TVL) could be a valid seed funding source for OAD as a DEFI liquidity source since these protocols set-out to overcome the pitfalls of centralized banking and financing in different industries and are attempting to mitigate against the centralized fractional reserve US Dollar denominated bank network system based on ever increasing debt, a central tenet of the Nakamoto Protocol as referenced in Bitcoin's genesis block \textrm{coin-base field} \href{https://www.Blockchain.com/btc/tx/4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b}{HEX to ASCII}:  'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks' \footnote{\href{https://hackernoon.com/chancellor-on-brink-of-second-bailout-for-banks-where-to-find-this-on-the-bitcoin-blockchain-hm4k34v4}{Hackernoon article}}, and in a plethora of emails (and reply's) by Satoshi in the cypherpunk's mailing list, that provided what appears to be the first token to successfully relate Power production to value for all transactional based systems as examined more thoroughly and put on a more theoretical framework in Sec. \ref{sec:energy}.
+
+\subsection{Selected key-ideas and primitives for the building of OAD}
+\label{subsec: review}
+
+\cite{arvindandclark2017} show insurmountable evidence as do other authors therein that standard OB protocols are much rooted in academic studies of cryptography. Fig \ref{fig:narayanan} is an adaptation of their figure 1 with the addition of a key-idea or related notion: The Decentralized Finance Movement or "DEFI" that through a `non-custodial' or decentralized exchange "DEX" may issue governance tokens to fund open development incentive efforts. There is much evidence that DEFI was already implicit in the Nakamoto consensus from the outset and is referred to in \cite{nak2009} and before that in the `cryptographyat metzdowd.com' mailing list emails from Satoshi in October and November 2008, as well as in the bitcoin genesis block as before-mentioned. In the same spirit, a DEX enables automatic market making (AMM) token swaps that may provide an incentive fees for liquidity providers depending on the nature of the smart contract. Smart contract were first proposed by Nick Szabo as an important Blockchain primitive in Extropy \#16 \footnote{\href{ https://archive.org/details/extropy-16}{Extropy \#16}}. The term `smart-contracts' is unrelated to AI but more related to the concept of automatic P2P transactional conditioning, through cryptographic signing that does not technically require human intervention. Alice and Bob can be machine and machine!  A `smart-contract' may be automatically executed on the `cloud' via a `trustless' financial rail system like the Bitcoin or perhaps the Ethereum network \citep{antono_me19}. The transaction (Tx) contracts via 'non-custodial' community built infrastructure will automatically be executed prohibiting at the protocol level interference from any third party. Initially developed to omit the need of a centralised order book, a DEX should minimise other counterparty risks to contract execution, for example web Framework server failure like that suffered by INFURA Denial-of-Service (DOS) attack to its price Oracle feed which unpegged US stable coin values that incurred million dollar losses in December 2019 to the Compound protocol, so caution and much care of infrastructure selection, decentralised implementation must also be had and periodically updated by the Astronomy community. In fact INFURA itself is subject to US regulatory conditioning and that also represents a potential attack vector for true open development since addresses can be blacklisted, including whole countries or regions via metadata filtering by highly centralised government agencies and the like. This was experienced in January 2023 when in a test SG tried to access UNISWAP from Cuba without a VPN. So, a more transparent WEB5 framework may be required for our specific needs. Following Szabo's definition, \href{https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html}{Smart Contracts} could integrate into base-layer applications like Oracles to automatically query data from third-party data feeds such as a NASA ADS publication metric within a research subject, field, key area,  or even institution. All counter party risks must be averted in contract-design if true decentralization is to be guaranteed. Governance through voting must also be considered and implemented in a thoughtful way here. Note:  More details on the concept of Uniswap DEX can be found in \cite{uniswap2019_angeris} who explore the technical details of UNISWAP and its use as a financial DEFI source. If the community wishes funding could be restricted to Bitcoin via a maximal-ism, but this itself may be subject to single point-of-failure type issues, so much discussion is required.  
+
+ \begin{figure}[ht!]
+  \centering
+  \caption{Historic Price (USD) function of BTC in time (Years), as a potential underlying store-of-value for Open Astronomy Development (OAD). The figure shows the fair value (middle green), and bubble peak (red lines) fits as modelled by Cowen et. al; (2023) for 3 prior market-cycles that are dependent on the bitcoin block reward halvings every 210,000 blocks and the following (estimated) halving as white and red vertical lines, respectively.}
+  \includegraphics[width=0.4\textwidth]{figs/cowen3.png}
+  \label{fig:cowen}
+  \end{figure}
+
+\begin{figure}[h!]
+    \centering
+  \caption{Historic global Crisis, Figure taken from \href{https://en.wikipedia.org/wiki/Global_recession}{wikipedia-commons} adapted from data Reinhart and Rogoff (2009) depicts the binned instances of global crisis (Y-axis) for individual countries that grew in number exponentially before and after the US Nixon administration pulled out of the Breton Woods accord unilaterally that required physical gold backing to USD money printing.}
+  \label{fig:crisis}
+  \includegraphics[width=0.5\textwidth]{figs/330px-BankingCrises.svg.png}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+  \caption{Figure taken from \cite{milo_2018} depicts the falling half-life rate in Astronomy and Astrophysics and other STEM fields}
+  \label{fig:F4.large}
+  \includegraphics[width=0.5\textwidth]{figs/F4.large.jpg}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/Docuemnto_Stefani_2.jpg}
+    \caption{\href{https://aargentinapciencias.org/wp-content/uploads/2019/05/Docuemnto_Stefani.pdf}{Congressional Report, Prof Stefani}}
+\end{figure}
+\subsection{Open Production and Development}
+
+The latest BIP341 major update occurred at the end of 2021 has added scalability to Bitcoin's network since it allows for complex scripting in the witness portion of the transaction which is where the signing portion of the metadata is also contained. The earlier Lightning BIP was built on-top of Segwit and provides smart-contract capability for OAD applications via Ordinal Inscriptions of Layer 1 that runs on-top of a Bitcoin Core full node. To receive Sats or to route Sats via the Lightning network the receiver must sign the transaction. They must be online to transact via the payment channel. Payment channels are fundamental to Lightning .  Ord is an opensource software released by \href{https://github.com/casey/ord}{Casey Rodarmor} between 2021-2022, who was not a Bitcoin core dev at the time, attesting the power of open source community development. According to Casey `Ordinal Theory' was inspired by Satoshi Nakamoto's idea of the indivisible satoshi as an `atomic unit' for Bitcoin. Each satoshi has an ordinal number that depends on when the block was minted giving a maximum of 2.1E15 inscriptions. Discussion on the basis of \href{https://bitcointalk.org/index.php?topic=117224.0}{Ordinal theory} began over a decade ago. In fact no BIP was required for ordinal inscriptions. Other bitcoin usage that inserts arbitary data to the Bitcoin blockchain with BIP also exist like \href{https://dev.rootstock.io/rsk/}{RootStock} sidechain merge mining which has also been designed as a smart contract platform for bitcoin. Nevertheless other perhaps less secure `open' blockchain protocols as previously mentioned may offer some temporary advantages and many issues must be considered including liquidity seed funding and functionality, scalability, Tx costs, Market cap, ease of use, developer numbers, technology standards, cross chain metric analysis as well as other indicators for other L1 chains. This includes Ethereum, DOT, and other chains. Some of these alt chains have helped in the technology development of Bitcoin network and even conceptally as testnets. Segwit was first activated and tested on Litecoin mainnet on May 10 2017 before Bitcoin on 23 August 2017. Many alt L1 have thriving developer communities, DApps and billions of USD in locked liquidity and are part of the burgeoning Decentralized Finance Movement whose protocols offer some advantages for OAD and seed-funding possibilities from DEFI grant funds, that may all help seed OAD. Most interestingly Bitcoin unlike pre-mined Blockchains like Ethereum and other tokens are not as much affected by more centralized liquidity markets in which venture capital or angel investor funds may dictate or even perhaps stymie development since there may be potential conflicts of interest. 
+
+In Sec. \ref{sec:btc4} some more discussion on the energy debate is given and a simple idea of implementation and on-boarding for IVOA, Astropy and IAU is proposed. Sec. \ref{sec:use-case} is an attempt at an institutional map of the Astronomical Observatory of Cordoba/IATE. Blockchain dynamics are considered for its various sub-units including departments, research groups, programs, educational, academic etc., functioning including "Telescopio Itinerante", "Noche de los Museos", "Museum del Observatorio Astronomico", "Library", "FOF workshop", "Olympiadas de Astronomia", etc as identified. The IATE-OAC has over 80 staff including permanent academic staff, graduate and undergraduate students,  CPA and auxiliary staff all which make up an otherwise thriving ecosystem. It is argued that for successful open protocols in Astronomy, an incentive system must work for these existing units of research, educational and out-rearch, so there is a necessity of liquidity partitioning to direct to Open Development despite funding challenges that are rooted in challenges of the existing system of funding and financing.
+
+%Smart contract first coined by Nick Szabo have nothing to do with AI but instead related to the concept of automatic conditional P2P transactions that obviate requirement of a third party that may more often than not be a centralized entity. Smart contracts may be  automatically executed by one or several parties. According to a \href{https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart_contracts_2.html}{community vetted smart contract protocols} are useful data-stuctures for open Blockchain development that have applications including Oracles that could involve tokens and nodes that validate transaction and receive data from external data feeds. These could be useful to adjudicated resources using community established metrics that may include publication rate in international refereed peer-reviewed journals or as  a research subject or field, group or institution, including macro metrics like GDP increase towards science and development could be taken as  valid metrics. 
+
+Governance protocols based on smart-contracts are identified as part of potentially successful OAD infrastructure, since the voice of the community may be efficiently enacted via census voting etc; Prediction market protocols could also be used to help OAD mitigate against stochastic ill-effects that may cause restrictions to Open development caused by other status-quo 'hard-wired" funding mechanisms that may hinder development. For example in Sec. \ref{sec:btc4} we examine the TFlop computational issue facing Argentine Astronomers (mostly N-body, and Grid), in which HPC Argentine Research Scientist are at a disadvantage since TFlop capability is disproportionately expensive as is most new technology, priced in USD. So delays of years to obtain project money to start building HPC infrastructure puts Argentine Astronomers on an uneven playing-field. In fact, it was stated in the Jornadas de Computation de Astronomia de Argentina (Nov 2021)  in which the IATE organizers invited members across all the astronomical institutions in Argentina to discuss these issues in a workshop, that: pooling resources is necessary but not sufficient because of rising capital costs to UPS, air-conditioning, rising energy costs, network core infrastructure costs due to inflation, so research projects often have to be scaled back in response of these elevated costs or depend on external collaborations and infrastructure. In Fig \ref{fig:crisis} we reproduce the historic global crisis function of nation states that depicts an exponential increase in crisis instances during periods when `sound money' was difficult to come by for many national governments of the world. It is concurrently noted that these periods affect and retard astronomy open development, since more essential funding priorities dominate that force governments to use all available resources to cover the bare essential necessities. We emphasize from this figure that during the Bretton Woods accords, or the period within the marked broken blue lines, the occurrence of financial crisis takes a value near a global minimum. 
+
+Could the Nakamoto consensus as the go-to store of value or sound money base protocol and subsequent BIPs usher-in a new period of stability and even innovation for OAD? 
+
+In Fig \ref{fig:F4.large} we reproduce the empirical half-life function for astronomy and astrophysics PhD majors as well as other STEM fields within the US Public University System. It is clear that this figure shows an exponential rate of decline.  In this section we have discussed the current and historical situation that has underpinned the negative effects of Astronomy development with examples. Some Blockchain primitives and protocols are identified and selected to complement Open Astronomy Development.  In Sec. \ref{sec:btc5} conclusions drawn and some discussion on a possible future course of action plus an NFT collection case-study to celebrate 150 years of the Observat\'orio Astron\'omico de Cordoba, the former National Argentine Observatory, including the Golden Plague of Pioneers 10 and 11, to celebrate this law as an ordinal of the bitcoin blockchain signed by the IATE institute and the Observatory Director. 
+
+\subsection{Open Blockchain Fundamentals}
+\label{subsec:fundamentals}
+
+The Turing complete programming languages like ETH (\href{https://github.com/ethereumbook/ethereumbook#readme}{Mastering Ethereum}) have loops, and code is able to iterate infinitely. Most have central actors (Founder, Cofounder, VC-funds, etc). Bitcoin on the other hand is Turing incomplete, purposely built to be much simpler that for over a decade (see Fig \ref{fig:cowen}) has resulted in a formidable store of value when compared to USD over time-scale of a few years. Advanced Smart Contracts capabilities were never part of the immediate scope of the original implementation. Whereas Bitcoin was primarily designed to be a P2P form of electronic cash, other Blockchain like Litecoin were used to test implement the Lightening network and other more complex smart contract capabilities on other layers and side-chains. The Ethereum Blockchain has also shown itself to be a successful Blockchain for more advanced smart contract capabilities, and has been defined by its lead developer to be a “World Computer”. 
+ 
+
+Preceding BITCOIN, many advances in Blockchain technology were made in works like Chaum (1983), Chaum, Fiat Naor (1989), Rivest and Shamir (1997). Haber and Stornetta in 1994 building from the literature as well as from their own paper in \cite{Haber1991wi} put the first Public OB system into practice in the New York Times newspaper classifies. This being the first accredited ledger that was a digital signature time-stamping validation service named "Surety", fourteen years prior to Bitcoin. 
+
+However the first decade of the 21st century gave rise to arguably the most important OB system, the Bitcoin standard, by Satoshi Nakamoto in 2008.  In the first block Satoshi made reference to the Times of London article that reported that the then U.K. chancellor was considering a second Bail-out round of the largest UK Banks. Satoshi, a likely pseudonym has demonstrated affinity with the academic literature since Satoshi much cites the academic literature. According to some studies may represent the work from mostly one individual (MOOC Blockchain, Princeton), although definitive evidence remains somewhat elusive perhaps more evidence will come to light if the early Wallets of Satoshi that contain many early Bitcoin become active. Moreover the identity of Satoshi or any Blockchain OG is a surface of attack to that network so it is no doubt that Satoshi identity is hidden by design, hopefully never to be revealed and those early wallets remain forever dormant. Never-the-less the Bitcoin Blockchain network and bitcoin the asset have grown in use and value more than any other asset class, including gold, so it could be argued that in the time-span of months to years in its first two decades of existence it has been successful and must be not be ignored in the Astronomical literature.
+
+On shorter time-frames less than $\sim 1$ year bitcoin volatility is significantly higher. No doubt compared to other asset or commodity classes like Gold it is measurably young and hence volatility high since if it is to represent a global commodity reference of value its market cap will likely be more sensitive to external speculative financial capital markets. 
+
+Bitcoin as a world reserve currency, medium of exchange and unit of account still appears to be correlated to other global financial markets. A recent example is the Covid19 black Thursday pandemic that in March 2020 saw BTC price drop by more than 30\% in only a few hours. This was caused by a global liquidity crisis event that swept the much larger global financial markets and the reactions of central bank governments as did the Omicron crash of December 2021. The March 2020 crash coincided with a crash in global equity markets that saw stocks suffer the worse losses since "The Great Depression" and iconic corporations were "bailed out", like Hertz after a record number of unemployed, filed for unemployment benefits in the US. After about a fortnight like many blue-chip stocks, bailed out by the US FED via Repo, corporate bond offers, and share buy-backs the bitcoin price (in USD) recovered in earnest.
+ 
+Bitcoin as a technology was able to solve several problems faced by earlier digital currencies. Having no single point of failure and being a pseudonymous Network adds to its resilience, so for example law-suits can not be used to persecute its pseudonymous creators, nor node operators. The Hash function rate is an integral part of Bitcoins security as shown later in this paper. The Bitcoin difficulty is adjusted on a two week basis as a function of the Hash rate. Considering that on average a new Bitcoin block is mined every 10 min, so 2015 blocks represents nearly a perfect two week interval. This is the difficulty adjustment time-scale that Satoshi chose realizing that the Hash-rate would evolve with time taking into consideration both the effect of new mining technology and variability in mining activity, sufficient to avoid the 'probability memory-less problem' for our model. In actual fact, a bug in Satoshi's Bitcoin Core client code or a zero-error=1 persists such that the the first block of every 2016 blocks is not actually included in the moving average calculation only the last 2015 blocks are considered. This bug can only be changed with a hard-fork that a cost too high to warrant implementation. Bitcoin developers are generally adverse to modify Bitcoin unless a security issue arises. Now, given the instantaneous hash rate will depend on many variables like seasonal electrical supply costs, technology developments, miner adoption rate, etc., miners have temporarily switched off mining units. For example, in Southern China in the Summer months the monsoon or Wet-Season provides abundant energy supply that drives more intense miner activity such that the total China hash-rate committed may increase by more than 100 \%, with electricity generated from stranded hydro facilities or natural gas flaring that may be otherwise illegally flared. Nevertheless, on the criticism that Bitcoin Network requires as much power as some Countries like Argentina or large cities as New York, confusion is often unwittingly made between Energy Consumption and Energy Production and comparisons to the consumption of other industries, often omitted. The Bitcoin energy consumption models by the Cambridge University Judge's University Center for Alternative Finance or simply the Bitcoin Energy Consumption Index puts many of these comparisons into context. The Bitcoin Energy Consumption Index estimates the Energy Consumption by modelling the Bitcoin hash rate with hash computes, using a Normal distribution of basket miner technology (GPU's, ASICS etc), taking into account technological advances in ASICS production, World Energy costs ., etc. Using these model parameters, the CBECI estimate that as percentage of world total power required for Bitcoin will be of the order of magnitude of one tenth of one percent of the world production over Bitcoin lifetime. Other authors like Antonopoulos argue that the energy cost of the Bitcoin network is near the noise of the total global energy consumption value so such a cost may be necessary if it leads to a secure reserve global decentralized and un-censurable financial network. Taking the Cambridge Bitcoin Electricity Consumption Index estimate, Bitcoin Energy is predicted to scale by: 
+$E_BTC/E_tot < 0.1$
+\\
+ Some authors, including Andreas Antonopoulos believe Bitcoin and Ethereum Blockchains have the potential to revolutionize open development in science and technology and with 5G roll-out promise unprecedented levels of growth of over 18 percent per year, not seen since the first industrial revolution Waldon, M.  Fig needtoinsertfigure adapted from Walden et al. shows the world GDP as a function of time. These technologies were born out of academia, the occupy wall-street and anonymous movements as a direct response to the 2008 financial crisis that saw a global slump in the world GDP based on the US sub-prime financial crisis  that included a drop in US GDP by 30 \% sustained over several years.
+ 
+Programmable money is not exclusively relevant to human beings but also to machines as participating actors. Hardware evolution is also tied to open development, as seen in the evolution of specialized hardware architecture for Proof Of Work (POW) HASH Function calculations that is developing Application-Specific Integrated Circuit (ASICS) to mine Bitcoin blocks. It could be argued that these developments have outpaced Moore's law.  Wrights Law suggests that the for every percentage increase in the cumulative distribution function of production in any industry equates to a fixed percentage increase in the efficiency of production. So hardware has evolved from CPU intensive to graphic processing units (GPU) and  Application Specific Integrated Circuit  (ASICS), \cite{10.1371/journal.pone.0052669}.
+
+\section{Bitcoin and the Kardashev exponential model conundrum}
+\label{sec:energy}
+
+We now attempt to link the Kardashev law  \cite{kar64} with the Nakamoto consensus and Bitcoin \cite{nak2009}. As a starting point we analyze the one-percent Kardashev model: $y_t = y_0 \times (1.01)^t$
+ and show it has a critical flaw with respect to the type-ii original timescale prediction, that is the Kardashev scale. In Subsec. \ref{subsec: data} we present the Energy data from \cite{owidenergy} and the Bitcoin Hash-rate that we use in the analysis that follows. 
+
+In Fig. \ref{fig:kardashev1} we show two models for the data of total global Power production (red dots). The one-percent Kardashev exponential growth rate model (unbroken line) and the linear OLS model (broken line). The one-percent model has an exponential form and diverges from the data.
+$$P(\theta_{\text{exp}} | M_{\text{exp}}) = \delta(b - \log(1.01))$$,
+
+where $$\theta_{\text{exp}= (y_0,b)}$$ and $$ b= \log(1.01)$$
+
+The likelihood for this model has the specific constraint that the growth rate is 1\% year-over-year, a point prior. The likelihood for a single data point $$(x_{i},y_{i})$$ is: $$P(y_i | x_i, \theta_{\text{exp}}, M_{\text{exp}}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left( -\frac{(y_i - y_0 (1.01)^{x_i})^2}{2\sigma^2} \right)
+$$
+
+where $x_{i}$, represents the year, $y_{i}$ represents the observed power production metric, and $\sigma^{2}$ represents the noise variance. On the other hand, using Bayes' Theorem, the posterior distribution for the parameters of the exponential model is given by:
+$$P(\theta_{\text{exp}} | D, M_{\text{exp}}) = \frac{P(D | \theta_{\text{exp}}, M_{\text{exp}}) P(\theta_{\text{exp}} | M_{\text{exp}})}{P(D | M_{\text{exp}})}
+$$
+
+where, D represents the observed data, and the prior is the assumption of 1 \% year-over-year growth. 
+
+If the likelihood $$ P(D | \theta_{\text{exp}}, M_{\text{exp}})$$ is low, this suggests that the 1\% growth poorly fits the data, a poor posterior for the exponential model.
+ On the other hand that the OLS linear model provides a significantly better fit for the data indicates it must be further explored. The linear model with form: $$y=mx+c,$$ found by minimizing the sum of the squared differences between the observed values $y_{i}$ and the predicted values: $$\hat{m}, \hat{c} = \arg\min_{m, c} \sum_{i=1}^{n} (y_i - (mx_i + c))^2
+$$
+The likelihood for the Linear Model is:
+$$P(y_i | x_i, \theta_{\text{linear}}, M_{\text{linear}}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left( -\frac{(y_i - (mx_i + c))^2}{2\sigma^2} \right)
+$$
+
+However,in extrapolating to large Power values approaching the Luminosity of The Sun would require an exceedingly long non-physical time-scale: Kardashev's Conundrum. This is a serious conflict between the \textbf{posterior} of the linear model and the prior assumption from the exponential model, the basis of the Kardashev scale. To test this, a MonteCarlo bootstrap simulation was conducted for the year-over-year differences of the Power Production data metric, to evaluate if the point prior of the likelihood function was critical to its divergence from the data that tends to a marginal likelihood type minimization. The simulations showed that the resampled data also yield a significantly larger type-ii Kardashev timescale than does the approximately exponential model, given the resampled data is valid. This confirms that it is not exclusively the point prior that renders the Kardashev standard model untenable. So we choose the linear model a basis for a  more robust model with for our predictor but, the linear model itself requires urgent modification.
+In Fig. \ref{fig:kardashev3} the data and models are again shown with the same color codings with the Kardashev civilization type demarcations and the current Solar insolation limits. Kardashev defines type i civilization as the attainment limit for a civilizations to reach an equivalent Power consumption as that of Earths in 1964, and type ii as the Power attainment is defined equal to the The Sun's total bolometric luminosity of roughly 3.9 X $10^{26}$ W. \cite{sagan73} slightly re-define the zero point for type i but \cite{sagan73} also use the one-percent model or Eqn. \ref{eq:2}, taken from \cite{kar64} for which x=0.01. Using  this growth rate Kardashev proceeds to calculate that Human civilization would reach type ii in roughly 3200 years, see Table 1. \cite{sagan73} obtain a similar value for the type ii Power attainment and calculate a type iii attainment timescale for when a civilization via technology perhaps Dyson spheres is able to muster as much Power as would be emitted by all of the stars of their host galaxy. From Figure \ref{fig:kardashev3} it can be seen that the timescales given a one-percent model are roughly consistent between Kardashev and \cite{sagan73}, however these are remarkably inconsistent with the simpler OLS predicted linear model fit. \\  
+The plot of the residuals of the points to the linear model in Fig. \ref{fig:kardashev1_res} shows the agreement. 
+The type ii timescale for The Earth given the OLS model would be over one Hubble time. Also worth mentioning is a noticeable higher order trend perhaps sinusoidal in the residuals that might be indicative of Total Production planning of Global production entities like OPEC. Also interesting to note is that the scatter in the last decade is somewhat reduced, and the outliers of Energy production for the years 2008 and 2020 that may be related to the Subprime 2008-2009 crisis and the COVID-19 2020-2021 pandemic year! The subprime crisis incidentally coincided with the Nakamoto consensus. 
+
+%Bitcoin has been described in early sections and previous works to behave as a unit of account, store-of-value and potential medium of exchange.  
+The inability of the constant growth rate models to reproduce the data, as is the case for the one-percent Kardashev model, has its origin in the fact that the probability distribution of a random variable X, say Global Power is \textbf{memoryless} if for all real numbers a and b in its range satisfies:
+\begin{equation}
+P(X>a +b|X>b)=P(X>a)
+\label{eqn:memless}
+\end{equation}
+
+Kardashev's 1\% model is a geometric series type with a non-negative integer common ratio. It is approximately an exponential growth model as described by Eqn. \ref{eq:2}, reproduced from the original paper of \cite{kar64}:
+
+\begin{equation}
+(1+x)^t \approx e^{tx}
+\label{eq:2}
+\end{equation}
+
+It follows the probability distribution of the the type of Eqn. \ref{eqn:memless}. Possessing the memoryless property renders this model anathema to the very phenomea Kardashev intended to model.
+
+ However although \cite{sagan73} and \cite{kar64} suggest an additional information parameter to the Kardeshev law, a quantitative generalization of the Kardashev law to include it has not been attempted, until now in this WP.  \cite{sagan73} discuss use of a binary tree data-structure to suggest that all the information of The Earth including the contribution of Greek Philosophy would require roughly 2**16 bits and propose a data-structure of a similar form to a Hash tree or Merkle Tree since Hash trees like Bitcoin's are in general Binary trees that preserve critical state information of the system. Table one shows the predicted Energy consumption by advanced civilisation from type i to type iii, based on \cite{kar64}. We show the two model fits in Fig. \ref{fig:kardashev3}. We note that although we have set the Insolation limit as constant they will also depend somewhat on the Milankovitch (Orbital) and Solar cycle. 
+
+\subsection{The Data and the Kardashev-Sagan-Nakamoto}
+\label{subsec: data}
+
+The Power data is taken directly from \href{https://github.com/owid/energy-data}{owid-energy} for which a pull-request was \href{https://github.com/owid/energy-data/pull/23}{made} to resolve an inconsistency between the column label of Total Energy Consumption that is actually Total Energy Production. We use the total global Power production in TW-hours metric and convert to Power in Units: Watts by multiplying the it by 3600 s for all calculations that follow.
+
+The total Bitcoin Hash-rate is a function of the minning difficulty which is determined every two weeks and the number of blocks being mined, which gives Bitcoin the network, the security that Kardashev may have envisioned in 1964. For this study we use the \href{https://data.nasdaq.com/data/BCHAIN/HRATE-bitcoin-hash-rate}{Blockchain API} from NASDAQ. We determine the mean yearly hash-rate for every year from 2009 to 2023. Table XX shows the average hash-rate and year. 
+
+We first show the original Kardashev model using the Power data from 1964 to 2023 and with an OLS fit linear model and solve our OLS fit to the type ii Power limit as determined by \cite{kar64} that is also consistent with \cite{sagan73}.
+
+To reconcile this discrepancy, we rescale the Y-axis by normalizing it with respect to another state-variable, say the Bitcoin Hash-rate function $H{x}$. So $$z=\frac{P}{Hx}$$ This transformation makes our model more consistent with the original idea of Kardashev and his scale since we assume conservation of the Bitcoin value-layer to be seemingly locked with Global Energy production. Interestingly \cite{sagan73} consider an alternate information metric for the Kardashev law, one that includes information richness. This can be represented in a Binary operation even a Binary Tree which share the Hash tree or Merkel tree structure. In Bayseian terms, given the exponential model consistently predicts values that deviate from the observed data, the likelihood $$ P(D | \theta_{\text{exp}}, M_{\text{exp}})$$ is no doubt very low. The posterior distribution for the exponential model will be weak, and the model evidence will be significantly lower than for the linear model:
+
+$$P(D | M_{\text{exp}}) = \int P(D | \theta_{\text{exp}}, M_{\text{exp}}) P(\theta_{\text{exp}} | M_{\text{exp}}) d\theta_{\text{exp}}
+$$
+
+ 
+
+Finally to compare the exponential and linear models, the Bayes Factor should be computed.
+
+$$BF = \frac{P(D | M_{\text{linear}})}{P(D | M_{\text{exp}})}
+$$
+
+This will be considered in a future paper. But effectively the Bayes Factor BF> 1 would indicate that the linear model is more strongly supported by the data, and the 1 \% year-over-year exponential model can be finally rejected.
+
+Interesting, the Bitcoin Network Ledger which contains transaction information of every base-layer transaction may also be used between actors that are not-humans. This may be the sense of "Smart Contracts" by Nick Szabo. The Bitcoin hash-rate as a function of time we take to represent a type of Energy Production metric and simultaneously preserve the Information richness required in our model. We take data complied from the International Energy Agency and BP, from \cite{owidenergy} and plot the total yearly power production available for The Earth. In Fig \ref{fig:kardashev1}, we show actual data since 1964 from \cite{owidenergy}. We show two models, the Kardashev Equation \ref{eq:2} 1\% model, taking the first point of the actual 1964 data and a OLS model to the data. Interesting the second last datum point shows a 3 percent decline in production in 2020 (Due to COVID) and a 5 percent increase in production in 2021 breaking the COVID-19 pandemic year!
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/fig1_kar2ff.jpg}
+    \caption{Global average energy production metric in Terra Watts VS Year (lin-lin) from the Owidenergy resource with a Ordinary Least-squares fit and the Standard one-percent model as proposed  by Kardashev 64, subsequently by Sagan and later authors. The Numpy Python module Polyfit was used to do the linear fit.}
+    \label{fig:kardashev1}
+
+\end{figure}
+
+In Fig. \ref{fig:kardashev3}, we show the same data on a log-log plot and include the Kardashev and Sagan time-scale estimate for the formation of type i and ii civilizations. The Solar Insolation value or the total energy of The Sun abosrbed by the clouds, oceans and Earth's surface limit is also shown. %It can be seen that the original Kardashev limit by \cite{kar64} of 4 TW was already reached but the T1- Sagan limit of 10000 TW from \cite{Sagan73} will be reached in about 20000 years. 
+The total number of bitcoin mined can be represented by the following summation:
+\[
+\textrm{Total Bitcoin} = \sum_{i=0}^{32} 210000 \times \left(\frac{50}{2^i}\right)
+\]
+Here, \( i \) indexes each halving period from 0 to 32, where the initial reward of 50 BTC is halved every increment in \( i \).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/fig2_kar.jpg}
+    \caption{Global energy production metric in Terra Watts VS Year (log-log), taken directly from the Owidenergy resource, with a Ordinary Least-squares fit. The solar Insolation, Kardashev types i and ii limits are shown for Kardashev and Sagan esstimates. The Scipy Python module was used to do the linear fit.}
+    \label{fig:kardashev3}
+
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{figs/fig1p_kar_rel_res.jpg}
+    \caption{Relative residual for the OLS
+    linear model}
+    \label{fig:kardashev1_rel_res}
+
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{figs/fig1p_kar_res.jpg}
+    \caption{Residual for the OLS
+    linear model}
+    \label{fig:kardashev1_res}
+
+\end{figure}
+
+Plots were made and are shown for the estimate of $\delta$ time, required for a typical civilizations given the model to reach type-i and type-ii for both the Kardashev and separately, the Sagan models. These are shown to diverge from the real data. We note the 2008 so-called sub-prime crisis and 2020 COVID19 pandemic points bellow the average trend of points for which it is possible that Energy production was significantly reduced.
+
+We calculate the difference between successive years of our Energy Production metric from 1964 to 2022 using the Oneworld yearly total production value. 
+
+
+\begin{table}[h]
+\centering
+\caption{Kardashev data, model \& implication}
+\label{kard_comp}
+\begin{tabular}{|l|l|c|c|}
+\hline
+\multirow{2}{*}{Data Source} & \multirow{2}{*}{\textrm{Power\_{1965}}} & \multicolumn{2}{c|}{Type II Timescale} \\
+\cline{3-4}
+                             &                       & Geo Model (kyr) & OLS Model         \\
+\hline
+kard64 \cite{kar64} & 4 TW                & 3.2             & NA          \\
+\hline
+OurWorld \cite{owidenergy}    & 43307 TW               & 2.3             & $>> \frac{1}{H_{0}}$     \\
+\hline
+\end{tabular}
+\end{table}
+
+
+A histogram of the distribution of successive differences in the Power values is shown in Fig. \ref{fig:his_power}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{figs/pp_his_kdetrue.png}
+    \vspace*{-0.3cm}
+    \caption{Histogram showing the \% power difference between successive years}
+    \label{fig:his_power}
+\end{figure}
+
+The distribution of differences has a measured skewness of -0.31 \cite{zw00}, a mean of 2.34 and standard deviation of 2.02. The residual and relative residual of the data from the linear model are shown in Figs: \ref{fig:kardashev1_res} \& \ref{fig:kardashev1_rel_res}, respectively. The histograms of the distribution of residuals and relative error is shown in Figs. \ref{fig:his_res}, \& \ref{fig:his_rel_res}, and the daily average Bitcoin hash-rate since the genesis block in Fig. \ref{fig:btchash}.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{figs/P_residual.png}
+    \vspace*{-0.3cm}
+    \caption{Histogram showing the residual of data}
+    \label{fig:his_res}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{figs/P_rel_residual.png}
+    \vspace*{-0.3cm}
+    \caption{Histogram showing the rel residual of data}
+    \label{fig:his_rel_res}
+\end{figure}
+
+
+The Skewness of our sample is slightly negative perhaps because of man-made crisis like the 2008 subprime crisis and 2020 pandemic, but it is approximately symmetric. To quantify this further, we perform a test on these data for normality using the Shapiro-Wilk test on Normally Distributed Data and obtain a test statistic and the corresponding p-vale of 0.97 and 0.23, respectively. Since the p-value is not less than 0.05 we can not reject the null hypothesis so the conclude the Power difference sample is approximately consistent with being drawn from a Normal Distribution population. A similar result is obtained via an Anderson-Darling test for which we obtain a test statistic of 0.38, and critical values of 0.54, 0.62, 0.74,0.86 and 1.03, so we reject the null hypothesis at the 15, 10, 5, 2.5 and 1\% significance levels. Evidently, the distribution, although it has some Skewness and Kurtosis can not be ruled out to be derived from a normal distribution.
+
+
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figs/hash_btc.png}
+    \caption{Historical Hash-rate for the Bitcoin network. Note: the vertical axis multiplier of 1E8}
+    \label{fig:btchash}
+\end{figure}
+
+ \subsection{POW Incentive}
+
+The target hash-rate for Bitcoin is a moving average of the hash rate over the last 2,015 blocks.The hashing power is estimated from the number of blocks being mined in the last 24h and the current block difficulty, given the average time T between mined blocks and a difficulty D, the estimated hash rate per second is given by:\\
+
+$\textrm{H} = 2^{32} \textrm{D} / \textrm{T}$\\
+
+\subsection{Community Liquidity Pools}
+Liquidity Pools, Uniswap as an example, can use triggered based on governance metrics and network state parameters to provide finance. In this section we examine some of these methods.
+
+
+\subsection{Indexing Open Production and Development}
+
+In this subsection the notion of indexing open production metrics is discussed.
+Blockchain Oracles may inevitably be used to validate transactions and safeguard value in OAD via data feeds (Eg ADS searches, citations, etc.) that may include guardian nodes. Guardian nodes in the context of blockchain oracles refer to a specific design mechanism used to enhance the security and reliability of data feeds provided by oracles. Blockchain oracles are third-party services that could be built as part of the OAD infrastructure to provide external data to smart contracts on the blockchain. This solves the issue that blockchains cannot access external data directly, so oracles serve as bridges between the off-chain world and the on-chain world.
+A successful model for Astronomy and Astrophysics Open Development would do well to tie metrics of Open Production in Astronomy not only into Bitcoins base-layer protocol but would do well to provide appropriate incentive mechanism in other layers and blockchains. A tooling mechanism could be used to define metrics by existing governance structures in real institutions to enable Open Astronomical development funding to flow when it is needed. OB should be uncensored so a data protocol standard of best practice through governance of existing institutions and communities must be first defined and consolidation of metrics determined that could use blockchain oracles. Oracles receive feeds and are penalized if they predict incorrect probability distributions of events or facts for Astronomy Development prediction markets. This may include production metrics or paper impact scores, PhD completion rates, specialised and public lecture metrics, as well as other academic and outreach indices.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.50\textwidth]{figs/figkarnak.jpg}
+    \caption{Kardashev-Nakamoto data-points for the Kardashev-Nakamoto model}
+    \label{fig:karnak}
+
+\end{figure}
+
+The energy required to operate the Bitcoin Network is within the error budget of the total global energy consumption and although it may be a  cost one must take in mind: (i) this cost is to secure the network (ii) that energy consumption is a lower limit on energy production (iii) that a significant percentage of POW hash-rate is powered by renewable energy sources that could if consensual agreement be reached by miners,  holders, governments and the general community, power the Bitcoin Network using renewable and sustainable stranded energy or even within a carbon credit system. Of course on the topic of energy consumption, the \cite{kar64} model or Energy Use function for civilizations is a useful comparison chart to ascertain the current Energy situation of Civilization on The Earth over as long a time baseline as possible to mitigate sensitivity to low time-scale variance given the potential of wide-use of Bitcoin adoption as analyzed in this paper.
+
+Finally, we present the Kardashev Nakamoto plot in Fig. \ref{fig:karnak}. The ordinate values are in Jules/Hash or in the Kar-Nak unit. In this plot, one is inadvertently observing how the security of the Bitcoin network as a value system depends on the Global energy rate of production over time. A functional fit of this relation is not attempted here but rather left as an open question posed by this white paper.
+
+\section{Energy Consideration and governance of Liquidity Pools}
+\label{sec:btc4}
+
+The energy required for Bitcoin's POW consensus algorithm has been criticised for the Power required to operate and secure it. Bitcoin hashing is considered fundamental to the POW protocol for the: (1) production of new blocks, (2) processing of unspent transactions (UTXO). At any time, the hash rate is a measure of the hash-power of the total Bitcoin POW system. 
+
+The Bitcoin network over time requires an increasing amount of energy for hashing that has been estimated by the Cambridge Bitcoin Electricity Consumption Index as limited to a fixed percentage of the total global energy production. 
+
+If we accept that historically there are bubbles in bitcoin price volatility in some nominal value system, say USD and that the btc/USD volatility may be taken as a proxy metric to this volatility, then we must examine ways to mitigate against downside volatility for OAD during periods in which the btc/USD is significantly above the average during bubble periods. One metric for this is the 20 week simple and exponential moving average functions or some equivalent, which represent periods of fair-valuation as modelled by Cowen el al (2023). In periods when the daily bitcoin price is well above this non-bubble band it is risky for AOD treasury to hold onto bitcoin so it would be reasonable for a maximum percentage of total OAD liquidity be held in stable coins by OAD governance treasuries. Likewise when the btc/USD price is much below the 20-week moving average, it is risky not to hold BTC, so some minimum liquidity must be held in bitcoin by treasury. These limits may be defined and managed by community via voting to maintain reasonable value for OAD although and will depend on the use-case and local context and use-case. The following use-cases are now selected across a wide base-line of activities for Astronomy development at the OAC-IATE for (i) funding of a new telescope-system TOROS at an ELT tested site, (ii) 'telescopio itinerante' or itinerant telescope program of the OAC, (iii) re-value historical OAC patrimony, (iv) grant stable coin liquidity pool for granted research projects, that is PICT-PIP, (v) Community Broker for backend of Vera Rubin Survey. (vi) Astronomy software development. (vii) inclusion of mega-project in-kind financing like the CFHT
+Letters of Interest to participate in the development of the Maunakea
+Spectroscopic Explorer (MSE) or the China Argentina Radio Telescope \href{http://cart.unsj.edu.ar/}{CART} in which Argentina PIs have 20\% dedicated time but as yet, no guaranteed financing. 
+
+Of the seven case-types identified, the first four focus on the OAC-IATE ecosystem and the last three on a more broader national, or international scale.  So in this context global salient issues that affect OAD that include the so-called global brain drain or haemorrhage afflicting astronomers could be addressed, so astronomers are not lost to financial industries. In Subsec. \ref{btc2:sec:sub:half} proxy metrics for OAD are proposed that might go someway to restore historic half-life rate function of Astronomy PhD majors in Public US Universities and associated OAD systems as considered. 
+
+
+
+
+\subsection{Half-life function}
+\label{btc2:sec:sub:half}
+
+The exponentially falling half-life function for Astronomy majors in US public universities is an alarming metric. It is now about 3 years and has been dropping exponentially since about 1970 or about the same time the US withdrew unilaterally from the International Bretton-Woods accords that tied the 'price of one USD' to an allocation of gold. The desertion PhD function could be considered a global hemorrhage of 'grey matter' or capital flight away from astronomy open development.
+
+\emph{In an open development model scientific contributions from the community should be guaranteed, valued and enhanced in a P2P application-layer sense via a more robust gold2.0-standard programmed by the community through open governance Blockchain protocols.}
+
+
+\subsection{The Merging of Open-Source protocols}
+
+Both AI and Blockchain cryptographic come from Open Source community, and both may actually be necessary for the evolution of Astronoomy. To help resolve the issue that is presented by the Data Tsunami, on building deep learning models for large data streams, brokers are necessary, and must be as efficient as possible. For surveys like the Vera Rubin the tasks are complex from cross matching to managing to the community deep learning models to test and refine. Data-rights proprietary periods although have been dropping over time and are now around 6-12 months obviously provide science-team members with a considerable time-sensitive advantage and know-how first mover advantage.  Given the scenario depicted in \ref{btc2:sec:sub:half} of increasing number of astronomer PhDs within larger team projects, and considering as reported by the Bambanunu broker team, for deep federated learning decentralized computer infrastructure is expected to be more ideal than large centralized data-centres for many types of problem.  Astronomers that do not have access to such infrastructure to train a models either with their own machines and drawn know-how or are not part of a federated deep learning model will find it more difficult to stay competitive. Blockchain technology could also help here in incentivising these collaboration.   
+
+How to merge Open Blockchain technology to Open Source academic/(community) stack of astronomy protocols via the: Nakamoto consensus, remains an open question.
+
+In the last decade Open-Source projects in Astronomy have burgeoned and become somewhat unified. 'Astropy' with its community affiliated and coordinated packages has become the leading community repository mine.  One of the reasons the community got behind one project was that many packages offered similar functions and the maintenance costs scaled with the number of version. Some methods may have been more optimal, so a standard system evolved that now maintains the code-base in the community. In Astropysics and other early python repositories for Astronomy the developers recognized with other members of the community that community maintained code repositories was key to development of Open-Source software.
+
+Although most astronomers use Astropy amongst other tools, no blockchain packages yet exist on Astropy so a community developed coordinated or affiliated blockchain package might be necessary. Consider AstroOD as a core package to help with frictionless interoperability that preserves best practice procedures and methods for different source-types, source-matching algorthms, and analysis techniques that could be refined by developers and users of software from existing institutions and facilities including the IVOA.
+\subsection{Liquidity Tooling}
+\label{btc2:sec:sub:liquidity}
+Adding and protecting value in Astronomy for Open Development inevitably requires so-called 'liquidity tooling'. Liquidity tooling is the engineering of liquidity mechanisms and tools that may extend onto Layer 1. Fortunately several decentralized framework solutions exist that peruse a balanced economy for the open development of astronomy are being development and Web3 + Web2= Web5 solutions will no doubt eventually evolve as bitcoin L2 scaling solutions development. The idea of a Cordoba NFT collection celebrating different open development initiatives in Astronomy is one obvious application that we explore as an example in the following subsection. 
+
+
+
+A community-defined and validated OAD system could be used to evaluate preferred funding channels including node validation via incentives Txn types. Such a system could be periodically revised by the community with community governance protocols that ideally would respect yet complement existing structures in a self-consistent decentralized manner. IVOA could be the perfect example with 19 Nation State member countries and 4 international members. These metrics could be used to direct and supply liquidity for the Open Development of Astronomy. As seen in Fig Seffanni. national governments that spend a larger percentage of GDP towards science and technology also on average have higher GDP growth rates (in USD). So this could be a weighting factor metric. See equtation1. Reciprocal percentage of total GDP towards science could be a constructed normalization parameter. So too could total debt to GDP public debt.  An example is the Maker ERC231 ETH governance token that itself control a  pseudo-decentralized US stable coin bank, DAI, over-collateralised that has remained 1 USD for several years despite the BTC market varience.  On the question of whether a special token need minting. The pros and cons need to be carefully studied by the community. For example WETH and WBTC are stable tokens that are on native ETH but allow interconectivity between chains. A similar system occurs with the price issuance of DAI via Maker. It is an important element of DEFI and governence that is included in Figure 2.   
+
+DEFI protocols include grant seed liquidity funds like Open-Sats and other specific DEFI Open development protocols that will be built on-top of as developed by specific communities. Sharing Astropy ethos, many are based on Open Source community development model that also adhere to the Lindy effect so standards are likely to require some degree of co-evolution.
+
+
+ \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/royalty_pay.jpg}
+    \caption{Ethereum Token NFT royalty payments}
+\end{figure}
+\subsection{Model Attributes of a Token for Astronomy}
+\label{subsec:btc4}
+There are certainly advantages if the community has its own token. But there are also disadvantages. RSA Ecliptic Curve Algorithm, asymetric hash function, Blind, Schnor Signatures, Merkle Trees, ZKP,  WEB3, Multi-sig, Cross chain, mixing - Privacy. 
+
+\subsection{Block Validation}
+\label{subsec: validator}
+Blockchain Validators and Nodes. ERC20 Protocalls like GRT ERC   
+
+\href{https://defipulse.com/}{DEFI$\;$ PULSE} pulse is a list of all the liquidity that is tied into DEFI. There is over 77.77 $\times 10^{9}$ USD locked in DEFI. The UNISWAP treasury has in excess of 3 billion dollars. These treasury funds are available via grants programs that Astronomy Open Development protocols should have access to.
+
+In this section, a toy model for the open development of Astronomy based on open Blockchain technology is presented. An attempt is made to sketch out some ingredients to be consistent with the Nakamoto-Kardashev model. Some elemental principles as determined by instances of governance should be voted upon to calibrate and refine proposals. For argument sakes in this model we follow the UNISWAP snapshot community model in Fig. \ref{fig:unigov}, showing the different instances of governance. The UNISWAP model, to date is one of the largest decentralized exchanges, has many developers working for it, was the first massive airdrop token of Blockchain value, so for all intents and purposes is sufficiently decentralized in our assumption. As is the Web5 Nostr protocol. Some fundamental actors are identified and their functionality with the model sketched out. This paper does not pretend to discuss in strict technical details the finer points of the implementation of such model and parameters therein, but does make reference to some basic cryptographic primatives including Merkle Trees, Zero-knowledge proofs, cross chain protocals, etc. that offer promising solutions and could certainly be considered to be incorporated during Improvement Proposals directed by the community periodically. The paper does not delve into technical details of some Blockchain procedures like mixing to maintain secure personal and private information but of all actors but pretends to highlight some core model features to be followed up by future authors but obviously  locked value will naturally flow to the more useful protocols.  
+ 
+The only condition to participate is bonafide scientific curiosity for Astronomy so sufficient incentive methods need to be developed to entice value-added interaction with the astronomy Blockchain via Decentralized Block Chain Applications, (DAps) as programmable parameters that can be set by the Model's governance component albeit individual minority actors. 
+
+%This part examines a type of Model. The ICO era based on the Ethereum smart contracts bubble that burst aside from rthe egulatory issues about Securities that was mostly based on near useless speculative tokens must be avoided by any OAD bonafide . It looks at some main or speculive  I would not be in favour of an ICO, I think founds are complimentary and as such must come forom existing DEFI protocol pools. But the Community must decide this. However, For the sake of simplicity the following three `actors' are identified as founding governance members: International Virtual Observatory Alliance, the  Astropy community and authors of referred peer reviewed journals weighted by their h-index, the International Astronomy Union etc. Parameters such as the weight of each should be set soon and be discussed by the community and there could even be a switch or that must be voted on according to community established acoords. For example astropy community. A type of switch could be voted for to change the relative percentage of votes.UNISWAP for exmaple is the first governence token that inclduded the AMM liquidity  The reward will be the AstroOD Token, since the wallet creation, Blockchain exploder and DApp python tools and protocols are unified by the proposed affiliated package of astropy. This parameter could be considered to as a proportionality of any initial coin distribution function. But we would be against this and think programs need to start from the ground-roots up, providing liquidity and rewarding Tx were useful (community validaded) Tx occur. On Balance an initial token distribution or ICO has drawbacks and so our model draws on existing liquidity pools from the DEFI Space. 
+
+The development of Astropy  can be found in \cite{robitaille_astropy:_2013}, etc.,  It was an amalgamation of community effort of astronony python software and has been very success community development model with over 70 percent of Astronomers have used or continue to use Astropy for data analysis. Astropy is an interesting community development model framework for analysis,  a valuable resource for data analysis in Astronomy since processes are streamlined out-of-house to community best practice standards and procedures for broad science-cases. VO, standards and software from IVOA has proved to be similarly useful. Many astronomers probably agree to say these would be the recognized go-to  Astronomy Software and Development so the Astropy Community onboarding, usefulness would be advantages to the Open Development Astronomy model as proposed. Affiliated package authors could be validated and offered a period to open a wallet and partake in governence DAO. An affiliated package to Astropy is selected to generate private public SHA256 pairs and the generated funds could be locked by the Community, and developers, as determined through governance. 
+
+No initial coin offering is necessary as this could be deemed a security and may violate some Legal Jurisdictions that could be argued for Open Development must be lawful in most countries, at the same time decentralized means if a majority want and if safeguards are put in place, ie truly decentralized nodes, not INFURA WEB three but above. So recognizing `challenges' that Open Protocol must face and converging on Wrights Law of the CDF of Astronomy Development we appeal to DEFI grant protocols to fund OAD development. 
+
+
+The AstroOD package 
+
+Here we analyse a new AstroOD coordinated package \textcolor{red} github ref. that periodically receives data-feeds on AstroOD on collects basic statistics of packages being used and is correlated to ADS Main-Text query and ORCID query. A possibility is to build a SubGraph to program as an Oracle on UNISWAP. UNISWAP liquidity. Anyone in the Astropy community can create key pairs to be used as Smart Contract accounts. The program using RSA, and blind signature for privacy. The package will include a functional wallet, with multi signature, multi currency and multiple accounts. This will be the basis of deployment of “Smart Contracts”, as a concept was introduced in 1995 by Nick Szabo, who described Smart Contracts as “a set of promises,
+specified in digital form, including protocols within which these parties perform.
+
+The AstroOD community built package for astropy could implement the use of Oracles. Oracles manage feeds of information are not put into the native Blockchain due to scalability or privacy issues, etc but to other Chains.  Oracles are focused on price-feed data for crypto asset prediction markets but with DEFI burgeoning and necessity the Oracle inputs are becoming more diversified.  The Oracle Problem 4 promises” (Szabo, 1996). 
+
+Feeds for Oracles would include ADS-NASA, Archiev., etc,  to validate information that can be used to automatically set parameters in the model. The weights could be voted on by IVOA representatives.
+
+If the  model truly represents an open Blockchain then anyone can participate and be offered rewards as incentive in pursuit of open astronomy. It is obviously important that protocol standards be defined and a body that may include IVOA, IAU and Astropy could be instrumental in helping to define. That body could take into account validated economic considerations like inflation of national currencies., crisis, etc. Staked AstroOD tokens can be awarded using a 'competative' awards scheme program to Secondary School Teachers, Plenetarium guides, thesis graduate students etc. that work to teach astronomy. All must have oportunity to receive incentive rewards for their valid contributions including for example validated University students and volunteers that staff Open-Day/Night activity for the public, etc., All should receive incentive rewards for their contribution since sacrificing their time in sharing knowledge to allow others opportunities should be rewarded as it is clearly in pursuit of Open Development. Weightings for these activities can be set periodically by the governance component with mandatory revision periods, and clauses if they change too abruptly. An option is to follow MakerDAO governance models, with funds from Treasury. Unfortunately political, financial, health  crisis cause by rampant financial speculation and the like, will probably not be solved by Central Bank Digital Currencies, as these are essentially still centralised institutions on a Blockchain.  Often during major crisis outreach and educational activities are the first casualty of open development, as are resources for Public University and National Institute research bodies. With respect to the creation of transaction events, the governance model may provide staked token holders benefits in providing credit for future open development. 
+
+\subsection{ERC 721 }
+
+ERC 721 tokens are an ETH standard token contracts that are Non-Fungible Token (NFT), ie they are unique and indivisible or in other words can be used to identify a unique event, object or condition. This type of Token may be used on platforms that offer digital collectibles, access keys, lottery tickets, numbered seats for concerts, sports matches or academic meetings, for example best "student" poster prizes in conferences, etc. 
+
+ERC 721 tokens may have different values from one another although derived from the same Smart Contract base, due to its age, rarity often iconized by its unique visual artistry (appearance).
+
+The uint256 variable or called tokenId, so for any ERC-721 Contract, the pair contract address, uint256 tokenId must be globally unique. Said that a dApp can have a "converter" that uses the tokenId as input and outputs an image of something cool, like astrophysical relations,  zombies or punks (last three in my opinion as test concepts)!
+
+
+With PAOP protocol ERC721 SMart Contract Non-Fungable Tokens can be issued on demand if needbe. These digital collectables will be sold on a Dex funded exchange, to provide liquidity to further Scientific-Cultural use-case.
+
+
+
+\subsection{Tokenisation}
+
+Since centralized regulation that at some stage may undermine public open Blockchain science development and by weighing-up pros/cons between POW and POS consusus, of the Table blockpros/cons as well as from recognizing the 12 year dominance of BITCOIN we choose to follow governance model tokenisation, adopted by  companies like "Shape-Shift" a XXX billion USD companies that has become completely Tokenized. Any system must be able tp use Bridges even to different chains. 
+
+A possible route of course is to solicit an initial token grant from UNI the largest decentralized exchange provider as well as other DEFI DAOs, then in an active campaign period leading up to the token release allow for initial Know your customer (KYC) and anti-money laundering (AML). Since We need to validate some key actors that include students that are doing a graduate or undergraduate degree with major in Astronomy professors of Astronomy Univsersity Courses. Developers, authors and co-authors of open development astronomical software, including those of affiliated packages in Astropy. 
+
+i) A PhD scholarship holder has run out of PhD Funding 
+ii) A Group that is working in some country has had the USD devalued and the subsidy payments are late, and they are applying for some tokens and offer in exchange a collaborate NFT to be published in the acknolodgements of the paper.
+iii) A group of astronomers, technicians, students,  are building an observatory in a advantageous site in a poor country. 
+
+\subsection{Liquidity pools}
+
+Liquidity pools for Astronomy: astronomers , scholarships, outreach, travel Conferences,oObserving, teaching and instrument development pools, via governance standards and/or metrics of developments. 
+
+\subsection{Career Development in Astronomy}
+
+Over the time-scale of 3-5 years, roughtly the time it takes a new astronomy major to complete a PhD, Bitcoin and other Layer 1 OB like Ethereum have become highly valuaded in USD MarketCap. Bitcoin was born after the 2008 sub-prime morgage backed security and credit default swap crisis when the worlds largest banks and insurers were called to account since they were instrumental in the greatest financial crisis since The Great Depression of 1930's and had to be bailed out to prevent global contagion effect.
+ 
+For the astronomical community in Argentina an important debt crisis is playing out. In 2024 the new government of Argentina is boastrfully governing Argentina  by upholding the 'deficit zero' policy 'balanced budget' spending policy ignoring the rules of a 'zero-sum-games' and would efectively maintain the budges of National Public Universities at a still despite double digit monthly headline inflation. The government shut down the ministry of science and in Feb 2024 several Nobel Laureates wrote an open public letter or petition advising against such action and warning of the consecuences. A few years earlier Gemini membership for Argentina was under threat since in 2020 a consortium put forward by authorities in Argentina requested a partial withdraw. A situation that unfolded since only a small fraction of the funds required by the Gemini consortia on behalf of Argentina for 2019 were paid by the previous government and similarly astronomers wages and subsidies perceived to be undervalued. Unfortunately the news for science in general was not great since the Ministry of Science was then also disbanded and funding to host international conferences in 2019 were unavailable. Although Alberto Ferdnandez 2020 government handed the Milei 2024 administration the Ministry of science that the earlier Macri administration ckisedm , and blockchain technology is considered a strategic area in CONICET, it is a new technology and so early devopment is difficult. Milei has vowed to freeze and chop any real wage growth of Scientist, Teachers and public servants, in Argentina. If adequate governance and funding is not developed crises may continue to be recurrent not only here but perhaps also other countries with a large USD dinominated debt. These difficulties for educational, scientific and technological ecosystems appears to include drain waves for young-scientists into other more centralized industries like the financial industry and is leading to a spill-over exacerbated and undesirable effect as talent settles overseas. In the Institute of Astronia Teorica and Experimental in Argentina a reduction of at least $\sim$ 20\% of scientist and engineers appear likely to leave public service at that institution in the next year.
+
+The dire context above was contracted in com0plicity with loan requirements, exerted by the International Monetary Fund through loan obligations and/or conditioning that prioritized a creditor bonanza scheme based on a 70\% bank lending rate set by the PRO party coalition led by the ex-president of Paradise Paper's acclaim that ran a coalition government to full-term that appear to have deceived the electorate in the campaign of the Milei-Macri 2024 government. \textit{[reference required]}
+
+Underlying this debt ridden situation, is a loaming world recession within a post COVID-19 pandemic context with the cancellation of international Astronomical conferences, workshops and other meetings is taking place at a global scale: IVOA like many other international forums were forced to change the meeting mode and since the May Sydney Interop until 2023 all meetings have been virtual, and in Argentina the Observatory Astronomical of Cordoba (circa 1873) one of the first national scientific institutions with the Instituto de Astronomia Teorica y Experimental announced the suspension of the 2021 Friends of Friends workshop, can the Nakamoto-Kardashev relation help in this respect remains and open question.  
+
+It is argued that the current crisis, like the last major one that affected the research capacity of scientists to conduct their work in Argentina was the 2001 economic crisis, when Argentina paid for being the "poster child of the IMF" with the greatest default in history and before that, when the Argentina Scientific output capacity was being determined down the barrel of a gun by the military junta and some home-grown scientists that would probably prefer to stay unnamed that seemingly justified this collateral damage \cite{levato1976}.
+
+This is not unique to Argentina. The half-life rate of Astronomy majors from US public universities has been in steep free-fall,  \cite{milo_2018}. In fact as explained earlier this is the case in Australia too and other nation states. A tweet in 2023 by 2012 Nobel Laureate Brian Scmidt, the Chair of the group of 8 of Australia's  leading research-intensive universities makes reference to this dire situation in an article in the \href{https://t.co/RUEENvowqw}{Financial Times}, and so it is here argued that Blockchain tokenomics could be a solution.  At the same time, government spending in the military industrial complex, banks, insurers, and corporate bail-outs are at an all time high, so as scientist it could be argued that it is our responsibility to add checks and balances with recognizably proven community technology and a model. 
+%
+If such a model exists it is certain that data-feed protocols will become an important part to allow one to mitigate mistakes from central actors since the system must be largely transparent yet private when it needs to be to protect for example personal information. The model could use Zero Knowledge Proofs and other Blockchain primitives to safe-guard privacy of information of the individual yet also provide incentives that are safe-guarded by the bitcoin Network. 
+   
+The identification of elements or properties for the programmatic `tokenization' of an open development protocols for astronomy should not be influenced by any one central authority nor by extraneous factors affecting the wider political economy but should be decided by the community and based heavily on open source and the open development paradigm. 
+   
+In section \ref{sec:intro} we stated the motive and underlying potential of applying open development technology to astronomy. We detail with warp speed some crytographic primitives (Has functions, Merkle roots) and some basic protocols to establish a general model frame-work of Tokenomics, including staking or yield-farming incentive mechanics, time and value locked development fund release functions, and also discuss the implications of governance, etc,
+
+\section{Future prospects}
+\label{sec:use-case}
+
+The Bitcoin network has survived for over 15 years. Estimates of current adoption rates place it close to the internet in the early 90's. We now examine some possibilities for Bitcoin use-case for Astronomy Open Development. IVOA partners could run full nodes to validate the Bitcoin blockchain, sign transactions, and receive payments through lightning for all IVOA supported projects and start to develop Open Blockchain Protocols with IAU participation like a Nostr client. This could be done in the IVOA-IAU liaison committee. All directors of observatories and astronomical institutions where Astronomy is taught and research is conducted could open up a user account using a Nostr client to allow for selected projects that would normally be discarded. 
+
+A full Bitcoin node could be run for less than 300 USD a year. The advantages of running a full node are:
+
+1) Tap into trustless lightning network in a noncustodial way. This is to store noncustodial payment channels on layer two of the Bitcoin network, which would provide privacy. 
+
+2) Obtain validation fees for node members by processing transactions.
+
+
+Sufficient liquidity is a necessary resource for the health of any open blockchain project. An NIP for Nostr that permits the zapping of Gwei which is the indivisible Unit of the Ethereum native token could be useful. Open blockchain protocals for astronomy must seemlessly be able to tap into the liquidity pools of the decentralized finance movement. Some parameters of the funding rate, principally by UNISWAP grant, would be determined in collaboration with that community via a DEFI grant proposal plan that must be nutted out in the near future.   
+
+\section{Case-Study that highlight the need for Open Blockchain Protocols based on sound governance}
+\label{sec:btc5}
+
+\begin{itemize}
+    \item{SSO SSS defence contractor that had previously developed ordnance systems on weapons that served in the Illegal war in Iraq was knowingly selected to build the Sky-Mapper detector. } 
+    \item{NSF Shutdown or Telescopes in EEUU during Obama and Trump administrations}
+    \item{Split decision of the Australian community under the Hawke government to direct funds to upgrade of radio-facilities in Australia, instead of ESO membership}
+    \item{Close door period of Scientific Research position in Argentina, 1990's}
+    \item{Gemini contractual issue for Argentina, implicating a withdraw of funding from the ministry of science, and a divided community because of recommended reduction of Gemini time.}
+    \item{NFT for the MOA}, see Figure 1, which the Astronomical Observatory of Cordoba holds NFT ownership and wishes to offer as a digital collectable to help fund the MOA and research activities.
+    \item{Milei 2024}, closes the Ministry of Science, revokes Argentina's admission into the BRICS that control over 40\% of global petroleum production and installs Austerity measures onto Argentina. 
+
+\end{itemize}
+
+
+\begin{figure}[ht!]
+    \centering
+    \label{fig:my_label}
+  \caption{NFT collectable, world event to constrain Einstein's GTR before publication, foto by the C\'ordoba Observatory team,
+during the 1912 eclipse expedition. The Perrine settlement is located in the right, attached to the big white building. Courtesy of the Museo Astron\'omico del Observatorio Astron\'omico de C\'ordoba, C\'ordoba, Argentina.}
+  \includegraphics[width=0.4\textwidth]{figs/p1912.eps}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/institutional_structure_v2.eps}
+    \caption{Institutional structure of the Córdoba Astronomical Observatory, showing the secretariats and their associated programs under the supervision of UNC/CONICET.}
+    \label{fig:institutional_structure}
+\end{figure}
+
+
+Astropy is a leading open developer community for astronomical research, reflected in the astropy  user and dev comits see \cite{ 2020ASPC..522..491T}, so OAD development between IVOA, IAU and Astropy should begin in earnest. Etherium Blockchain should also be considered, it contains a type of smart contracts called NFT or non-fungable token.  This type of token is non-interchangable can be unique to preserve the notion of digital scarcity, and can be verified without any centralized organization required to authenticate it. These smart contracts can be used issue incentive rewards to nodes. A protocol build around 721 protocal includes POAP.xyz, ref(github address). This proof of attendance protcol can be used to validad the attendance of astronomical events, including virtual ones. The tokens can be exchanged for goods and services and soldon for fiat money.  
+
+
+Data feeds will be entered into Oracles that will automatically via smart contracts provide incentive rewards to the node and user wallets.
+%
+POAP type proof of attendance protocol for meetings. To rewards students for attending and presenting their results in meetings.
+%
+\subsection{Hash Function Account}
+We propose for any developer of Astropy core plus afiliated package models including co-authors are onboarded and in our model we apply the afilated package astropy Package astrobtc, recognizing the fact that Bitcoin has been the major asset class for the last 12 years that included several global crisis. 
+%
+
+Astropy proving to revolutionize astronomical data-reduction collaboration and is channelled through the open development of astronomy project Astropy. It involves IVOA's 20 member institution was originally much smaller and conceived by its founding members to be a large fraternal virtual observatory working seamlessly in perfect collaboration with no imposed boundaries other than those of the ethical nature. Today it consists of mostly national VO members as well as three very important international members that include: the European Space Agency, the European VO and the UK VO. The national members are: Argentina, Armenia, Australia, Brazil, Canada, China, \textit{Europe}, France, Germany, Hungary, India, Italy, Japan, Korea, Russia, Spain, Ukraine, the United Kingdom and the United States. This `paper' proposes to open the discussion on the adoption of Block-chain technology for IVOA for the open development of astronomy. It is written in the context of long term flaws experienced in the current development model paradigm that results in less than efficient research inventive mechanism and cyclic funding crisis as well as possibly serendipitous COVID-19 type pandemic that may become more frequent.
+%
+Aside from some issues as illustrated below that would pausibly affects any 'closed' development model for astronomy, or one determined by powerful central actors, one based on open Blockchain technology should, on the other hand preferable gravitate to real open development via carefully thought-out and implemented incentive mechanisms to foster collaboration in a more efficient way and lay the path to unprecedented scientific discovery and innovation. It is in this context that I invite the reader to contemplate on the opening discussion of IVOA in the field of tokenomics. 
+%
+Our analysis focuses on the US public university research system, some limited experience on the IVOA system and the Argentine, Australian astronomical research system. 
+   
+   Strong motivation for this discussion is based on the facts that:
+   
+\begin{itemize}
+       \item A dwindling half-life for the Astronomy and astrophysics PhD majors in US, Australian \& British (etc,) public university system meaning astronomy and astrophysics is loosing a main investment, its researchers.  
+       
+       \item Shortfalls caused by ciclic funding crisis that affect education institutions, scientific research facilities observed as acute funding restrictions, cutbacks and "government shutdowns" and/or inflation in national currencies, is the elephant in the room that must be addressed.
+\end{itemize}
+       
+       
+This paper argues the use of "Blockchain Technology" as a necessary tool for efficient and sustainable open development in Astronomy as an underlying incentive mechanism for collaborative research projects that foster open development community identified metrics.  
+
+
+% =============================================================================
+% SECTION CONCLUSIONS
+% =============================================================================
+\section{Application prospects}
+\label{sec:5}
+%
+In this section we look at possible paths to embrace OAD onboarding. To secure the network IVOA members could run a full Bitcoin node. A full node can be run on a Raspberry PI.  This will allow all node operators fast lightning censorship free payment channels. Recomendation is that this node be set up as a multi-sig scheme. Also proposed is an affiliated package to Astropy AstroOD to build on the DEFI stack including the creation of wallets and metric based discussion group for open software development in consultation with the Astropy Finance Committee. This new package developed by the community must be compatible with up-coming Python versions and be fully documented in a public repository. Another recommendation for is a multisig signature WEB3 wallets operated by all IVOA representatives in association with the project observatory chair, vice-chair and representative . A 2-3 or 3-5 multi-sig scheme would suffice. Finally an IVOA/Astropy Uniswap governance proposal for the seed-funding. This proposal must go through 
+ Phase 1: Request for Comment (RFC), Phase 2: temperature check and finally Phase 3: Governance Proposal, see Fig \ref{fig:unigov}
+%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.38\textwidth]{figs/unigov.png}
+    \vspace*{-0.2cm}
+    \caption{Uniswap governance proposal}
+    \label{fig:unigov}
+\end{figure}
+
+Future development will focus on the following three areas: incorporating
+new features, improving documentation, and 
+possible integration with tools for interactively analyzing features of development.
+
+IAU and IVOA Astronomer data-base to validate KYC, coordinating contact with different institutions. 
+
+\section{Conclusion and Discussion}
+\label{sec:conc}
+The Kardashev model is not tenable since this model is an approximately exponential model that violates the memory conservation property of its probability distribution and as visually seen diverges from the Energy Production data. An OLS data-model is produced that although has low scatter over a temporal baseline of more than 60 years it too is too is untenable since the time-scale required to Kardashev type II acquisition for a typical civilization would be over an order of magnitude the Age of the Universe. To resolve this Conundrum, the Power ordinate is renormalized by the yearly average Bitcoin Hashrate. A fit to this renormalized data is not attempted but this data shows the sence of the Kardashev-Nakamoto relation, left as an open question. 
+
+An implication of the 10 minute average block time is now considered. Given the finite speed of light, c, and that the next extra-solar system, alpha-centuri is a few light years distance or about 1 cycle.  Then, should an advanced civilisation come into contact with us that manages their own Bitcoin chain that has developed there own decentralized blockchain network, then a fork may be contemplated. This most likely would occur after a few cycles for both civilisations, so that most of unit value  will have already been mined. On the new Kardashev-Sagan-Nakamoto scale this could be defined as a Type-II civilization assuming that civilization lives in The Galaxy. If that civilization comes from another galaxy it could be defined as a type-III civilization on the Kardashev-Sagan-Nakamoto scale and a new fork would be required.
+
+A Decentralized Autonomous Organization may be formed by the Astropy, IVOA, IAU communities to help with governance issues and implementing OB protocols for astronomy.
+% =============================================================================
+% SECTION Acknowledgments
+% =============================================================================
+\section{Acknowledgments}
+SG acknowledges the New Virtual Observatory of Argentina (NOVA) and his selection as representative of Argentina on the IVOA-exec committee and support of all his colleagues in the IATE.
+
+% =============================================================================
+% SECTION BIBLIO
+% =============================================================================
+%
+%\section*{References}
+%\label{biblio}
+% Astronomy and Computing (Elsevier) uses the elsarticle Harvard (author–year) style.
+\bibliographystyle{elsarticle-harv}
+\bibliography{ivoatoken}
+
+
+\end{document}
+
+\endinput
