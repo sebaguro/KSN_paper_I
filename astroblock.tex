@@ -44,7 +44,8 @@
 \begin{document}
 \begin{frontmatter}
 
-\title{The Kardashev Conundrum:\\ A straw-person P2P Electronic Cash System base-layer primer for the Open Development of Astronomy and Astrophysics via the open blockchain public ledger}
+\title{The Kardashev Conundrum: Statistical Falsification of the 
+Standard Kardashev Model and the Kardashev--Sagan--Nakamoto Resolution}
 %\subtitle{Towards the open development of astronomy through a Blockchain based smart token}
  
     \author[iate,wsu]{S.Gurovich}\corref{mycorrespondingauthor}
@@ -123,7 +124,7 @@ unit as a universal information-energy yardstick for the Kardashev scale.
 
 
 \begin{keyword}
-   Kardashev scale \sep Astroinformatics \sep Baysian inference \sep Bitcoin
+   Kardashev scale \sep Astroinformatics \sep Bayesian inference \sep Bitcoin
 \sep Blockchain \sep Open Development \sep Information theory \sep Civilization energy
 \end{keyword}
 \end{frontmatter}
@@ -271,13 +272,14 @@ presents our conclusions.
 
 %Discovered in 1901 amidst the remains of an ancient shipwreck, the Antikythera mechanism is widely recognized by computer and data scientists as one of the earliest forms of an analogue computational device, often referred to as the precursor to modern computers. \cite{Freeth2021} and other studies therein have indicated that this intricate mechanism was designed to solve mostly astronomical problems, reflecting a sophisticated understanding of celestial movements rooted in the astronomical knowledge of ancient greek scholars like Hipparchus and Archimedes. The detailed scanning and modeling of the recovered 'jigsaw puzzle' relic by \cite{Freeth2021} reveal that the mechanism is over 2000 years old and contains at least three finely crafted rotating discs and more than thirty-odd cogs that were designed, forged, and crafted with adequate tolerances to calculate and predict the positions of astronomical sources including The Sun; The Moon; and some planets across space and time; calculations necessary for navigation, agriculture, cultural, and scientific/technological reckonings, here assumed to have been at the bequest of open human development.
  
- \begin{figure}
-    \centering
-    \includegraphics[width=0.38\textwidth]{narayanan3.png}
-    \vspace*{-0.3cm}
-    \caption{Blockchain key ideas including Nakamoto consensus and DEFI (adapted from Narayaran and Clark, 2019)}
-    \label{fig:narayanan}
-\end{figure}
+% (Removed stray Figure 1 from Introduction: Narayanan & Clark adapted diagram)
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.38\textwidth]{narayanan3.png}
+%    \vspace*{-0.3cm}
+%    \caption{Blockchain key ideas including Nakamoto consensus and DEFI (adapted from Narayaran and Clark, 2019)}
+%    \label{fig:narayanan}
+%\end{figure}
  
  The ancient greek astronomers had defined the logarithmic magnitude system and introduced concepts of limits and infinitesimals that would become the basis of differential geometry, calculus and numerical methods; they had also paved the way for The Roman empire to define the Julian Day as a counting yardstick that they employed to define epochs, using the 28-year Solar, 19-year Metonic and 15-year Indiction tax cycle that resulted in a conjunction of sorts. Many of these advances are readily found today in open source toolkits or libraries for the development of astronomy, built by community efforts; eg Scipy, Astropy, IVOA. 
  
@@ -285,16 +287,20 @@ presents our conclusions.
  
  Roughly two-thousand years later, Charles Babbage and Alan Turin (AT) are widely recognised as the modern 'fathers' of the digital computer \citep{swa2017}. The pioneering work of AT paved the foundations of Artificial Intelligence (AI) and Cryptography. 
  
+% (AI/OAD + broker/federated learning discussion moved to Paper 2)
+\iffalse
 Cryptography, the basis of OB ledger technology or distributed ledger technology (DLT), has until now not been much considered for astronomy development, as revealed in 'full-text' searches of astronomical peer-reviewed international journal papers, least as a potential interoperability catalysing agent. In fact, cryptography for Astronomy has its main use as an ancillary or technology layered on top of data transfer protocols TCP-IP, including TLS/SSL, IPSec, and SSH for compression, permission, (eg: ssh-rsa), routines, and programmes (eg: checksum) for software development etc.
 
-Conversely, Artificial Intelligence (AI) programs and techniques like `Machine Learning' and `Data Mining' have become increasingly relevant for Astronomy in the last few decades as measured by the increasing publication rate as found in studies within astronomy and astrophysics peer-reviewed international journals; see Fig \ref{fig:ai}.  Derived tools like publicly available 'Natural Large Language Models' are no doubt also relevant for astronomy development. Nevertheless, many studies that that depend on AI have mapped the physical parameter space of astronomical sources over the observable parameter space from large ensembles of data measurements and have led to the classification of astrophysical sources and relations or physical laws that govern The Universe. AI technology is proving fundamental in the so-called data tsunami era of astronomy through these data science techniques, partly as a necessity of data optimisation in mega-surveys and simulations that depend on: Velocity, Volume, Veracity, and data Variety constraints; each of these and their combination are sensitive to specific science cases. Short timescale astrophysical events with a cadence of 1 day or less for example for the study of Kilonova transients require multimessenger observations that depend on real-time AI alert systems to constrain Kilonova specto-photometric models have revealed only in the last few years that a significant percentage of the Lanthanide Universal abundance budget is produced from rapid neutron capture, or r-process nucleosynthesis reactions of neutron-rich material in ejecta caused by the collision of two neutron stars; see \cite{artola2020} and references therein. Many of the coordinated procedures required for these studies have made direct use of community-built Astropy and other Open Source library packages in Python, as well as protocols developed by the International Virtual Observatory Alliance (IVOA), Universities, and other entities that receive funding at a regional or federal level. Python packages include community-developed core packages, for example, $\textit{Numpy, Scipy, Matplotlib, Astropy., etc}$  and affiliated Astropy packages and others, submitted by users and vetted through the academic community development process. Other software based on other programming languages have also been developed with considerable success, and whether standards are converging or not, may well remain an open question. It is argued that this evolving ecosystem is proving to be increasingly relevant for the evolution of astronomy, not just because of the ease-of-use of the programming languages like Python and its accessibility but because of the nucleation of the community development model that minimizes redundancies and optimises understanding of assumptions, bias and sample selections, to best-practice procedures and selfless collaborative opportunities in which resources can be pooled and systems built, tested, modified, and enhanced. The Open Source development paradigm has proven and is likely to continue to be causal for many of the new tools and discoveries in astronomy, as is evidenced in Fig \ref{fig:astropy} that shows how Python as a programming language continues to play an increasingly significant role for data science in astronomy when the number of papers is taken as a metric.  Nevertheless although the Python community developement model, see AP0, and the IVOA software development model as well as perhaps others are considerably useful, by themselves, they may fall somewhat short in optimising OAD through interoperability if a digital gold standard for OAD transactions remains largely undefined and financing depends on political decisions from outside the community, by politicians that may in some cases be corrupted by hidden interests that go against that of the astronomical community.  
- \begin{figure}
+Conversely, Artificial Intelligence (AI) programs and techniques like `Machine Learning' and `Data Mining' have become increasingly relevant for Astronomy in the last few decades as measured by the increasing publication rate as found in studies within astronomy and astrophysics peer-reviewed international journals; see Fig \ref{fig:ai}.  Derived tools like publicly available 'Natural Large Language Models' are no doubt also relevant for astronomy development. Nevertheless, many studies that that depend on AI have mapped the physical parameter space of astronomical sources over the observable parameter space from large ensembles of data measurements and have led to the classification of astrophysical sources and relations or physical laws that govern The Universe. AI technology is proving fundamental in the so-called data tsunami era of astronomy through these data science techniques, partly as a necessity of data optimisation in mega-surveys and simulations that depend on: Velocity, Volume, Veracity, and data Variety constraints; each of these and their combination are sensitive to specific science cases. Short timescale astrophysical events with a cadence of 1 day or less for example for the study of Kilonova transients require multimessenger observations that depend on real-time AI alert systems to constrain Kilonova specto-photometric models have revealed only in the last few years that a significant percentage of the Lanthanide Universal abundance budget is produced from rapid neutron capture, or r-process nucleosynthesis reactions of neutron-rich material in ejecta caused by the collision of two neutron stars; see \cite{artola2020} and references therein. Many of the coordinated procedures required for these studies have made direct use of community-built Astropy and other Open Source library packages in Python, as well as protocols developed by the International Virtual Observatory Alliance (IVOA), Universities, and other entities that receive funding at a regional or federal level. Python packages include community-developed core packages, for example, $\textit{Numpy, Scipy, Matplotlib, Astropy., etc}$  and affiliated Astropy packages and others, submitted by users and vetted through the academic community development process. Other software based on other programming languages have also been developed with considerable success, and whether standards are converging or not, may well remain an open question. It is argued that this evolving ecosystem is proving to be increasingly relevant for the evolution of astronomy, not just because of the ease-of-use of the programming languages like Python and its accessibility but because of the nucleation of the community development model that minimizes redundancies and optimises understanding of assumptions, bias and sample selections, to best-practice procedures and selfless collaborative opportunities in which resources can be pooled and systems built, tested, modified, and enhanced. The Open Source development paradigm has proven and is likely to continue to be causal for many of the new tools and discoveries in astronomy, as is evidenced in Fig \ref{fig:astropy} that shows how Python as a programming language continues to play an increasingly significant role for data science in astronomy when the number of papers is taken as a metric.  Nevertheless although the Python community developement model, see AP0, and the IVOA software development model as well as perhaps others are considerably useful, by themselves, they may fall somewhat short in optimising OAD through interoperability if a digital gold standard for OAD transactions remains largely undefined and financing depends on political decisions from outside the community, by politicians that may in some cases be corrupted by hidden interests that go against that of the astronomical community.
+
+\begin{figure}
     \centering
     \includegraphics[width=0.48\textwidth]{figs/fulltextai.png}
     \vspace*{-0.4cm}
     \caption{Showing Full-text search for  full:"Artificial" and full:"intelligence" or full: "AI" or full: "machine learning")) AND year:1976-2022) returned query in NASA ADS}
     \label{fig:ai}
 \end{figure}
+\fi
 
 
 % (Section 1.1 moved to second paper)
@@ -373,8 +379,7 @@ $E_BTC/E_tot < 0.1$
 \\
  Some authors, including Andreas Antonopoulos believe Bitcoin and Ethereum Blockchains have the potential to revolutionize open development in science and technology and with 5G roll-out promise unprecedented levels of growth of over 18 percent per year, not seen since the first industrial revolution Waldon, M.  Fig needtoinsertfigure adapted from Walden et al. shows the world GDP as a function of time. These technologies were born out of academia, the occupy wall-street and anonymous movements as a direct response to the 2008 financial crisis that saw a global slump in the world GDP based on the US sub-prime financial crisis  that included a drop in US GDP by 30 \% sustained over several years.
 \fi
- 
-Programmable money is not exclusively relevant to human beings but also to machines as participating actors. Hardware evolution is also tied to open development, as seen in the evolution of specialized hardware architecture for Proof Of Work (POW) HASH Function calculations that is developing Application-Specific Integrated Circuit (ASICS) to mine Bitcoin blocks. It could be argued that these developments have outpaced Moore's law.  Wrights Law suggests that the for every percentage increase in the cumulative distribution function of production in any industry equates to a fixed percentage increase in the efficiency of production. So hardware has evolved from CPU intensive to graphic processing units (GPU) and  Application Specific Integrated Circuit  (ASICS), \cite{10.1371/journal.pone.0052669}.
+% (Programmable money / Wright's Law paragraph moved to Paper 2)
 
 \section{The Kardashev Conundrum and the Kardashev--Sagan--Nakamoto Model}
 \label{sec:conundrum}
@@ -437,12 +442,12 @@ where $P_0$ is the energy production at $t=0$ (1964) and $x = 0.01$
 corresponds to the stated one-percent per year growth rate. Using this model,
 \citet{Kardashev1964} calculated that a Type~II civilisation --- defined as
 one harnessing the total bolometric luminosity of its host star,
-$L_\odot = 3.828 \times 10^{26}\,\mathrm{W}$ \citep{Mamajek2015} --- would
+$L_\odot = 3.828 \times 10^{26}\,\mathrm{W}$ \citep{mamajek2015} --- would
 be reached in approximately $3{,}200$\,years. \citet{Sagan1973} obtained a
 similar value using a slightly revised Type~II threshold of
 $\sim 10^{26}\,\mathrm{W}$.
  
-Figure~\ref{fig:panel_a} shows the Kardashev model (Eq.~\ref{eq:kardashev})
+Figure~\ref{fig:ksn_notitle} shows the Kardashev model (Eq.~\ref{eq:kardashev})
 alongside the OWID data on a logarithmic ordinate scale, together with the
 Type~I and Type~II civilisation limits of \citet{Kardashev1964} and
 \citet{Sagan1973}, and the solar insolation at Earth
@@ -479,7 +484,7 @@ residuals. Following Occam's razor \citep{Blumer1987}, this two-parameter
 model is the simplest physically plausible alternative. The OLS solution gives
 $b = 8.68 \times 10^{7}\,\mathrm{W\,yr}^{-1}$ and coefficient of
 determination $R^2 = 0.9827$. The fit is exquisite over the six-decade
-baseline of the data (Figure~\ref{fig:panel_a}).
+baseline of the data (Figure~\ref{fig:ksn_notitle}).
  
 To assess the normality of the residual structure, we compute the year-on-year
 absolute differences $\Delta P_i = P_i - P_{i-1}$ and apply the Shapiro--Wilk
@@ -620,7 +625,7 @@ of $P(t)$ is the correct model: the correct extensive variable for the
 Kardashev scale has not previously been identified. The KSN variable
 $z(t)$ is our proposal.
  
-Figure~\ref{fig:panel_c} shows $z(t)$ for 2009--2024, spanning 16 annual
+Figure~\ref{fig:ksn_notitle} shows $z(t)$ for 2009--2024, spanning 16 annual
 data points and 14 orders of magnitude in $z$. The data display a
 monotonically decreasing trend consistent with an exponential decay:
 \begin{equation}
@@ -631,7 +636,7 @@ with best-fit parameters $z_0 = 2.02 \times 10^3\,\mathrm{J\,Hash}^{-1}$
 and decay rate $\gamma \approx 43\%\,\mathrm{yr}^{-1}$, giving a
 characteristic timescale $\tau = 1/\gamma \approx 2.3\,\mathrm{yr}$
 reflecting the rapid improvement in ASIC mining efficiency. A formal fit
-to the KSN data is deferred to a future paper; Figure~\ref{fig:panel_c}
+to the KSN data is deferred to a future paper; Figure~\ref{fig:ksn_notitle}
 presents the data and their trend as an open question for the community.
  
 %% -----------------------------------------------
@@ -652,25 +657,27 @@ hash approaches $k_B T \ln 2$. This reframing is consistent with the original
 intent of \citet{Kardashev1964} and the information-theoretic extension
 proposed by \citet{Sagan1973}.
  
-\begin{table}[h]
+\begin{table*}[t]
 \centering
 \caption{Type~II civilisation timescales under each model. All timescales
 are measured from 1964. $H_0^{-1} = 13.8\,\mathrm{Gyr}$ is the Hubble time.}
 \label{tab:timescales}
-\begin{tabular}{llll}
-\hline
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{l l l l}
+\toprule
 Model & Growth rate & Type~II year & $\Delta t / H_0^{-1}$ \\
-\hline
-Kardashev 1964 (fixed $r$)  & $1.00\%\,\mathrm{yr}^{-1}$ & $\sim 5920$ & $\sim 3 \times 10^{-7}$ \\
-Exp.\ free $r$ (MCMC mean)  & $1.85\%\,\mathrm{yr}^{-1}$ & $\sim 4097$ & $\sim 2 \times 10^{-7}$ \\
-Linear OLS                  & $8.68 \times 10^7\,\mathrm{W\,yr}^{-1}$ & $\sim 4.4 \times 10^{18}$ & $\sim 3.2 \times 10^{8}$ \\
-KSN ($z = P/H$)             & $\gamma \approx 43\%\,\mathrm{yr}^{-1}$ & \multicolumn{2}{l}{Re-expressed via Landauer limit} \\
-\hline
+\midrule
+Kardashev 1964 (fixed $r$) & $1.00\%\,\mathrm{yr}^{-1}$ & $\sim 5920$ & $\sim 3 \times 10^{-7}$ \\
+Exp.\ free $r$ (MCMC mean) & $1.85\%\,\mathrm{yr}^{-1}$ & $\sim 4097$ & $\sim 2 \times 10^{-7}$ \\
+Linear OLS & $8.68 \times 10^7\,\mathrm{W\,yr}^{-1}$ & $\sim 4.4 \times 10^{18}$ & $\sim 3.2 \times 10^{8}$ \\
+KSN ($z = P/H$) & $\gamma \approx 43\%\,\mathrm{yr}^{-1}$ & \multicolumn{2}{l}{Re-expressed via Landauer limit} \\
+\bottomrule
 \end{tabular}
-\end{table}
+\end{adjustbox}
+\end{table*}
  
 %% -----------------------------------------------
-\subsection{The Memoryless Property as a Further Objection to the Exponential}
+\subsection{The Memoryless Property as a Further Objection to the Exponential Model}
 \label{sec:memoryless}
  
 A complementary statistical objection to the exponential Kardashev model
@@ -766,13 +773,14 @@ data reject it.
 %This will be considered in a future paper. But effectively the Bayes Factor BF> 1 would indicate that the linear model is more strongly supported by the data, and the 1 \% year-over-year exponential model can be finally rejected.
 
 %Interesting, the Bitcoin Network Ledger which contains transaction information of every base-layer transaction may also be used between actors that are not-humans. This may be the sense of "Smart Contracts" by Nick Szabo. The Bitcoin hash-rate as a function of time we take to represent a type of Energy Production metric and simultaneously preserve the Information richness required in our model. We take data complied from the International Energy Agency and BP, from \cite{owidenergy} and plot the total yearly power production available for The Earth. In Fig \ref{fig:kardashev1}, we show actual data since 1964 from \cite{owidenergy}. We show two models, the Kardashev Equation \ref{eq:2} 1\% model, taking the first point of the actual 1964 data and a OLS model to the data. Interesting the second last datum point shows a 3 percent decline in production in 2020 (Due to COVID) and a 5 percent increase in production in 2021 breaking the COVID-19 pandemic year!
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/fig1_kar2ff.jpg}
-    \caption{Global average energy production metric in Terra Watts VS Year (lin-lin) from the Owidenergy resource with a Ordinary Least-squares fit and the Standard one-percent model as proposed  by Kardashev 64, subsequently by Sagan and later authors. The Numpy Python module Polyfit was used to do the linear fit.}
-    \label{fig:kardashev1}
-
-\end{figure}
+% (Old figure removed; replaced by the multi-panel KSN figure Fig.~\ref{fig:ksn_notitle})
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{figs/fig1_kar2ff.jpg}
+%    \caption{Global average energy production metric in Terra Watts VS Year (lin-lin) from the Owidenergy resource with a Ordinary Least-squares fit and the Standard one-percent model as proposed  by Kardashev 64, subsequently by Sagan and later authors. The Numpy Python module Polyfit was used to do the linear fit.}
+%    \label{fig:kardashev1}
+%
+%\end{figure}
 
 %In Fig. \ref{fig:kardashev3}, we show the same data on a log-log plot and include the Kardashev and Sagan time-scale estimate for the formation of type i and ii civilizations. The Solar Insolation value or the total energy of The Sun abosrbed by the clouds, oceans and Earth's surface limit is also shown. %It can be seen that the original Kardashev limit by \cite{kar64} of 4 TW was already reached but the T1- Sagan limit of 10000 TW from \cite{Sagan73} will be reached in about 20000 years. 
 %The total number of bitcoin mined can be represented by the following summation:
@@ -781,84 +789,74 @@ data reject it.
 %\]
 %Here, \( i \) indexes each halving period from 0 to 32, where the initial reward of 50 BTC is halved every increment in \( i \).
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/fig2_kar.jpg}
-    \caption{Global energy production metric in Terra Watts VS Year (log-log), taken directly from the Owidenergy resource, with a Ordinary Least-squares fit. The solar Insolation, Kardashev types i and ii limits are shown for Kardashev and Sagan esstimates. The Scipy Python module was used to do the linear fit.}
-    \label{fig:kardashev3}
+% (Old figure removed; replaced by the multi-panel KSN figure Fig.~\ref{fig:ksn_notitle})
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{figs/fig2_kar.jpg}
+%    \caption{Global energy production metric in Terra Watts VS Year (log-log), taken directly from the Owidenergy resource, with a Ordinary Least-squares fit. The solar Insolation, Kardashev types i and ii limits are shown for Kardashev and Sagan esstimates. The Scipy Python module was used to do the linear fit.}
+%    \label{fig:kardashev3}
+%
+%\end{figure}
 
-\end{figure}
+% (Removed Figures: OLS residual and relative residual plots; to be placed in second paper / appendix)
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.35\textwidth]{figs/fig1p_kar_rel_res.jpg}
-    \caption{Relative residual for the OLS
-    linear model}
-    \label{fig:kardashev1_rel_res}
-
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.35\textwidth]{figs/fig1p_kar_res.jpg}
-    \caption{Residual for the OLS
-    linear model}
-    \label{fig:kardashev1_res}
-
-\end{figure}
 
 %Plots were made and are shown for the estimate of $\delta$ time, required for a typical civilizations given the model to reach type-i and type-ii for both the Kardashev and separately, the Sagan models. These are shown to diverge from the real data. We note the 2008 so-called sub-prime crisis and 2020 COVID19 pandemic points bellow the average trend of points for which it is possible that Energy production was significantly reduced.
 
 %We calculate the difference between successive years of our Energy Production metric from 1964 to 2022 using the Oneworld yearly total production value. 
 
 
-\begin{table}[h]
+\begin{table*}[t]
 \centering
 \caption{Kardashev data, model \& implication}
 \label{kard_comp}
-\begin{tabular}{|l|l|c|c|}
-\hline
-\multirow{2}{*}{Data Source} & \multirow{2}{*}{\textrm{Power\_{1965}}} & \multicolumn{2}{c|}{Type II Timescale} \\
-\cline{3-4}
+\begin{adjustbox}{width=\textwidth,center}
+\begin{tabular}{l l c c}
+\toprule
+\multirow{2}{*}{Data Source} & \multirow{2}{*}{\textrm{Power\_{1965}}} & \multicolumn{2}{c}{Type II Timescale} \\
+\cmidrule(lr){3-4}
                              &                       & Geo Model (kyr) & OLS Model         \\
-\hline
-kard64 \cite{kar64} & 4 TW                & 3.2             & NA          \\
-\hline
-OurWorld \cite{owidenergy}    & 43307 TW               & 2.3             & $>> \frac{1}{H_{0}}$     \\
-\hline
+\midrule
+kard64 \cite{kar64} & 4 TW                   & 3.2             & NA \\
+OurWorld \cite{owidenergy} & 43307 TW            & 2.3             & $\gg \frac{1}{H_{0}}$ \\
+\bottomrule
 \end{tabular}
-\end{table}
+\end{adjustbox}
+\end{table*}
 
 
-A histogram of the distribution of successive differences in the Power values is shown in Fig. \ref{fig:his_power}. 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.35\textwidth]{figs/pp_his_kdetrue.png}
-    \vspace*{-0.3cm}
-    \caption{Histogram showing the \% power difference between successive years}
-    \label{fig:his_power}
-\end{figure}
+% (Old histogram figure removed; replaced by the multi-panel KSN figure Fig.~\ref{fig:ksn_notitle})
+%A histogram of the distribution of successive differences in the Power values is shown in Fig. \ref{fig:his_power}.
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.35\textwidth]{figs/pp_his_kdetrue.png}
+%    \vspace*{-0.3cm}
+%    \caption{Histogram showing the \% power difference between successive years}
+%    \label{fig:his_power}
+%\end{figure}
 
 %The distribution of differences has a measured skewness of -0.31 \cite{zw00}, a mean of 2.34 and standard deviation of 2.02. The residual and relative residual of the data from the linear model are shown in Figs: \ref{fig:kardashev1_res} \& \ref{fig:kardashev1_rel_res}, respectively. The histograms of the distribution of residuals and relative error is shown in Figs. \ref{fig:his_res}, \& \ref{fig:his_rel_res}, and the daily average Bitcoin hash-rate since the genesis block in Fig. \ref{fig:btchash}.
 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.35\textwidth]{figs/P_residual.png}
-    \vspace*{-0.3cm}
-    \caption{Histogram showing the residual of data}
-    \label{fig:his_res}
-\end{figure}
+% (Old residual histogram removed; replaced by the multi-panel KSN figure Fig.~\ref{fig:ksn_notitle})
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.35\textwidth]{figs/P_residual.png}
+%    \vspace*{-0.3cm}
+%    \caption{Histogram showing the residual of data}
+%    \label{fig:his_res}
+%\end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.35\textwidth]{figs/P_rel_residual.png}
-    \vspace*{-0.3cm}
-    \caption{Histogram showing the rel residual of data}
-    \label{fig:his_rel_res}
-\end{figure}
+% (Old relative-residual histogram removed; replaced by the multi-panel KSN figure Fig.~\ref{fig:ksn_notitle})
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.35\textwidth]{figs/P_rel_residual.png}
+%    \vspace*{-0.3cm}
+%    \caption{Histogram showing the rel residual of data}
+%    \label{fig:his_rel_res}
+%\end{figure}
 
 
 %The Skewness of our sample is slightly negative perhaps because of man-made crisis like the 2008 subprime crisis and 2020 pandemic, but it is approximately symmetric. To quantify this further, we perform a test on these data for normality using the Shapiro-Wilk test on Normally Distributed Data and obtain a test statistic and the corresponding p-vale of 0.97 and 0.23, respectively. Since the p-value is not less than 0.05 we can not reject the null hypothesis so the conclude the Power difference sample is approximately consistent with being drawn from a Normal Distribution population. A similar result is obtained via an Anderson-Darling test for which we obtain a test statistic of 0.38, and critical values of 0.54, 0.62, 0.74,0.86 and 1.03, so we reject the null hypothesis at the 15, 10, 5, 2.5 and 1\% significance levels. Evidently, the distribution, although it has some Skewness and Kurtosis can not be ruled out to be derived from a normal distribution.
@@ -867,12 +865,13 @@ A histogram of the distribution of successive differences in the Power values is
 
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{figs/hash_btc.png}
-    \caption{Historical Hash-rate for the Bitcoin network. Note: the vertical axis multiplier of 1E8}
-    \label{fig:btchash}
-\end{figure}
+% (Old Bitcoin hashrate figure removed; replaced by the multi-panel KSN figure Fig.~\ref{fig:ksn_notitle})
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=1\linewidth]{figs/hash_btc.png}
+%    \caption{Historical Hash-rate for the Bitcoin network. Note: the vertical axis multiplier of 1E8}
+%    \label{fig:btchash}
+%\end{figure}
 
 % \subsection{POW Incentive}
 
@@ -892,10 +891,13 @@ A histogram of the distribution of successive differences in the Power values is
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.50\textwidth]{figs/figkarnak.jpg}
-    \caption{Kardashev-Nakamoto data-points for the Kardashev-Nakamoto model}
-    \label{fig:karnak}
-
+    \IfFileExists{figs/KSN_notitle(1).png}{%
+        \includegraphics[width=0.95\linewidth]{figs/KSN_notitle(1).png}%
+    }{%
+        \fbox{\parbox{0.95\linewidth}{\centering Missing figure file: \texttt{figs/KSN\_notitle(1).png}.}}%
+    }
+    \caption{Kardashev--Sagan--Nakamoto (KSN) diagnostic plot (three-panel figure).}
+    \label{fig:ksn_notitle}
 \end{figure}
 
 %The energy required to operate the Bitcoin Network is within the error budget of the total global energy consumption and although it may be a  cost one must take in mind: (i) this cost is to secure the network (ii) that energy consumption is a lower limit on energy production (iii) that a significant percentage of POW hash-rate is powered by renewable energy sources that could if consensual agreement be reached by miners,  holders, governments and the general community, power the Bitcoin Network using renewable and sustainable stranded energy or even within a carbon credit system. Of course on the topic of energy consumption, the \cite{kar64} model or Energy Use function for civilizations is a useful comparison chart to ascertain the current Energy situation of Civilization on The Earth over as long a time baseline as possible to mitigate sensitivity to low time-scale variance given the potential of wide-use of Bitcoin adoption as analyzed in this paper.
@@ -1131,20 +1133,223 @@ new features, improving documentation, and
 possible integration with tools for interactively analyzing features of development.
 \fi
 
-IAU and IVOA Astronomer data-base to validate KYC, coordinating contact with different institutions. 
 
-\section{Conclusion and Discussion}
-\label{sec:conc}
-The Kardashev model is not tenable since this model is an approximately exponential model that violates the memory conservation property of its probability distribution and as visually seen diverges from the Energy Production data. An OLS data-model is produced that although has low scatter over a temporal baseline of more than 60 years it too is too is untenable since the time-scale required to Kardashev type II acquisition for a typical civilization would be over an order of magnitude the Age of the Universe. To resolve this Conundrum, the Power ordinate is renormalized by the yearly average Bitcoin Hashrate. A fit to this renormalized data is not attempted but this data shows the sence of the Kardashev-Nakamoto relation, left as an open question. 
+\section{Discussion}
+\label{sec:discussion}
 
-An implication of the 10 minute average block time is now considered. Given the finite speed of light, c, and that the next extra-solar system, alpha-centuri is a few light years distance or about 1 cycle.  Then, should an advanced civilisation come into contact with us that manages their own Bitcoin chain that has developed there own decentralized blockchain network, then a fork may be contemplated. This most likely would occur after a few cycles for both civilisations, so that most of unit value  will have already been mined. On the new Kardashev-Sagan-Nakamoto scale this could be defined as a Type-II civilization assuming that civilization lives in The Galaxy. If that civilization comes from another galaxy it could be defined as a type-III civilization on the Kardashev-Sagan-Nakamoto scale and a new fork would be required.
+\subsection{Falsifiability of the KSN Model}
 
-A Decentralized Autonomous Organization may be formed by the Astropy, IVOA, IAU communities to help with governance issues and implementing OB protocols for astronomy.
+A scientific model is meaningful only insofar as it generates
+predictions that can in principle be refuted by data
+\citep{Blumer1987}. We identify four concrete falsification
+criteria for the KSN model.
+
+First, the posterior growth rate $r = 1.85\% \pm 0.17\%\,
+\mathrm{yr}^{-1}$ is a quantitative prediction: if sustained
+observation of global energy production over the coming
+decades yields a growth rate consistently outside the 95\%
+credible interval $[1.53\%, 2.19\%]$, the exponential component
+of the KSN framework is falsified.
+
+Second, the Shapiro--Wilk result ($W = 0.97$, $p = 0.23$)
+establishes that year-on-year energy increments are consistent
+with additive Gaussian noise. This is a testable claim: a
+structural shift in the global energy system --- such as a
+sustained period of multiplicative growth driven by a step
+change in energy technology --- would produce a distribution
+of $\Delta P$ that violates normality, falsifying the additive
+error structure on which the linear model rests.
+
+Third, the KSN variable $z = P/H$ predicts a monotonically
+decreasing trend as Bitcoin ASIC efficiency improves toward
+the Landauer limit \citep{Landauer1961}. If the Bitcoin hashrate
+growth stalls or reverses permanently --- for example if
+proof-of-work mining becomes economically unviable --- the
+KSN variable would cease to decrease and the renormalization
+would lose its physical motivation. This is a genuine
+falsification risk that the model acknowledges explicitly.
+
+Fourth, the dimensional incompleteness argument predicts that
+no functional form fitted to $P(t)$ alone can resolve
+Kardashev's Conundrum. If a future author produces a model
+of $P(t)$ without additional state variables that gives both
+a statistically adequate fit to the data and a physically
+coherent Type~II timescale, the KSN renormalization is
+unnecessary and the argument is falsified.
+
+\subsection{Limitations}
+
+Several limitations of the present analysis deserve explicit
+acknowledgement.
+
+The Bitcoin network hashrate is the only publicly auditable
+global proof-of-work dataset currently available, but it
+represents a single network. A more complete KSN state
+variable would integrate all global computational
+proof-of-work, including other proof-of-work cryptocurrencies
+and, eventually, any future large-scale computational
+infrastructure that provides an unforgeable public record.
+The present analysis should therefore be understood as
+a proof of concept using the best available proxy, rather
+than a definitive measurement of civilisational
+computational efficiency.
+
+The hashrate data span only 2009--2024 --- sixteen annual
+data points covering approximately one human generation.
+The KSN variable exhibits a structural break between the
+CPU/GPU era (2009--2012) and the ASIC era (2013--2024),
+reflecting a qualitative change in the technology of
+proof-of-work computation rather than a smooth continuous
+evolution. The log-space coefficient of determination
+for a single exponential fit to the full $z(t)$ series
+is $R^2_{\log} = 0.296$, which is poor, confirming that
+a single functional form does not adequately describe the
+full 2009--2024 baseline. A formal piecewise or
+era-segmented fit is deferred to a future paper.
+
+A further limitation concerns the production--consumption
+distinction noted in Section~\ref{sec:intro}. The OWID
+dataset reports total primary energy production, whereas
+\citet{kar64} defined his scale in terms of energy
+\emph{consumption}. We have argued that production
+constitutes a valid upper-limit proxy for consumption at
+the civilisational scale, and that the two track each other
+closely over decadal baselines. However, the ratio of
+production to consumption is not precisely unity and varies
+with time, introducing a systematic uncertainty that is
+difficult to quantify without a separate long-baseline
+consumption dataset.
+
+\subsection{The Novel Observation on Kardashev's Growth Rates}
+
+A result that has received no attention in the literature
+emerges directly from re-reading \citet{kar64}. Kardashev
+presents \emph{two distinct growth rates} in the same paper:
+an empirical estimate of $3$--$4\%\,\mathrm{yr}^{-1}$
+based on statistical findings over the following sixty years,
+and a conservative model assumption of $x = 1\%\,\mathrm{yr}^{-1}$
+used for the Type~II timescale calculation. The standard
+Kardashev model universally cited in the literature
+\citep{gray2020} uses the conservative $1\%$ figure, not
+Kardashev's own central estimate.
+
+Our MCMC posterior growth rate of $r = 1.85\% \pm 0.17\%\,
+\mathrm{yr}^{-1}$ sits precisely between these two values ---
+above the conservative assumption but below the empirical
+estimate. This is not a falsification of \citet{kar64}; it
+is a vindication of his empirical judgment. The standard
+``one-percent Kardashev model'' is falsified not because
+Kardashev was wrong, but because the literature has been
+testing a deliberately conservative lower bound rather than
+his actual prediction.
+
+\subsection{Connection to the Drake Equation}
+
+The Drake equation for the number of communicating
+civilisations in the Galaxy includes a longevity factor $L$
+--- the average duration for which a civilisation remains
+detectable. This factor carries the largest relative
+uncertainty of any term in the Drake equation and is
+sensitive to whether civilisations tend to self-destruct
+or achieve long-term stability \citep{gray2020}.
+
+The KSN model is relevant to the longevity factor in the
+following sense: a civilisation that approaches the Landauer
+limit --- that is, one for which $z \to k_B T \ln 2$ per
+bit --- has achieved near-optimal use of available energy
+for computation, which we argue is a necessary condition
+for long-term civilisational stability. The KSN Type~II
+threshold, defined as $z$ approaching the Landauer limit,
+is therefore not merely an energy milestone but an
+information-thermodynamic one. Whether $L$ is large or
+small may depend on whether civilisations reach this
+threshold before exhausting or destabilising their energy
+resources --- a question the KSN model frames quantitatively
+for the first time.
+
+\subsection{The Doomsday Clock}
+
+The Bulletin of the Atomic Scientists advanced the
+Doomsday Clock to 90 seconds to midnight in 2023 ---
+the closest it has been to civilisational catastrophe in
+the history of the index. The KSN model provides an
+independent quantitative perspective on civilisational
+risk: the dramatic decrease in $z(t)$ observed over
+2009--2024 reflects an exponential improvement in the
+energy efficiency of global computation, consistent with
+a civilisation moving \emph{toward} the Landauer limit.
+Whether this trajectory can be sustained, and whether
+it will be accompanied by the institutional stability
+required to avoid catastrophe, lies beyond the scope of
+this model --- but the KSN framework provides the
+quantitative language in which such questions can
+eventually be posed.
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+We have tested the standard Kardashev one-percent exponential
+model against six decades of global energy production data
+and found it statistically untenable. The posterior growth
+rate from MCMC inference is $r = 1.85\% \pm 0.17\%\,
+\mathrm{yr}^{-1}$ (95\% credible interval $[1.53\%, 2.19\%]$),
+placing the Kardashev one-percent value outside the credible
+interval. The normality of year-on-year energy differences
+(Shapiro--Wilk $W = 0.97$, $p = 0.23$) formally rejects
+the multiplicative error structure required by the
+exponential model.
+
+A linear OLS model fits the data exquisitely ($R^2 = 0.983$)
+and is statistically indistinguishable from a free-parameter
+exponential model ($\Delta\mathrm{WAIC} = 0.7$,
+$\Delta R^2 = 0.003$). However, extrapolation of the linear
+model to the Kardashev Type~II threshold yields a
+civilisational transition timescale of $\sim 3.2 \times 10^8$
+Hubble times --- a physical reductio ad absurdum we term
+\textit{Kardashev's Conundrum}. No functional form fitted
+to energy production alone can simultaneously satisfy
+statistical adequacy and physical coherence, because the
+Kardashev state variable is dimensionally incomplete as
+a measure of civilisational advancement.
+
+We have proposed the Kardashev--Sagan--Nakamoto (KSN)
+model as a resolution: renormalising the energy production
+ordinate by the annual average Bitcoin network hashrate
+$H(t)$, yielding the KSN state variable $z = P/H$ in
+units of J\,Hash$^{-1}$ --- the KarNak unit. This
+renormalisation adds no free parameters, is physically
+motivated by the Landauer limit connecting energy to
+irreversible computation \citep{Landauer1961}, and fulfils
+the requirement of \citet{sagan73} that the Kardashev
+scale be sensitive to the information richness of a
+civilisation.
+
+We further note, for the first time in the literature, that
+\citet{kar64} presented two distinct growth rates: an
+empirical estimate of $3$--$4\%\,\mathrm{yr}^{-1}$ and a
+conservative model assumption of $1\%\,\mathrm{yr}^{-1}$.
+Our posterior $r = 1.85\%\,\mathrm{yr}^{-1}$ sits between
+these values, vindicating Kardashev's empirical judgment
+while falsifying the conservative assumption that the
+literature has universally adopted.
+
+The KSN variable spans 14 orders of magnitude over
+2009--2024, reflecting the dramatic improvement in Bitcoin
+proof-of-work energy efficiency from the CPU era through
+to modern ASICs. A formal functional fit to $z(t)$,
+including a piecewise treatment of the CPU/GPU and ASIC
+eras, is deferred to a future work. The KarNak unit
+is proposed as a universal information-energy yardstick
+for the Kardashev scale, and the KSN framework as a
+quantitative language for discussing civilisational
+longevity in the context of the Drake equation.
+
+
 % =============================================================================
 % SECTION Acknowledgments
 % =============================================================================
 \section{Acknowledgments}
-SG acknowledges the New Virtual Observatory of Argentina (NOVA) and his selection as representative of Argentina on the IVOA-exec committee and support of all his colleagues in the IATE.
+SG acknowledges the New Virtual Observatory of Argentina (NOVA) and his selection as the representative of Argentina on the IVOA-exec committee from 2015 to 2024 and support of all his colleagues in the IATE, especially those who administer the 'decentralized' supercomputer facility. This work made use of Astropy, a community-developed core Python package for Astronomy, and the broader open-source scientific software ecosystem (including SciPy and NumPy). The author sincerely thanks the Chinese Academy of Sciences for the MOU signed between the Astronomical Observatory of Cordoba and the Shanghai National Astronomical Observatory to value-add historical plate data of the old Argentina National Observatory.
 
 % =============================================================================
 % SECTION BIBLIO
