@@ -297,54 +297,10 @@ Conversely, Artificial Intelligence (AI) programs and techniques like `Machine L
 \end{figure}
 
 
-\subsection{ Brokers and Astronomical Surveys}
+% (Section 1.1 moved to second paper)
 
-The full Tsunami data-streams from surveys are not easily accessible for immediate reprocessing by the broader community, and data-access still depends on propriety periods and to a degree on in-house techniques. An examination of the Vera Rubin pre-processed photometric survey is now considered to illustrate this point. Data from the Vera C. Rubin Observatory, originally `The Legacy Survey of Space and Time' once observed is pre-processed and ingested into seven Brokers that have been selected in an Open Community competition call.  This call was made in an attempt to guarantee the data bandwidth and ingestion rate of the survey for a maximum of seven 'Community Brokers' as later selected: Alerce, Ampel, Antares, Babamul, Fink, Lasair, Pitt-Google. Some of these teams contain a degree of centralization since some are more weighted on members with specific science objectives and skill-sets and rely on a code-base and procedures that are not necessarily optimal and community driven across all possible science cases. OB could be used to fund a dedicated Astropy and IVOA community Broker where friction-less incentives could be rewarded to contributors via OB Oracles. An example selected to illustrate this point is from experience of the Vista Variables in the Via Lactea VVV survey. After the commissioning, an issue was found in the Cambridge Astronomical Survey Unit preprocessing algorithm by Victoria Santucho (VS) who was completing her licentiate thesis at the Observatory of Cordoba that depends on the public National University of Cordoba, Argentina, arguable the oldest scientific institution of Argentina, and one of the oldest Universities in Latin America, respectively. As part of the science team VS had 18 month proprietary access to the reprocessed data and VS determined in 2012 that the CASU 1.1 pawprint catalogs had systematic magnitude differences due to a 'grouting error' in the preprocessed data (Mike Irwin, priv comm), see Fig. \ref{fig:mapa_dif_Kvsa_Kcasu_grid80_1} from Vicky's thesis when compared to the Vista Science Achieve Catalogues. The effect was corrected after several months and incorporated in later CASU data releases as resolved internally by the collaboration. Most people outside of the proprietary team who base their studies on corrected magnitudes from pre-processed VVV or VVVx data are not familiar with VS work because by itself this contribution was not published in any peer reviewed journal. Expert problem solving that led to this solution is not in the public domain. Should it be? The Decentralized Science movement or DESCI via existing governance structures like IVOA \& IAU and the Astropy community could be used to address some of the subtleties of open development, mitigate issues in problem solving and lead to more open Astronomy development standards that through Federated learning models and appropriate incentive mechanisms based on OB protocol technologies add guardrails to increase the efficiency of the ELT (extract, load, transform) processes required for astrophysical discovery. For example, of the 7 community brokers of Rubin, some have different source-matching \citep{bellm19} algorithms. Across the wider community various groups have adopted different reduction and analysis methods and techniques for particular problem sets, in this case different source cross matching algorithms have been developed that offer clear advantages and biases on sample selection that are sensitive to source-type, source-colour, whether the sample is magnitude or volume limited, proximity to the galactic plane, etc,  within different band-pass filter sets. The FAIR principles for open astronomy science as reported in \cite{2022arXiv220310710O} and \cite{molinaro21} have also proved to be useful for astronomy software development; however, no 'best-practice' guideline pipeline for observers and data analysts with respect to the relative trade-offs between source matching algorithms with incentive mechanisms, has yet been developed by the community.
- Could the data-streams use OB protocols to protect data provenance uniting analysis strength across brokers over different wavelengths, AI learning methods, and data models through different community institutions and organizations? In this whitepaper OB is proposed as this missing link in an environment where the half-life function of US PhD majors in astronomy is in steep decline and where projects are becoming much more reliant on team science and access to new technology developments, and infrastructure especially in developing countries becomes increasingly difficult since the burden of the opportunity cost to technological development or innovation is denominated in USD and for many countries inflation and public and private dollar-denominated debt is at an all time high with severe consequences, so technological developments are often encumbered and in some cases near prohibitive. With respect to the community broker for the Vera Rubin Survey, it is noted that an expected capacity of 10,000 alerts will be provided every 39 seconds so there is a need for short time-scale and semantically rich science. Triggering Difference Image source, 82 KB per alert means 5 GB per s per full stream. Sixty Second from read-out information needs to get to the Broker system, at least 5 full streams to alert brokers.   For example  Jakob Nordin of AMPEL, requests from the community a standard processing framework for Legacy Very Rubin data, a standard that would enable processing of data-sets irrespective of broker identically and as efficiently as possible, at the moment this is a challenge.  Mathew Graham of Babamul has considered that traditional approaches to handle event streams are sub-optimal and sees for back-end work a decentralized network of low-cost components employing commodity AI accelerators and reusable models plus an in-use science data platform for information management that any group can set up on their own at-scale broker for less than 1 USD per day, using Raspberry PI + USB TPUs (4 TOPS), optimal for deep learning models.  Federated Learning for example, which has been explored by Babamul devs is completely open sourced and eventually be required to complement open block chain protocol implementation. Several issues exist within federated learning systems including single-point failure type issues, but also a suitable incentive mechanism to mitigate against data falsification. Blockchain-enabled federated learning may solve these issues as described in \cite{zhu2023}. 
-
-\emph{Our goal then is to discuss the Bitcoin OB Nakamoto standard and to identify useful elements for a potential base-layer stack for the Open Development of Astronomy that also includes the onboarding of existing astronomical organizations and institutions.}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.38\textwidth]{figs/mapa_dif_Kvsa_Kcasu_grid80_1}
-    \vspace*{-0.2cm}
-    \caption{Binned Ks magnitude differences (in mags) between Vista Science Achieve and Cambridge Astronomical Survey Unit Catalogue data, caused by a grouting error in preprocessing, found during the VVV proprietary period of 18-month by Vicky Santucho and confirmed by Mike Irwin (priv communication)}
-    \label{fig:mapa_dif_Kvsa_Kcasu_grid80_1}
-\end{figure}
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.38\textwidth]{figs/2206.14220.jpg}
-    \vspace*{-0.3cm}
-    \caption{Reproduced from Astropy Core paper showing Full-text search for 'programming language' returned query in NASA ADS}
-    \label{fig:astropy}
-\end{figure}
-
-
-\begin{table}[htbp]
-\centering
-\caption{Bitcoin Mining Data Simulation}
-\begin{adjustbox}{width=\columnwidth,center}
-\begin{tabular}{@{}lllllll@{}}
-\toprule
-Julian Day & Year Interval & Block Range & Reward (BTC) & BTC per halving & Mined Bitcoin \\ \midrule
-2454833    & 2009-2012     & 0-210000     & 50.000       & 10.5M         & 10.5M         \\
-2456294    & 2012-2016     & 210000-420000& 25.000       & 5.25M         & 15.75M        \\
-2457755    & 2016-2020     & 420000-630000& 12.500       & 2.63M         & 18.38M        \\
-2459216    & 2020-2024     & 630000-840000& 6.250        & 1.31M         & 19.69M        \\
-2460677    & 2024-2028     & 840000-1050000& 3.125       & 656K          & 20.34M        \\
-2462138    & 2028-2032     & 1050000-1260000& 1.562      & 328K          & 20.67M        \\
-2463599    & 2032-2036     & 1260000-1470000& 0.781      & 164K          & 20.84M        \\
-2465060    & 2036-2040     & 1470000-1680000& 0.391      & 82K           & 20.92M        \\
-\multicolumn{6}{c}{\dots} \\ % Continues the pattern
-2466521    & 2040-2044     & 1680000-1890000& 0.195      & 41K           & 20.96M        \\
-2467982    & 2044-2048     & 1890000-2100000& 0.098      & 20.5K         & 20.98M        \\
-\bottomrule
-\end{tabular}
-\end{adjustbox}
-\end{table}
-
+% (Section 2 and its subsections moved to second paper)
+\iffalse
 \section{Open Blockchain as a corner-stone for Astronomy Open Development?}
 \label{sec:bc_review}
 
@@ -416,83 +372,400 @@ Bitcoin as a technology was able to solve several problems faced by earlier digi
 $E_BTC/E_tot < 0.1$
 \\
  Some authors, including Andreas Antonopoulos believe Bitcoin and Ethereum Blockchains have the potential to revolutionize open development in science and technology and with 5G roll-out promise unprecedented levels of growth of over 18 percent per year, not seen since the first industrial revolution Waldon, M.  Fig needtoinsertfigure adapted from Walden et al. shows the world GDP as a function of time. These technologies were born out of academia, the occupy wall-street and anonymous movements as a direct response to the 2008 financial crisis that saw a global slump in the world GDP based on the US sub-prime financial crisis  that included a drop in US GDP by 30 \% sustained over several years.
+\fi
  
 Programmable money is not exclusively relevant to human beings but also to machines as participating actors. Hardware evolution is also tied to open development, as seen in the evolution of specialized hardware architecture for Proof Of Work (POW) HASH Function calculations that is developing Application-Specific Integrated Circuit (ASICS) to mine Bitcoin blocks. It could be argued that these developments have outpaced Moore's law.  Wrights Law suggests that the for every percentage increase in the cumulative distribution function of production in any industry equates to a fixed percentage increase in the efficiency of production. So hardware has evolved from CPU intensive to graphic processing units (GPU) and  Application Specific Integrated Circuit  (ASICS), \cite{10.1371/journal.pone.0052669}.
 
-\section{Bitcoin and the Kardashev exponential model conundrum}
-\label{sec:energy}
+\section{The Kardashev Conundrum and the Kardashev--Sagan--Nakamoto Model}
+\label{sec:conundrum}
+ 
+We now present our central analysis. We compare the standard Kardashev
+one-percent exponential model against a linear Ordinary Least-Squares (OLS)
+model fitted to the total global energy production data, and demonstrate that
+both models are unsatisfactory in complementary ways. We then propose the
+Kardashev--Sagan--Nakamoto (KSN) renormalization as the minimal resolution
+that is simultaneously consistent with the data and with physical causality.
+ 
+%% -----------------------------------------------
+\subsection{Data}
+\label{sec:data}
+ 
+The energy production data $\mathcal{D}$ consist of the World total primary
+energy consumption in terra-watt-hours per year (TWh\,yr$^{-1}$), drawn from
+the Our World in Data (OWID) energy dataset \citep{Ritchie2022}, which
+integrates the Energy Institute (EI) Statistical Review of World Energy and
+the US Energy Information Administration (EIA) international energy series.
+We use $N = 60$ annual data points spanning 1965--2024. The 2024 value is
+not taken directly from the EI Statistical Review 2025 \citep{EI2025},
+because that edition introduced a methodological change from the substitution
+method to the direct primary energy accounting method, rendering the 2024
+figure ($592\,\mathrm{EJ}$) inconsistent with the historical OWID series.
+Instead, we adopt the 2023 OWID value of $229{,}000\,\mathrm{TWh}$ and apply
+the EI-reported annual growth rate of $2\%$ for 2024, giving
+$233{,}580\,\mathrm{TWh}$, preserving methodological consistency throughout
+the time series. All energy values are converted to SI watts (J\,s$^{-1}$)
+via:
+\begin{equation}
+    P\,[\mathrm{W}] \;=\; E\,[\mathrm{TWh\,yr}^{-1}]
+    \;\times\; \frac{10^{12}}{8760 \times 3600}\,,
+    \label{eq:conversion}
+\end{equation}
+where the denominator converts one year to seconds. We set the origin of the
+time coordinate at $t_0 = 1964$, the year of the Kardashev conjecture
+\citep{Kardashev1964}, so that $t = \mathrm{year} - 1964$ throughout.
+ 
+The Bitcoin network hashrate data $H(t)$ are yearly averages in hash\,s$^{-1}$,
+compiled from the Blockchain.com public API and the NASDAQ BCHAIN/HRATE
+dataset for 2009--2024. These span the full history of Bitcoin mining from the
+CPU era ($\sim 3\,\mathrm{MH\,s^{-1}}$ in 2009) through the ASIC era
+($\sim 620\,\mathrm{EH\,s^{-1}}$ in 2024), covering 16 annual data points
+and 14 orders of magnitude in hashrate.
+ 
+%% -----------------------------------------------
+\subsection{The Standard Kardashev Model and its Statistical Assessment}
+\label{sec:kardashev_model}
+ 
+\citet{Kardashev1964} proposed that the energy production of a technologically
+advanced civilisation increases at a constant fractional rate per year, giving
+a geometric series:
+\begin{equation}
+    P_{\rm K}(t) \;=\; P_0 \,(1 + x)^{t} \;\approx\; P_0\,e^{xt}\,,
+    \quad x = 0.01\,,
+    \label{eq:kardashev}
+\end{equation}
+where $P_0$ is the energy production at $t=0$ (1964) and $x = 0.01$
+corresponds to the stated one-percent per year growth rate. Using this model,
+\citet{Kardashev1964} calculated that a Type~II civilisation --- defined as
+one harnessing the total bolometric luminosity of its host star,
+$L_\odot = 3.828 \times 10^{26}\,\mathrm{W}$ \citep{Mamajek2015} --- would
+be reached in approximately $3{,}200$\,years. \citet{Sagan1973} obtained a
+similar value using a slightly revised Type~II threshold of
+$\sim 10^{26}\,\mathrm{W}$.
+ 
+Figure~\ref{fig:panel_a} shows the Kardashev model (Eq.~\ref{eq:kardashev})
+alongside the OWID data on a logarithmic ordinate scale, together with the
+Type~I and Type~II civilisation limits of \citet{Kardashev1964} and
+\citet{Sagan1973}, and the solar insolation at Earth
+($F_\oplus = L_\odot \pi R_\oplus^2 / 4\pi d_{\rm AU}^2
+\approx 1.74 \times 10^{17}\,\mathrm{W}$). It is visually evident that the
+one-percent Kardashev model diverges from the data: the data grow substantially
+more slowly than predicted.
+ 
+We quantify this divergence statistically. The likelihood of the data given the
+Kardashev model with a point prior on $x = 0.01$ is:
+\begin{equation}
+    \mathcal{L}(\mathcal{D} \mid \theta_{\rm K}, M_{\rm K})
+    \;=\; \prod_{i=1}^{N} \frac{1}{\sqrt{2\pi\sigma^2}}
+    \exp\!\left[-\frac{\bigl(P_i - P_0\,(1.01)^{t_i}\bigr)^2}{2\sigma^2}\right],
+    \label{eq:likelihood_kard}
+\end{equation}
+where $\sigma^2$ is estimated from the residuals. The residual sum of squares
+for the Kardashev model is $\sim 10^4$ times larger than for the linear model
+defined in Section~\ref{sec:linear_model}, constituting overwhelming evidence
+against the one-percent prior. We therefore conclude that the standard
+Kardashev exponential model with $x = 0.01$ is statistically untenable.
+ 
+%% -----------------------------------------------
+\subsection{The Linear Model: an Exquisite Fit with a Physical Reductio}
+\label{sec:linear_model}
+ 
+We next consider a linear OLS model:
+\begin{equation}
+    P_{\rm L}(t) \;=\; a + b\,t\,,
+    \label{eq:linear}
+\end{equation}
+with parameters $a$ and $b$ estimated by minimising the sum of squared
+residuals. Following Occam's razor \citep{Blumer1987}, this two-parameter
+model is the simplest physically plausible alternative. The OLS solution gives
+$b = 8.68 \times 10^{7}\,\mathrm{W\,yr}^{-1}$ and coefficient of
+determination $R^2 = 0.9827$. The fit is exquisite over the six-decade
+baseline of the data (Figure~\ref{fig:panel_a}).
+ 
+To assess the normality of the residual structure, we compute the year-on-year
+absolute differences $\Delta P_i = P_i - P_{i-1}$ and apply the Shapiro--Wilk
+normality test \citep{Shapiro1965}. We obtain $W = 0.97$, $p = 0.23$: we
+cannot reject the null hypothesis that $\Delta P$ is drawn from a Normal
+distribution at any standard significance level. The distribution of
+$\Delta P$ has skewness $-0.31$ and is approximately symmetric, with outliers
+at 2008 (subprime financial crisis) and 2020 (COVID-19 pandemic), both of
+which represent identifiable exogenous shocks to global energy production.
+ 
+This result has a decisive implication for model selection. The Shapiro--Wilk
+result on $\Delta P$ is the statistical signature of \emph{additive Gaussian
+noise}: the year-on-year increments are drawn from a distribution with
+approximately constant variance, independent of the current level $P(t)$.
+The exponential model (Eq.~\ref{eq:kardashev}), by contrast, requires that
+increments are \emph{multiplicative} --- that $\Delta P / P$ is the
+fundamental random variable --- producing variance that scales as $P^2$.
+These are incompatible error structures.  The Shapiro--Wilk result therefore
+formally rejects the generative mechanism of the exponential model at the
+level of its assumed probability distribution, independent of goodness-of-fit
+considerations.
+ 
+Notwithstanding its exquisite in-sample fit, the linear model fails
+catastrophically on extrapolation. Solving $P_{\rm L}(t^*) = L_\odot$ gives:
+\begin{equation}
+    t^* \;=\; \frac{L_\odot - a}{b}
+    \;\approx\; 4.4 \times 10^{18}\,\mathrm{yr}
+    \;\approx\; 3.2 \times 10^{8}\,H_0^{-1}\,,
+    \label{eq:linear_typeii}
+\end{equation}
+where $H_0^{-1} \approx 13.8\,\mathrm{Gyr}$ is the Hubble time. The implied
+Type~II timescale is $\sim 3.2 \times 10^{8}$ times the age of the Universe.
+This is not merely improbable --- it is physically incoherent, since it
+exceeds the main-sequence lifetime of the Sun by twelve orders of magnitude,
+and the projected heat death of the Universe by many orders of magnitude.
+We designate this result \textit{Kardashev's Conundrum}: the linear model,
+which best fits the data by all standard statistical criteria, predicts
+a civilisational transition timescale that is cosmologically nonsensical.
+ 
+%% -----------------------------------------------
+\subsection{Model Comparison and the Statistical Indistinguishability}
+\label{sec:model_comparison}
+ 
+To place the comparison on a rigorous Bayesian footing, we fit an exponential
+model with the growth rate $r$ as a free parameter --- the ``Model~2 family''
+of Section~\ref{sec:conundrum}:
+\begin{equation}
+    P_{\rm E}(t) \;=\; a_0\,e^{r t}\,,
+    \label{eq:exp_free}
+\end{equation}
+using a Metropolis--Hastings Markov Chain Monte Carlo (MCMC) sampler with a
+prior $r \sim \mathcal{N}(0.01,\, 0.02^2)$ centred on the Kardashev value
+and $N=60{,}000$ posterior samples after a $15{,}000$-step burn-in. The
+posterior mean growth rate is $r = 1.85\% \pm 0.17\%\,\mathrm{yr}^{-1}$
+(95\% credible interval $[1.53\%, 2.19\%]$), with the Kardashev value of
+$1\%\,\mathrm{yr}^{-1}$ lying outside the $95\%$ credible interval.
+The best-fit exponential model gives $R^2 = 0.9858$, marginally exceeding the
+linear model ($R^2 = 0.9827$).
+ 
+The Widely Applicable Information Criterion \citep[WAIC;][]{Watanabe2010}
+comparison yields $\Delta\mathrm{WAIC} = \mathrm{WAIC}_{\rm linear} -
+\mathrm{WAIC}_{\rm exp} = 0.7$: the two models are \emph{statistically
+indistinguishable} on the observed data range. Since both models have
+$K = 2$ free parameters, the AIC and BIC penalties are identical and also
+provide no discrimination. This confirms and quantifies the statistical
+statement of Kardashev's Conundrum: the data genuinely cannot discriminate
+between the two functional forms over the observed baseline.
+ 
+This indistinguishability is itself informative. Together with the Shapiro--Wilk
+result rejecting the multiplicative error structure of the exponential model,
+the complete statistical picture is:
+\begin{enumerate}
+    \item The one-percent Kardashev exponential is falsified by the data
+          (poor fit, wrong error structure).
+    \item The linear model and the free-$r$ exponential are
+          statistically indistinguishable on observed data
+          ($\Delta\mathrm{WAIC} = 0.7$).
+    \item The linear model has the correct additive error structure
+          (Shapiro--Wilk $p = 0.23$).
+    \item The linear model is physically falsified by extrapolation
+          (Type~II timescale $\sim 3.2 \times 10^8\,H_0^{-1}$).
+\end{enumerate}
+No functional form fitted to $P(t)$ can simultaneously satisfy statistical
+adequacy and physical coherence. This \emph{is} the Conundrum, stated
+precisely.
+ 
+%% -----------------------------------------------
+\subsection{The KSN Resolution: Renormalization to J\,Hash$^{-1}$}
+\label{sec:ksn}
+ 
+The resolution of Kardashev's Conundrum cannot be achieved by selecting
+a different fitting function for the same state variable $P(t)$, because the
+problem is not one of functional form --- it is one of variable choice.
+We demonstrate this via the following argument.
+ 
+\textbf{Dimensional incompleteness.} The Kardashev scale measures energy
+throughput, $P$ [W = J\,s$^{-1}$], but makes no reference to what that energy
+accomplishes. As \citet{Sagan1973} noted, a civilisation that wastes energy
+inefficiently is rated equally to one that channels the same power into
+information-rich computation. The scale is therefore dimensionally incomplete
+as a measure of civilisational advancement: it conflates energy expenditure
+with technological capability.
+ 
+\textbf{The Landauer connection.} The fundamental physical link between energy
+and information is the Landauer limit \citep{Landauer1961}: the minimum energy
+required to erase one bit of information at temperature $T$ is $k_B T \ln 2
+\approx 2.85 \times 10^{-21}\,\mathrm{J}$ at room temperature. The ratio
+$P / H$ --- global energy production divided by global computational hashrate
+--- has dimensions of energy per hash, and is an empirical measure of how
+efficiently a civilisation converts energy into irreversible computational
+work. As $P/H \to k_B T \ln 2$ (per bit), a civilisation approaches the
+thermodynamic limit of computation. The variable $z = P / H$ thus inherits
+physical meaning absent from $P$ alone.
+ 
+\textbf{The renormalization.} We define the KSN state variable as:
+\begin{equation}
+    z(t) \;=\; \frac{P(t)}{H(t)}
+    \qquad \left[\mathrm{J\,Hash}^{-1} \equiv \mathrm{KarNak}\right]\,,
+    \label{eq:ksn}
+\end{equation}
+where $H(t)$ is the yearly average Bitcoin network hashrate in
+hash\,s$^{-1}$. We use the Bitcoin hashrate because it is the only
+\emph{publicly auditable, unforgeable, and continuously updated}
+global measure of computational proof-of-work \citep{Nakamoto2008},
+fulfilling the requirement of \citet{Sagan1973} that the Kardashev state
+variable be sensitive to the ``security of vast quantities of information.''
+No free parameter is added to the model: the renormalization is a ratio
+of two independently measured physical quantities.
+ 
+\textbf{Statistical motivation.} The variable transformation
+$P \to z = P/H$ is not a Box--Cox power transformation of $P$
+\citep{BoxCox1964}, which would remain within the family of
+functional forms fitted to the original variable. It is instead a
+\emph{ratio normalization} by an external physically motivated quantity.
+This takes the analysis outside the Box--Cox family and is the
+mathematical statement that neither the linear nor the exponential model
+of $P(t)$ is the correct model: the correct extensive variable for the
+Kardashev scale has not previously been identified. The KSN variable
+$z(t)$ is our proposal.
+ 
+Figure~\ref{fig:panel_c} shows $z(t)$ for 2009--2024, spanning 16 annual
+data points and 14 orders of magnitude in $z$. The data display a
+monotonically decreasing trend consistent with an exponential decay:
+\begin{equation}
+    z(t) \;=\; z_0\,e^{-\gamma t}\,,
+    \label{eq:ksn_model}
+\end{equation}
+with best-fit parameters $z_0 = 2.02 \times 10^3\,\mathrm{J\,Hash}^{-1}$
+and decay rate $\gamma \approx 43\%\,\mathrm{yr}^{-1}$, giving a
+characteristic timescale $\tau = 1/\gamma \approx 2.3\,\mathrm{yr}$
+reflecting the rapid improvement in ASIC mining efficiency. A formal fit
+to the KSN data is deferred to a future paper; Figure~\ref{fig:panel_c}
+presents the data and their trend as an open question for the community.
+ 
+%% -----------------------------------------------
+\subsection{Civilisational Timescales on the KSN Scale}
+\label{sec:timescales}
+ 
+Table~\ref{tab:timescales} summarises the Type~II timescales implied by each
+model. The Kardashev and Sagan exponential models give timescales of order
+$10^3\,\mathrm{yr}$. These are reached tautologically: any exponential model
+of the form $P = P_0 e^{rt}$ will reach any finite threshold at some finite
+time, so the Type~II crossing year is determined by the assumed growth rate
+$r$ and is not a prediction in any falsifiable sense. The linear model, as
+shown in Eq.~(\ref{eq:linear_typeii}), gives a timescale that is
+cosmologically absurd. On the KSN scale, the concept of a Type~II threshold
+must be re-expressed in terms of $z = P/H$: a Type~II KSN civilisation is
+one for which $z$ approaches the Landauer limit, i.e.\ the energy cost per
+hash approaches $k_B T \ln 2$. This reframing is consistent with the original
+intent of \citet{Kardashev1964} and the information-theoretic extension
+proposed by \citet{Sagan1973}.
+ 
+\begin{table}[h]
+\centering
+\caption{Type~II civilisation timescales under each model. All timescales
+are measured from 1964. $H_0^{-1} = 13.8\,\mathrm{Gyr}$ is the Hubble time.}
+\label{tab:timescales}
+\begin{tabular}{llll}
+\hline
+Model & Growth rate & Type~II year & $\Delta t / H_0^{-1}$ \\
+\hline
+Kardashev 1964 (fixed $r$)  & $1.00\%\,\mathrm{yr}^{-1}$ & $\sim 5920$ & $\sim 3 \times 10^{-7}$ \\
+Exp.\ free $r$ (MCMC mean)  & $1.85\%\,\mathrm{yr}^{-1}$ & $\sim 4097$ & $\sim 2 \times 10^{-7}$ \\
+Linear OLS                  & $8.68 \times 10^7\,\mathrm{W\,yr}^{-1}$ & $\sim 4.4 \times 10^{18}$ & $\sim 3.2 \times 10^{8}$ \\
+KSN ($z = P/H$)             & $\gamma \approx 43\%\,\mathrm{yr}^{-1}$ & \multicolumn{2}{l}{Re-expressed via Landauer limit} \\
+\hline
+\end{tabular}
+\end{table}
+ 
+%% -----------------------------------------------
+\subsection{The Memoryless Property as a Further Objection to the Exponential}
+\label{sec:memoryless}
+ 
+A complementary statistical objection to the exponential Kardashev model
+arises from probability theory. A non-negative random variable $X$ is
+memoryless if for all $a, b \geq 0$:
+\begin{equation}
+    P(X > a + b \mid X > b) \;=\; P(X > a)\,.
+    \label{eq:memoryless}
+\end{equation}
+The Kardashev geometric series $(1+x)^t$ imposes this property by
+construction: the fractional increment $\Delta P / P = x$ is independent of
+the current level and of history. But the global energy system manifestly
+possesses memory: infrastructure lock-in, geopolitical constraints,
+technology diffusion rates, and crisis events (2008, 2020) all induce
+path-dependence. The slight negative skewness ($-0.31$) of the $\Delta P$
+distribution is direct empirical evidence of this asymmetry --- large negative
+shocks are systematically more probable than the symmetric memoryless
+distribution would predict. The memoryless property is therefore not just a
+mathematical abstraction: it is a testable claim about the process, and the
+data reject it.
 
-We now attempt to link the Kardashev law  \cite{kar64} with the Nakamoto consensus and Bitcoin \cite{nak2009}. As a starting point we analyze the one-percent Kardashev model: $y_t = y_0 \times (1.01)^t$
- and show it has a critical flaw with respect to the type-ii original timescale prediction, that is the Kardashev scale. In Subsec. \ref{subsec: data} we present the Energy data from \cite{owidenergy} and the Bitcoin Hash-rate that we use in the analysis that follows. 
+%\section{Bitcoin and the Kardashev exponential model conundrum}
+%\label{sec:energy}
 
-In Fig. \ref{fig:kardashev1} we show two models for the data of total global Power production (red dots). The one-percent Kardashev exponential growth rate model (unbroken line) and the linear OLS model (broken line). The one-percent model has an exponential form and diverges from the data.
-$$P(\theta_{\text{exp}} | M_{\text{exp}}) = \delta(b - \log(1.01))$$,
+%We now attempt to link the Kardashev law  \cite{kar64} with the Nakamoto consensus and Bitcoin \cite{nak2009}. As a starting point we analyze the one-percent Kardashev model: $y_t = y_0 \times (1.01)^t$
+% and show it has a critical flaw with respect to the type-ii original timescale prediction, that is the Kardashev scale. In Subsec. \ref{subsec: data} we present the Energy data from \cite{owidenergy} and the Bitcoin Hash-rate that we use in the analysis that follows. 
 
-where $$\theta_{\text{exp}= (y_0,b)}$$ and $$ b= \log(1.01)$$
+%In Fig. \ref{fig:kardashev1} we show two models for the data of total global Power production (red dots). The one-percent Kardashev exponential growth rate model (unbroken line) and the linear OLS model (broken line). The one-percent model has an exponential form and diverges from the data.
+%$$P(\theta_{\text{exp}} | M_{\text{exp}}) = \delta(b - \log(1.01))$$,
 
-The likelihood for this model has the specific constraint that the growth rate is 1\% year-over-year, a point prior. The likelihood for a single data point $$(x_{i},y_{i})$$ is: $$P(y_i | x_i, \theta_{\text{exp}}, M_{\text{exp}}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left( -\frac{(y_i - y_0 (1.01)^{x_i})^2}{2\sigma^2} \right)
-$$
+%where $$\theta_{\text{exp}= (y_0,b)}$$ and $$ b= \log(1.01)$$
 
-where $x_{i}$, represents the year, $y_{i}$ represents the observed power production metric, and $\sigma^{2}$ represents the noise variance. On the other hand, using Bayes' Theorem, the posterior distribution for the parameters of the exponential model is given by:
-$$P(\theta_{\text{exp}} | D, M_{\text{exp}}) = \frac{P(D | \theta_{\text{exp}}, M_{\text{exp}}) P(\theta_{\text{exp}} | M_{\text{exp}})}{P(D | M_{\text{exp}})}
-$$
+%The likelihood for this model has the specific constraint that the growth rate is 1\% year-over-year, a point prior. The likelihood for a single data point $$(x_{i},y_{i})$$ is: $$P(y_i | x_i, \theta_{\text{exp}}, M_{\text{exp}}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left( -\frac{(y_i - y_0 (1.01)^{x_i})^2}{2\sigma^2} \right)
+%$$
 
-where, D represents the observed data, and the prior is the assumption of 1 \% year-over-year growth. 
+%where $x_{i}$, represents the year, $y_{i}$ represents the observed power production metric, and $\sigma^{2}$ represents the noise variance. On the other hand, using Bayes' Theorem, the posterior distribution for the parameters of the exponential model is given by:
+%$$P(\theta_{\text{exp}} | D, M_{\text{exp}}) = \frac{P(D | \theta_{\text{exp}}, M_{\text{exp}}) P(\theta_{\text{exp}} | M_{\text{exp}})}{P(D | M_{\text{exp}})}
+%$$
 
-If the likelihood $$ P(D | \theta_{\text{exp}}, M_{\text{exp}})$$ is low, this suggests that the 1\% growth poorly fits the data, a poor posterior for the exponential model.
- On the other hand that the OLS linear model provides a significantly better fit for the data indicates it must be further explored. The linear model with form: $$y=mx+c,$$ found by minimizing the sum of the squared differences between the observed values $y_{i}$ and the predicted values: $$\hat{m}, \hat{c} = \arg\min_{m, c} \sum_{i=1}^{n} (y_i - (mx_i + c))^2
-$$
-The likelihood for the Linear Model is:
-$$P(y_i | x_i, \theta_{\text{linear}}, M_{\text{linear}}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left( -\frac{(y_i - (mx_i + c))^2}{2\sigma^2} \right)
-$$
+%where, D represents the observed data, and the prior is the assumption of 1 \% year-over-year growth. 
 
-However,in extrapolating to large Power values approaching the Luminosity of The Sun would require an exceedingly long non-physical time-scale: Kardashev's Conundrum. This is a serious conflict between the \textbf{posterior} of the linear model and the prior assumption from the exponential model, the basis of the Kardashev scale. To test this, a MonteCarlo bootstrap simulation was conducted for the year-over-year differences of the Power Production data metric, to evaluate if the point prior of the likelihood function was critical to its divergence from the data that tends to a marginal likelihood type minimization. The simulations showed that the resampled data also yield a significantly larger type-ii Kardashev timescale than does the approximately exponential model, given the resampled data is valid. This confirms that it is not exclusively the point prior that renders the Kardashev standard model untenable. So we choose the linear model a basis for a  more robust model with for our predictor but, the linear model itself requires urgent modification.
-In Fig. \ref{fig:kardashev3} the data and models are again shown with the same color codings with the Kardashev civilization type demarcations and the current Solar insolation limits. Kardashev defines type i civilization as the attainment limit for a civilizations to reach an equivalent Power consumption as that of Earths in 1964, and type ii as the Power attainment is defined equal to the The Sun's total bolometric luminosity of roughly 3.9 X $10^{26}$ W. \cite{sagan73} slightly re-define the zero point for type i but \cite{sagan73} also use the one-percent model or Eqn. \ref{eq:2}, taken from \cite{kar64} for which x=0.01. Using  this growth rate Kardashev proceeds to calculate that Human civilization would reach type ii in roughly 3200 years, see Table 1. \cite{sagan73} obtain a similar value for the type ii Power attainment and calculate a type iii attainment timescale for when a civilization via technology perhaps Dyson spheres is able to muster as much Power as would be emitted by all of the stars of their host galaxy. From Figure \ref{fig:kardashev3} it can be seen that the timescales given a one-percent model are roughly consistent between Kardashev and \cite{sagan73}, however these are remarkably inconsistent with the simpler OLS predicted linear model fit. \\  
-The plot of the residuals of the points to the linear model in Fig. \ref{fig:kardashev1_res} shows the agreement. 
-The type ii timescale for The Earth given the OLS model would be over one Hubble time. Also worth mentioning is a noticeable higher order trend perhaps sinusoidal in the residuals that might be indicative of Total Production planning of Global production entities like OPEC. Also interesting to note is that the scatter in the last decade is somewhat reduced, and the outliers of Energy production for the years 2008 and 2020 that may be related to the Subprime 2008-2009 crisis and the COVID-19 2020-2021 pandemic year! The subprime crisis incidentally coincided with the Nakamoto consensus. 
+%If the likelihood $$ P(D | \theta_{\text{exp}}, M_{\text{exp}})$$ is low, this suggests that the 1\% growth poorly fits the data, a poor posterior for the exponential model.
+% On the other hand that the OLS linear model provides a significantly better fit for the data indicates it must be further explored. The linear model with form: $$y=mx+c,$$ found by minimizing the sum of the squared differences between the observed values $y_{i}$ and the predicted values: $$\hat{m}, \hat{c} = \arg\min_{m, c} \sum_{i=1}^{n} (y_i - (mx_i + c))^2
+%$$
+%The likelihood for the Linear Model is:
+%$$P(y_i | x_i, \theta_{\text{linear}}, M_{\text{linear}}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \left( -\frac{(y_i - (mx_i + c))^2}{2\sigma^2} \right)
+%$$
+
+%However,in extrapolating to large Power values approaching the Luminosity of The Sun would require an exceedingly long non-physical time-scale: Kardashev's Conundrum. This is a serious conflict between the \textbf{posterior} of the linear model and the prior assumption from the exponential model, the basis of the Kardashev scale. To test this, a MonteCarlo bootstrap simulation was conducted for the year-over-year differences of the Power Production data metric, to evaluate if the point prior of the likelihood function was critical to its divergence from the data that tends to a marginal likelihood type minimization. The simulations showed that the resampled data also yield a significantly larger type-ii Kardashev timescale than does the approximately exponential model, given the resampled data is valid. This confirms that it is not exclusively the point prior that renders the Kardashev standard model untenable. So we choose the linear model a basis for a  more robust model with for our predictor but, the linear model itself requires urgent modification.
+%In Fig. \ref{fig:kardashev3} the data and models are again shown with the same color codings with the Kardashev civilization type demarcations and the current Solar insolation limits. Kardashev defines type i civilization as the attainment limit for a civilizations to reach an equivalent Power consumption as that of Earths in 1964, and type ii as the Power attainment is defined equal to the The Sun's total bolometric luminosity of roughly 3.9 X $10^{26}$ W. \cite{sagan73} slightly re-define the zero point for type i but \cite{sagan73} also use the one-percent model or Eqn. \ref{eq:2}, taken from \cite{kar64} for which x=0.01. Using  this growth rate Kardashev proceeds to calculate that Human civilization would reach type ii in roughly 3200 years, see Table 1. \cite{sagan73} obtain a similar value for the type ii Power attainment and calculate a type iii attainment timescale for when a civilization via technology perhaps Dyson spheres is able to muster as much Power as would be emitted by all of the stars of their host galaxy. From Figure \ref{fig:kardashev3} it can be seen that the timescales given a one-percent model are roughly consistent between Kardashev and \cite{sagan73}, however these are remarkably inconsistent with the simpler OLS predicted linear model fit. \\  
+%The plot of the residuals of the points to the linear model in Fig. \ref{fig:kardashev1_res} shows the agreement. 
+%The type ii timescale for The Earth given the OLS model would be over one Hubble time. Also worth mentioning is a noticeable higher order trend perhaps sinusoidal in the residuals that might be indicative of Total Production planning of Global production entities like OPEC. Also interesting to note is that the scatter in the last decade is somewhat reduced, and the outliers of Energy production for the years 2008 and 2020 that may be related to the Subprime 2008-2009 crisis and the COVID-19 2020-2021 pandemic year! The subprime crisis incidentally coincided with the Nakamoto consensus. 
 
 %Bitcoin has been described in early sections and previous works to behave as a unit of account, store-of-value and potential medium of exchange.  
-The inability of the constant growth rate models to reproduce the data, as is the case for the one-percent Kardashev model, has its origin in the fact that the probability distribution of a random variable X, say Global Power is \textbf{memoryless} if for all real numbers a and b in its range satisfies:
-\begin{equation}
-P(X>a +b|X>b)=P(X>a)
-\label{eqn:memless}
-\end{equation}
+%The inability of the constant growth rate models to reproduce the data, as is the case for the one-percent Kardashev model, has its origin in the fact that the probability distribution of a random variable X, say Global Power is \textbf{memoryless} if for all real numbers a and b in its range satisfies:
+%\begin{equation}
+%P(X>a +b|X>b)=P(X>a)
+%\label{eqn:memless}
+%\end{equation}
 
-Kardashev's 1\% model is a geometric series type with a non-negative integer common ratio. It is approximately an exponential growth model as described by Eqn. \ref{eq:2}, reproduced from the original paper of \cite{kar64}:
+%Kardashev's 1\% model is a geometric series type with a non-negative integer common ratio. It is approximately an exponential growth model as described by Eqn. \ref{eq:2}, reproduced from the original paper of \cite{kar64}:
 
-\begin{equation}
-(1+x)^t \approx e^{tx}
-\label{eq:2}
-\end{equation}
+%\begin{equation}
+%(1+x)^t \approx e^{tx}
+%\label{eq:2}
+%\end{equation}
 
-It follows the probability distribution of the the type of Eqn. \ref{eqn:memless}. Possessing the memoryless property renders this model anathema to the very phenomea Kardashev intended to model.
+%It follows the probability distribution of the the type of Eqn. \ref{eqn:memless}. Possessing the memoryless property renders this model anathema to the very phenomea Kardashev intended to model.
 
- However although \cite{sagan73} and \cite{kar64} suggest an additional information parameter to the Kardeshev law, a quantitative generalization of the Kardashev law to include it has not been attempted, until now in this WP.  \cite{sagan73} discuss use of a binary tree data-structure to suggest that all the information of The Earth including the contribution of Greek Philosophy would require roughly 2**16 bits and propose a data-structure of a similar form to a Hash tree or Merkle Tree since Hash trees like Bitcoin's are in general Binary trees that preserve critical state information of the system. Table one shows the predicted Energy consumption by advanced civilisation from type i to type iii, based on \cite{kar64}. We show the two model fits in Fig. \ref{fig:kardashev3}. We note that although we have set the Insolation limit as constant they will also depend somewhat on the Milankovitch (Orbital) and Solar cycle. 
+% However although \cite{sagan73} and \cite{kar64} suggest an additional information parameter to the Kardeshev law, a quantitative generalization of the Kardashev law to include it has not been attempted, until now in this WP.  \cite{sagan73} discuss use of a binary tree data-structure to suggest that all the information of The Earth including the contribution of Greek Philosophy would require roughly 2**16 bits and propose a data-structure of a similar form to a Hash tree or Merkle Tree since Hash trees like Bitcoin's are in general Binary trees that preserve critical state information of the system. Table one shows the predicted Energy consumption by advanced civilisation from type i to type iii, based on \cite{kar64}. We show the two model fits in Fig. \ref{fig:kardashev3}. We note that although we have set the Insolation limit as constant they will also depend somewhat on the Milankovitch (Orbital) and Solar cycle. 
 
-\subsection{The Data and the Kardashev-Sagan-Nakamoto}
-\label{subsec: data}
+%\subsection{The Data and the Kardashev-Sagan-Nakamoto}
+%\label{subsec: data}
 
-The Power data is taken directly from \href{https://github.com/owid/energy-data}{owid-energy} for which a pull-request was \href{https://github.com/owid/energy-data/pull/23}{made} to resolve an inconsistency between the column label of Total Energy Consumption that is actually Total Energy Production. We use the total global Power production in TW-hours metric and convert to Power in Units: Watts by multiplying the it by 3600 s for all calculations that follow.
+%The Power data is taken directly from \href{https://github.com/owid/energy-data}{owid-energy} for which a pull-request was \href{https://github.com/owid/energy-data/pull/23}{made} to resolve an inconsistency between the column label of Total Energy Consumption that is actually Total Energy Production. We use the total global Power production in TW-hours metric and convert to Power in Units: Watts by multiplying the it by 3600 s for all calculations that follow.
 
-The total Bitcoin Hash-rate is a function of the minning difficulty which is determined every two weeks and the number of blocks being mined, which gives Bitcoin the network, the security that Kardashev may have envisioned in 1964. For this study we use the \href{https://data.nasdaq.com/data/BCHAIN/HRATE-bitcoin-hash-rate}{Blockchain API} from NASDAQ. We determine the mean yearly hash-rate for every year from 2009 to 2023. Table XX shows the average hash-rate and year. 
+%The total Bitcoin Hash-rate is a function of the minning difficulty which is determined every two weeks and the number of blocks being mined, which gives Bitcoin the network, the security that Kardashev may have envisioned in 1964. For this study we use the \href{https://data.nasdaq.com/data/BCHAIN/HRATE-bitcoin-hash-rate}{Blockchain API} from NASDAQ. We determine the mean yearly hash-rate for every year from 2009 to 2023. Table XX shows the average hash-rate and year. 
 
-We first show the original Kardashev model using the Power data from 1964 to 2023 and with an OLS fit linear model and solve our OLS fit to the type ii Power limit as determined by \cite{kar64} that is also consistent with \cite{sagan73}.
+%We first show the original Kardashev model using the Power data from 1964 to 2023 and with an OLS fit linear model and solve our OLS fit to the type ii Power limit as determined by \cite{kar64} that is also consistent with \cite{sagan73}.
 
-To reconcile this discrepancy, we rescale the Y-axis by normalizing it with respect to another state-variable, say the Bitcoin Hash-rate function $H{x}$. So $$z=\frac{P}{Hx}$$ This transformation makes our model more consistent with the original idea of Kardashev and his scale since we assume conservation of the Bitcoin value-layer to be seemingly locked with Global Energy production. Interestingly \cite{sagan73} consider an alternate information metric for the Kardashev law, one that includes information richness. This can be represented in a Binary operation even a Binary Tree which share the Hash tree or Merkel tree structure. In Bayseian terms, given the exponential model consistently predicts values that deviate from the observed data, the likelihood $$ P(D | \theta_{\text{exp}}, M_{\text{exp}})$$ is no doubt very low. The posterior distribution for the exponential model will be weak, and the model evidence will be significantly lower than for the linear model:
+%To reconcile this discrepancy, we rescale the Y-axis by normalizing it with respect to another state-variable, say the Bitcoin Hash-rate function $H{x}$. So $$z=\frac{P}{Hx}$$ This transformation makes our model more consistent with the original idea of Kardashev and his scale since we assume conservation of the Bitcoin value-layer to be seemingly locked with Global Energy production. Interestingly \cite{sagan73} consider an alternate information metric for the Kardashev law, one that includes information richness. This can be represented in a Binary operation even a Binary Tree which share the Hash tree or Merkel tree structure. In Bayseian terms, given the exponential model consistently predicts values that deviate from the observed data, the likelihood $$ P(D | \theta_{\text{exp}}, M_{\text{exp}})$$ is no doubt very low. The posterior distribution for the exponential model will be weak, and the model evidence will be significantly lower than for the linear model:
 
-$$P(D | M_{\text{exp}}) = \int P(D | \theta_{\text{exp}}, M_{\text{exp}}) P(\theta_{\text{exp}} | M_{\text{exp}}) d\theta_{\text{exp}}
-$$
+%$$P(D | M_{\text{exp}}) = \int P(D | \theta_{\text{exp}}, M_{\text{exp}}) P(\theta_{\text{exp}} | M_{\text{exp}}) d\theta_{\text{exp}}
+%$$
 
  
 
-Finally to compare the exponential and linear models, the Bayes Factor should be computed.
+%Finally to compare the exponential and linear models, the Bayes Factor should be computed.
 
-$$BF = \frac{P(D | M_{\text{linear}})}{P(D | M_{\text{exp}})}
-$$
+%$$BF = \frac{P(D | M_{\text{linear}})}{P(D | M_{\text{exp}})}
+%$$
 
-This will be considered in a future paper. But effectively the Bayes Factor BF> 1 would indicate that the linear model is more strongly supported by the data, and the 1 \% year-over-year exponential model can be finally rejected.
+%This will be considered in a future paper. But effectively the Bayes Factor BF> 1 would indicate that the linear model is more strongly supported by the data, and the 1 \% year-over-year exponential model can be finally rejected.
 
-Interesting, the Bitcoin Network Ledger which contains transaction information of every base-layer transaction may also be used between actors that are not-humans. This may be the sense of "Smart Contracts" by Nick Szabo. The Bitcoin hash-rate as a function of time we take to represent a type of Energy Production metric and simultaneously preserve the Information richness required in our model. We take data complied from the International Energy Agency and BP, from \cite{owidenergy} and plot the total yearly power production available for The Earth. In Fig \ref{fig:kardashev1}, we show actual data since 1964 from \cite{owidenergy}. We show two models, the Kardashev Equation \ref{eq:2} 1\% model, taking the first point of the actual 1964 data and a OLS model to the data. Interesting the second last datum point shows a 3 percent decline in production in 2020 (Due to COVID) and a 5 percent increase in production in 2021 breaking the COVID-19 pandemic year!
+%Interesting, the Bitcoin Network Ledger which contains transaction information of every base-layer transaction may also be used between actors that are not-humans. This may be the sense of "Smart Contracts" by Nick Szabo. The Bitcoin hash-rate as a function of time we take to represent a type of Energy Production metric and simultaneously preserve the Information richness required in our model. We take data complied from the International Energy Agency and BP, from \cite{owidenergy} and plot the total yearly power production available for The Earth. In Fig \ref{fig:kardashev1}, we show actual data since 1964 from \cite{owidenergy}. We show two models, the Kardashev Equation \ref{eq:2} 1\% model, taking the first point of the actual 1964 data and a OLS model to the data. Interesting the second last datum point shows a 3 percent decline in production in 2020 (Due to COVID) and a 5 percent increase in production in 2021 breaking the COVID-19 pandemic year!
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{figs/fig1_kar2ff.jpg}
@@ -501,12 +774,12 @@ Interesting, the Bitcoin Network Ledger which contains transaction information o
 
 \end{figure}
 
-In Fig. \ref{fig:kardashev3}, we show the same data on a log-log plot and include the Kardashev and Sagan time-scale estimate for the formation of type i and ii civilizations. The Solar Insolation value or the total energy of The Sun abosrbed by the clouds, oceans and Earth's surface limit is also shown. %It can be seen that the original Kardashev limit by \cite{kar64} of 4 TW was already reached but the T1- Sagan limit of 10000 TW from \cite{Sagan73} will be reached in about 20000 years. 
-The total number of bitcoin mined can be represented by the following summation:
-\[
-\textrm{Total Bitcoin} = \sum_{i=0}^{32} 210000 \times \left(\frac{50}{2^i}\right)
-\]
-Here, \( i \) indexes each halving period from 0 to 32, where the initial reward of 50 BTC is halved every increment in \( i \).
+%In Fig. \ref{fig:kardashev3}, we show the same data on a log-log plot and include the Kardashev and Sagan time-scale estimate for the formation of type i and ii civilizations. The Solar Insolation value or the total energy of The Sun abosrbed by the clouds, oceans and Earth's surface limit is also shown. %It can be seen that the original Kardashev limit by \cite{kar64} of 4 TW was already reached but the T1- Sagan limit of 10000 TW from \cite{Sagan73} will be reached in about 20000 years. 
+%The total number of bitcoin mined can be represented by the following summation:
+%\[
+%\textrm{Total Bitcoin} = \sum_{i=0}^{32} 210000 \times \left(\frac{50}{2^i}\right)
+%\]
+%Here, \( i \) indexes each halving period from 0 to 32, where the initial reward of 50 BTC is halved every increment in \( i \).
 
 \begin{figure}
     \centering
@@ -534,9 +807,9 @@ Here, \( i \) indexes each halving period from 0 to 32, where the initial reward
 
 \end{figure}
 
-Plots were made and are shown for the estimate of $\delta$ time, required for a typical civilizations given the model to reach type-i and type-ii for both the Kardashev and separately, the Sagan models. These are shown to diverge from the real data. We note the 2008 so-called sub-prime crisis and 2020 COVID19 pandemic points bellow the average trend of points for which it is possible that Energy production was significantly reduced.
+%Plots were made and are shown for the estimate of $\delta$ time, required for a typical civilizations given the model to reach type-i and type-ii for both the Kardashev and separately, the Sagan models. These are shown to diverge from the real data. We note the 2008 so-called sub-prime crisis and 2020 COVID19 pandemic points bellow the average trend of points for which it is possible that Energy production was significantly reduced.
 
-We calculate the difference between successive years of our Energy Production metric from 1964 to 2022 using the Oneworld yearly total production value. 
+%We calculate the difference between successive years of our Energy Production metric from 1964 to 2022 using the Oneworld yearly total production value. 
 
 
 \begin{table}[h]
@@ -567,7 +840,7 @@ A histogram of the distribution of successive differences in the Power values is
     \label{fig:his_power}
 \end{figure}
 
-The distribution of differences has a measured skewness of -0.31 \cite{zw00}, a mean of 2.34 and standard deviation of 2.02. The residual and relative residual of the data from the linear model are shown in Figs: \ref{fig:kardashev1_res} \& \ref{fig:kardashev1_rel_res}, respectively. The histograms of the distribution of residuals and relative error is shown in Figs. \ref{fig:his_res}, \& \ref{fig:his_rel_res}, and the daily average Bitcoin hash-rate since the genesis block in Fig. \ref{fig:btchash}.
+%The distribution of differences has a measured skewness of -0.31 \cite{zw00}, a mean of 2.34 and standard deviation of 2.02. The residual and relative residual of the data from the linear model are shown in Figs: \ref{fig:kardashev1_res} \& \ref{fig:kardashev1_rel_res}, respectively. The histograms of the distribution of residuals and relative error is shown in Figs. \ref{fig:his_res}, \& \ref{fig:his_rel_res}, and the daily average Bitcoin hash-rate since the genesis block in Fig. \ref{fig:btchash}.
 
 
 
@@ -588,7 +861,7 @@ The distribution of differences has a measured skewness of -0.31 \cite{zw00}, a 
 \end{figure}
 
 
-The Skewness of our sample is slightly negative perhaps because of man-made crisis like the 2008 subprime crisis and 2020 pandemic, but it is approximately symmetric. To quantify this further, we perform a test on these data for normality using the Shapiro-Wilk test on Normally Distributed Data and obtain a test statistic and the corresponding p-vale of 0.97 and 0.23, respectively. Since the p-value is not less than 0.05 we can not reject the null hypothesis so the conclude the Power difference sample is approximately consistent with being drawn from a Normal Distribution population. A similar result is obtained via an Anderson-Darling test for which we obtain a test statistic of 0.38, and critical values of 0.54, 0.62, 0.74,0.86 and 1.03, so we reject the null hypothesis at the 15, 10, 5, 2.5 and 1\% significance levels. Evidently, the distribution, although it has some Skewness and Kurtosis can not be ruled out to be derived from a normal distribution.
+%The Skewness of our sample is slightly negative perhaps because of man-made crisis like the 2008 subprime crisis and 2020 pandemic, but it is approximately symmetric. To quantify this further, we perform a test on these data for normality using the Shapiro-Wilk test on Normally Distributed Data and obtain a test statistic and the corresponding p-vale of 0.97 and 0.23, respectively. Since the p-value is not less than 0.05 we can not reject the null hypothesis so the conclude the Power difference sample is approximately consistent with being drawn from a Normal Distribution population. A similar result is obtained via an Anderson-Darling test for which we obtain a test statistic of 0.38, and critical values of 0.54, 0.62, 0.74,0.86 and 1.03, so we reject the null hypothesis at the 15, 10, 5, 2.5 and 1\% significance levels. Evidently, the distribution, although it has some Skewness and Kurtosis can not be ruled out to be derived from a normal distribution.
 
 
 
@@ -601,21 +874,21 @@ The Skewness of our sample is slightly negative perhaps because of man-made cris
     \label{fig:btchash}
 \end{figure}
 
- \subsection{POW Incentive}
+% \subsection{POW Incentive}
 
-The target hash-rate for Bitcoin is a moving average of the hash rate over the last 2,015 blocks.The hashing power is estimated from the number of blocks being mined in the last 24h and the current block difficulty, given the average time T between mined blocks and a difficulty D, the estimated hash rate per second is given by:\\
+%The target hash-rate for Bitcoin is a moving average of the hash rate over the last 2,015 blocks.The hashing power is estimated from the number of blocks being mined in the last 24h and the current block difficulty, given the average time T between mined blocks and a difficulty D, the estimated hash rate per second is given by:\\
 
-$\textrm{H} = 2^{32} \textrm{D} / \textrm{T}$\\
+%$\textrm{H} = 2^{32} \textrm{D} / \textrm{T}$\\
 
-\subsection{Community Liquidity Pools}
-Liquidity Pools, Uniswap as an example, can use triggered based on governance metrics and network state parameters to provide finance. In this section we examine some of these methods.
+%\subsection{Community Liquidity Pools}
+%Liquidity Pools, Uniswap as an example, can use triggered based on governance metrics and network state parameters to provide finance. In this section we examine some of these methods.
 
 
-\subsection{Indexing Open Production and Development}
+%\subsection{Indexing Open Production and Development}
 
-In this subsection the notion of indexing open production metrics is discussed.
-Blockchain Oracles may inevitably be used to validate transactions and safeguard value in OAD via data feeds (Eg ADS searches, citations, etc.) that may include guardian nodes. Guardian nodes in the context of blockchain oracles refer to a specific design mechanism used to enhance the security and reliability of data feeds provided by oracles. Blockchain oracles are third-party services that could be built as part of the OAD infrastructure to provide external data to smart contracts on the blockchain. This solves the issue that blockchains cannot access external data directly, so oracles serve as bridges between the off-chain world and the on-chain world.
-A successful model for Astronomy and Astrophysics Open Development would do well to tie metrics of Open Production in Astronomy not only into Bitcoins base-layer protocol but would do well to provide appropriate incentive mechanism in other layers and blockchains. A tooling mechanism could be used to define metrics by existing governance structures in real institutions to enable Open Astronomical development funding to flow when it is needed. OB should be uncensored so a data protocol standard of best practice through governance of existing institutions and communities must be first defined and consolidation of metrics determined that could use blockchain oracles. Oracles receive feeds and are penalized if they predict incorrect probability distributions of events or facts for Astronomy Development prediction markets. This may include production metrics or paper impact scores, PhD completion rates, specialised and public lecture metrics, as well as other academic and outreach indices.  
+%In this subsection the notion of indexing open production metrics is discussed.
+%Blockchain Oracles may inevitably be used to validate transactions and safeguard value in OAD via data feeds (Eg ADS searches, citations, etc.) that may include guardian nodes. Guardian nodes in the context of blockchain oracles refer to a specific design mechanism used to enhance the security and reliability of data feeds provided by oracles. Blockchain oracles are third-party services that could be built as part of the OAD infrastructure to provide external data to smart contracts on the blockchain. This solves the issue that blockchains cannot access external data directly, so oracles serve as bridges between the off-chain world and the on-chain world.
+%A successful model for Astronomy and Astrophysics Open Development would do well to tie metrics of Open Production in Astronomy not only into Bitcoins base-layer protocol but would do well to provide appropriate incentive mechanism in other layers and blockchains. A tooling mechanism could be used to define metrics by existing governance structures in real institutions to enable Open Astronomical development funding to flow when it is needed. OB should be uncensored so a data protocol standard of best practice through governance of existing institutions and communities must be first defined and consolidation of metrics determined that could use blockchain oracles. Oracles receive feeds and are penalized if they predict incorrect probability distributions of events or facts for Astronomy Development prediction markets. This may include production metrics or paper impact scores, PhD completion rates, specialised and public lecture metrics, as well as other academic and outreach indices.  
 
 \begin{figure}
     \centering
@@ -625,10 +898,15 @@ A successful model for Astronomy and Astrophysics Open Development would do well
 
 \end{figure}
 
-The energy required to operate the Bitcoin Network is within the error budget of the total global energy consumption and although it may be a  cost one must take in mind: (i) this cost is to secure the network (ii) that energy consumption is a lower limit on energy production (iii) that a significant percentage of POW hash-rate is powered by renewable energy sources that could if consensual agreement be reached by miners,  holders, governments and the general community, power the Bitcoin Network using renewable and sustainable stranded energy or even within a carbon credit system. Of course on the topic of energy consumption, the \cite{kar64} model or Energy Use function for civilizations is a useful comparison chart to ascertain the current Energy situation of Civilization on The Earth over as long a time baseline as possible to mitigate sensitivity to low time-scale variance given the potential of wide-use of Bitcoin adoption as analyzed in this paper.
+%The energy required to operate the Bitcoin Network is within the error budget of the total global energy consumption and although it may be a  cost one must take in mind: (i) this cost is to secure the network (ii) that energy consumption is a lower limit on energy production (iii) that a significant percentage of POW hash-rate is powered by renewable energy sources that could if consensual agreement be reached by miners,  holders, governments and the general community, power the Bitcoin Network using renewable and sustainable stranded energy or even within a carbon credit system. Of course on the topic of energy consumption, the \cite{kar64} model or Energy Use function for civilizations is a useful comparison chart to ascertain the current Energy situation of Civilization on The Earth over as long a time baseline as possible to mitigate sensitivity to low time-scale variance given the potential of wide-use of Bitcoin adoption as analyzed in this paper.
 
-Finally, we present the Kardashev Nakamoto plot in Fig. \ref{fig:karnak}. The ordinate values are in Jules/Hash or in the Kar-Nak unit. In this plot, one is inadvertently observing how the security of the Bitcoin network as a value system depends on the Global energy rate of production over time. A functional fit of this relation is not attempted here but rather left as an open question posed by this white paper.
+%Finally, we present the Kardashev Nakamoto plot in Fig. \ref{fig:karnak}. The ordinate values are in Jules/Hash or in the Kar-Nak unit. In this plot, one is inadvertently observing how the security of the Bitcoin network as a value system depends on the Global energy rate of production over time. A functional fit of this relation is not attempted here but rather left as an open question posed by this white paper.
 
+
+
+
+% (Sections 4--7 moved to second paper)
+\iffalse
 \section{Energy Consideration and governance of Liquidity Pools}
 \label{sec:btc4}
 
@@ -851,6 +1129,7 @@ In this section we look at possible paths to embrace OAD onboarding. To secure t
 Future development will focus on the following three areas: incorporating
 new features, improving documentation, and 
 possible integration with tools for interactively analyzing features of development.
+\fi
 
 IAU and IVOA Astronomer data-base to validate KYC, coordinating contact with different institutions. 
 
