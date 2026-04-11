@@ -44,9 +44,8 @@
 \begin{document}
 \begin{frontmatter}
 
-\title{The Kardashev Conundrum: Statistical Falsification of the 
+\title{The Kardashev Conundrum: Statistical Falsification of the
 Standard Kardashev Model and the Kardashev--Sagan--Nakamoto Resolution}
-%\subtitle{Towards the open development of astronomy through a Blockchain based smart token}
  
     \author[iate,wsu]{S.Gurovich}\corref{mycorrespondingauthor}
         \cortext[mycorrespondingauthor]{Corresponding author}
@@ -60,58 +59,51 @@ Standard Kardashev Model and the Kardashev--Sagan--Nakamoto Resolution}
    Western Sydney University, Kingswood campus, NSW, Australia (visiting fellow 2019-2020)
 }
 
-
 \begin{abstract}
-We test the standard Kardashev conjecture, which models the energy production
-of technologically advanced civilisations as growing at a fixed rate of one
-percent per year, against six decades of global energy production data
-(1965--2024) drawn from the Our World in Data energy dataset. The standard
-Kardashev one-percent exponential model is a poor fit to the data: the
-posterior growth rate obtained via Markov Chain Monte Carlo (MCMC) inference
-is $r = 1.85\% \pm 0.17\%\,\mathrm{yr}^{-1}$ (95\% credible interval
-$[1.53\%, 2.19\%]$), placing the Kardashev one-percent value outside the
-credible interval, and the fixed one-percent model residuals are substantially
-larger than those of the linear alternative. A linear Ordinary Least-Squares
-(OLS) model provides an exquisite fit ($R^2 = 0.983$) and is further
-supported by the normality of year-on-year energy differences
-(Shapiro--Wilk $W = 0.97$, $p = 0.23$), which is consistent with additive
-Gaussian noise and formally rejects the multiplicative error structure
-required by any exponential growth model. A free-parameter exponential model
-and the linear model are statistically indistinguishable on the observed data
-($\Delta\mathrm{WAIC} = 0.7$, $\Delta R^2 = 0.003$). However, extrapolation
-of the linear model to the Kardashev Type~II threshold --- the total
-bolometric luminosity of the Sun, $L_\odot = 3.828 \times
-10^{26}\,\mathrm{W}$ --- yields a civilisational transition timescale of
-$\sim 3.2 \times 10^{8}$ Hubble times: a physical reductio ad absurdum we
-term \textit{Kardashev's Conundrum}. We demonstrate that no functional form
-fitted to energy production alone can simultaneously satisfy statistical
-adequacy and physical coherence, because the Kardashev state variable is
-dimensionally incomplete as a measure of civilisational advancement. To
-resolve the Conundrum, we propose the
-\textit{Kardashev--Sagan--Nakamoto} (KSN) model, constructed by renormalising
-the energy production ordinate by the annual average Bitcoin network hashrate
-$H(t)$, yielding the KSN state variable $z = P/H$ in units of
-J\,Hash$^{-1}$ (the KarNak unit). This renormalisation adds no free
-parameters, is motivated by the Landauer limit connecting energy to
-irreversible computation, and fulfils the original requirement that the
-Kardashev scale be sensitive to the information richness of a civilisation.
-The KSN variable spans 14 orders of magnitude over 2009--2024, reflecting the
-dramatic improvement in the energy efficiency of Bitcoin proof-of-work
-computation; a formal functional fit to $z(t)$ is deferred to a future work.
-We further discuss the implications of the KSN model for open astronomy
-development via decentralised blockchain protocols, and propose the KarNak
-unit as a universal information-energy yardstick for the Kardashev scale.
-
-
-
-
-
-
-
+We test the standard Kardashev conjecture, which models the energy
+production of technologically advanced civilisations as growing at a
+fixed rate of one percent per year, against six decades of global
+energy production data (1965--2024) drawn from the Our World in Data
+energy dataset. The standard Kardashev one-percent exponential model
+is a poor fit to the data: the posterior growth rate obtained via
+Markov Chain Monte Carlo (MCMC) inference is
+$r = 2.01\% \pm 0.03\%\,\mathrm{yr}^{-1}$ (95\% credible interval
+$[1.94\%, 2.07\%]$), placing the Kardashev one-percent value well
+outside the credible interval. A linear Ordinary Least-Squares (OLS)
+model provides an excellent fit ($R^2 = 0.987$) and is preferred over
+the free-parameter exponential model by the Widely Applicable
+Information Criterion ($\Delta\mathrm{WAIC} = 4.1$). The
+year-on-year energy increments exhibit significant non-Gaussian
+structure (Shapiro--Wilk $W = 0.918$, $p = 0.0007$), with negative
+skewness attributable to identifiable crisis events (2008, 2020),
+revealing path-dependence incompatible with the memoryless
+multiplicative structure required by any exponential growth model.
+However, extrapolation of the linear model to the Kardashev Type~II
+threshold --- the total bolometric luminosity of the Sun,
+$L_\odot = 3.828 \times 10^{26}\,\mathrm{W}$ --- yields a
+civilisational transition timescale of $\sim 1.1 \times 10^{5}$
+Hubble times: a physical reductio ad absurdum we term
+\textit{Kardashev's Conundrum}. We demonstrate that no functional
+form fitted to energy production alone can simultaneously satisfy
+statistical adequacy and physical coherence, because the Kardashev
+state variable is dimensionally incomplete as a measure of
+civilisational advancement. To resolve the Conundrum, we propose the
+\textit{Kardashev--Sagan--Nakamoto} (KSN) model, constructed by
+renormalising the energy production ordinate by the annual average
+Bitcoin network hashrate $H(t)$, yielding the KSN state variable
+$z = P/H$ in units of J\,Hash$^{-1}$ (the KarNak unit). This
+renormalisation adds no free parameters, is motivated by the Landauer
+limit connecting energy to irreversible computation, and fulfils the
+original requirement that the Kardashev scale be sensitive to the
+information richness of a civilisation. The KSN variable spans 14
+orders of magnitude over 2009--2024, reflecting the dramatic
+improvement in the energy efficiency of Bitcoin proof-of-work
+computation; a formal functional fit to $z(t)$ is deferred to a
+future work. We further discuss the implications of the KSN model for
+open astronomy development via decentralised blockchain protocols, and
+propose the KarNak unit as a universal information-energy yardstick
+for the Kardashev scale.
 \end{abstract}
-
-
-
 % Techniques based on artificial intelligence or machine learning has meant that precise data feeds or meta data eg: IRAF II standard, has shown the importance of synergy between new (Centralized) and optionally (decentralized) Scientific Research endeavour. 
 %The current limitation of funding and crisis in Scientific development faced by the foot-soldiers or perhaps someone colloquially described "data slaves" motor of scientific technical development mostly brought to bear by Science Major Career graduates. Since Open Development rests on the Tenets of open source, and given a significant percentage of astronomers use Astropy for some data analysis so we propose an affiliated package of Astropy hereby called astroOD, to be used to create and permit actors to manage individual wallets and transactions of Fungeble and Non-funagable tokens that serve the Open Developemnt of astronomy.  Although initially astropy users and developers will be onboarded, a stagerred onboarding setup implementation across the more wider astronomical community is concieved. Many parts of the tokenomics model could be adapted directly from the so-called 'decentralized finance' movement that allows for the development of decentralized applications (DApps) on mobile devices to facilitate transactions, transparency and usage of protocols, say Astropy perhaps via astroOD Tx. This paper investigates possible protocol standards and glosses over cross chain technologies like Oracles as a technology applicable to validate transactions and safeguard value via data feeds (Eg ADS searches, citations, etc.) and explores the concept of guardian nodes. General background conditions that may motivate adoption by the astronomical community for such a system are discussed and some model component parameters. Other technical details are omitted and not fixed but could be soft or hard-wired after successful vetting from a representative governance vote by means of periodic voting based on staked amounts of astropy tokens? A staking system is discussed to finance successful projects and  potential governance actors with initial staking claims including members seemingly outside of the astropy development community: Universities, National observatory facilities and institution, amateur astronomical associations, International Astronomy bodies (eg: IVOA, IAU), primary and secondary schooling bodies and other official and unofficial actors that promote astronomy research, education and outreach are discussed.. 
 
@@ -412,7 +404,7 @@ the time series. All energy values are converted to SI watts (J\,s$^{-1}$)
 via:
 \begin{equation}
     P\,[\mathrm{W}] \;=\; E\,[\mathrm{TWh\,yr}^{-1}]
-    \;\times\; \frac{10^{12}}{8760 \times 3600}\,,
+    \;\times\; \frac{10^{12}}{8760}\,,
     \label{eq:conversion}
 \end{equation}
 where the denominator converts one year to seconds. We set the origin of the
