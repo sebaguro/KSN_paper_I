@@ -33,7 +33,7 @@
 \usepackage{booktabs} % For formal tables
 \usepackage{adjustbox} % To adjust the table to column width
 \usepackage{amsmath}
-
+\usepackage{mathrsfs}
 
 %\usepackage[czech]{babel} % recommended if you write in Czech
 \usepackage{lmodern}
@@ -56,7 +56,7 @@ Standard Kardashev Model and the Kardashev--Sagan--Nakamoto Resolution}
    Observatorio Astron\'omico C\'ordoba (IATE--OAC--UNC--CONICET),
    Laprida 854, X5000BGR, C\'ordoba, Argentina}
 \address[wsu]{
-   Western Sydney University, Kingswood campus, NSW, Australia (visiting fellow 2019-2020)
+   Western Sydney University, Kingswood campus, NSW, Australia (visiting fellow 2019-2020,2024)
 }
 
 \begin{abstract}
@@ -67,15 +67,15 @@ energy production data (1965--2024) drawn from the Our World in Data
 energy dataset. The standard Kardashev one-percent exponential model
 is a poor fit to the data: the posterior growth rate obtained via
 Markov Chain Monte Carlo (MCMC) inference is
-$r = 2.01\% \pm 0.03\%\,\mathrm{yr}^{-1}$ (95\% credible interval
-$[1.94\%, 2.07\%]$), placing the Kardashev one-percent value well
+$r = 1.85\% \pm 0.03\%\,\mathrm{yr}^{-1}$ (95\% credible interval
+$1.79\%, 1.91\%]$), placing the Kardashev one-percent value well
 outside the credible interval. A linear Ordinary Least-Squares (OLS)
-model provides an excellent fit ($R^2 = 0.987$) and is preferred over
+model provides an excellent fit ($R^2 = 0.983$) and is preferred over
 the free-parameter exponential model by the Widely Applicable
-Information Criterion ($\Delta\mathrm{WAIC} = 4.1$). The
+Information Criterion ($\Delta\mathrm{WAIC} = 12.2$). The
 year-on-year energy increments exhibit significant non-Gaussian
-structure (Shapiro--Wilk $W = 0.918$, $p = 0.0007$), with negative
-skewness attributable to identifiable crisis events (2008, 2020),
+structure (Shapiro--Wilk $W = 0.933$, $p = 0.0029$), with negative
+skewness (skewness $= -0.736$) attributable to identifiable crisis events (2008, 2020),
 revealing path-dependence incompatible with the memoryless
 multiplicative structure required by any exponential growth model.
 However, extrapolation of the linear model to the Kardashev Type~II
@@ -101,7 +101,7 @@ original requirement that the Kardashev scale be sensitive to the
 information richness of a civilisation. The KSN variable spans 14
 orders of magnitude over 2009--2024, reflecting the dramatic
 improvement in the energy efficiency of Bitcoin proof-of-work
-computation; a formal functional fit to $z(t)$ is deferred to a
+computation; a formal functional fit to $\mathscr{B}(t)$.  is deferred to a
 future work. We further discuss the implications of the KSN model for
 open astronomy development via decentralised blockchain protocols, and
 propose the KarNak unit as a universal information-energy yardstick
@@ -221,7 +221,7 @@ other closely over decadal baselines --- the model diverges
 substantially from the data. A linear Ordinary Least-Squares (OLS)
 model fits the same data exquisitely, but when extrapolated to the
 Kardashev Type~II threshold it predicts a civilisational transition
-timescale of $\sim 1.1 \times 10^{5}$ Hubble times: a physical
+timescale of $\sim 8.9 \times 10^{4}$ Hubble times: a physical
 reductio ad absurdum. We term this conflict \textit{Kardashev's
 Conundrum}: no functional form fitted to energy production alone
 can simultaneously satisfy statistical adequacy and physical
@@ -418,8 +418,8 @@ where the numerator converts terawatt-hours to joules
 is the number of seconds in one Julian year. The factors of $3600$ cancel,
 reducing Equation~(\ref{eq:conversion}) to
 $P = E \times 10^{12} / (365.25 \times 24)$\,W. This yields
-$P(1965) = 4.95\,\mathrm{TW}$, consistent with the \citet{Kardashev1964}
-baseline of $4\,\mathrm{TW}$, and $P(2024) = 20.04\,\mathrm{TW}$,
+$P(1965) = 7.66\,\mathrm{TW}$, consistent with the \citet{Kardashev1964}
+baseline of $4\,\mathrm{TW}$, and $P(2024) = 26.66\,\mathrm{TW}$,
 consistent with independent estimates from the International Energy Agency.
  
 We set the origin of the time coordinate at $t_0 = 1964$, the year of the
@@ -454,7 +454,7 @@ be reached in approximately $3{,}200$\,years from 1964, corresponding to
 approximately year 5163\,CE. \citet{Sagan1973} obtained a similar value
 using a slightly revised Type~II threshold of $\sim 10^{26}\,\mathrm{W}$.
  
-Figure~\ref{fig:ksn_notitle} shows the Kardashev model (Eq.~\ref{eq:kardashev})
+Figure~\ref{fig:ksn_panel1} shows the Kardashev model (Eq.~\ref{eq:kardashev})
 alongside the OWID data, together with the Type~I and Type~II civilisation
 limits and the solar insolation at Earth
 ($F_\oplus \approx 1.74 \times 10^{17}\,\mathrm{W}$). The one-percent
@@ -488,15 +488,15 @@ with parameters $a$ and $b$ estimated by minimising the sum of squared
 residuals. Following Occam's razor \citep{Blumer1987}, this two-parameter
 model is the simplest physically plausible alternative. The OLS solution gives
 $b = 2.44 \times 10^{11}\,\mathrm{W\,yr}^{-1}$ and coefficient of
-determination $R^2 = 0.987$. The fit is excellent over the six-decade
+determination $R^2 = 0.983$. The fit is excellent over the six-decade
 baseline of the data (Figure~\ref{fig:ksn_notitle}).
  
 To assess the normality of the residual structure, we compute the year-on-year
 absolute differences $\Delta P_i = P_i - P_{i-1}$ and apply the Shapiro--Wilk
-normality test \citep{Shapiro1965}. We obtain $W = 0.918$, $p = 0.0007$:
+normality test \citep{Shapiro1965}. We obtain $W = 0.933$, $p = 0.0029$:
 we reject the null hypothesis that $\Delta P$ is drawn from a Normal
 distribution. The distribution of $\Delta P$ exhibits significant negative
-skewness, driven by identifiable exogenous shocks to global energy production
+skewness (skewness $= -0.736$), driven by identifiable exogenous shocks to global energy production
 at 2008 (subprime financial crisis) and 2020 (COVID-19 pandemic). This
 non-Gaussian structure constitutes direct evidence of \emph{path-dependence}
 in the global energy system: large negative shocks are systematically more
@@ -508,8 +508,8 @@ Notwithstanding its excellent in-sample fit, the linear model fails
 catastrophically on extrapolation. Solving $P_{\rm L}(t^*) = L_\odot$ gives:
 \begin{equation}
     t^* \;=\; \frac{L_\odot - a}{b}
-    \;\approx\; 1.57 \times 10^{15}\,\mathrm{yr}
-    \;\approx\; 1.1 \times 10^{5}\,H_0^{-1}\,,
+    \;\approx\; 1.23 \times 10^{15}\,\mathrm{yr}
+    \;\approx\; 8.9 \times 10^{4}\,H_0^{-1}\,,
     \label{eq:linear_typeii}
 \end{equation}
 where $H_0^{-1} \approx 13.8\,\mathrm{Gyr}$ is the Hubble time. The implied
@@ -534,15 +534,15 @@ model with the growth rate $r$ as a free parameter:
 using a Metropolis--Hastings Markov Chain Monte Carlo (MCMC) sampler with a
 prior $r \sim \mathcal{N}(0.01,\, 0.02^2)$ centred on the Kardashev value
 and $N = 60{,}000$ posterior samples after a $15{,}000$-step burn-in. The
-posterior mean growth rate is $r = 2.01\% \pm 0.03\%\,\mathrm{yr}^{-1}$
-(95\% credible interval $[1.94\%, 2.07\%]$), with the Kardashev value of
+posterior mean growth rate is $r = 1.85\% \pm 0.03\%\,\mathrm{yr}^{-1}$
+(95\% credible interval $1.79\%, 1.91\%]$), with the Kardashev value of
 $1\%\,\mathrm{yr}^{-1}$ lying well outside the $95\%$ credible interval.
-The best-fit exponential model gives $R^2 = 0.987$, identical to the
+The best-fit exponential model gives $R^2 = 0.983$, identical to the
 linear model to three significant figures.
  
 The Widely Applicable Information Criterion \citep[WAIC;][]{Watanabe2010}
 comparison yields $\Delta\mathrm{WAIC} = \mathrm{WAIC}_{\rm exp} -
-\mathrm{WAIC}_{\rm linear} = 4.1$: the linear model is preferred over the
+\mathrm{WAIC}_{\rm linear} = 12.2$: the linear model is preferred over the
 free-$r$ exponential. Since both models have $K = 2$ free parameters, the
 AIC and BIC penalties are identical, and the WAIC preference for the linear
 model reflects genuine differences in predictive accuracy. Together, the
@@ -554,18 +554,18 @@ simpler linear model is marginally preferred.
 The complete statistical picture is:
 \begin{enumerate}
     \item The one-percent Kardashev exponential is falsified by the data
-          (poor fit; posterior $r = 2.01\%$, well outside the
+          (poor fit; posterior $r = 1.85\%$, well outside the
           one-percent prior).
     \item The linear model and the free-$r$ exponential have
           statistically identical in-sample performance
           ($\Delta R^2 < 0.001$), with the linear model marginally
-          preferred ($\Delta\mathrm{WAIC} = 4.1$).
+          preferred ($\Delta\mathrm{WAIC} = 12.2$).
     \item The year-on-year differences $\Delta P$ are non-Gaussian
-          (Shapiro--Wilk $W = 0.918$, $p = 0.0007$), exhibiting
+          (Shapiro--Wilk $W = 0.933$, $p = 0.0029$), exhibiting
           path-dependent negative skewness inconsistent with any
           memoryless growth model.
     \item The linear model is physically falsified by extrapolation
-          (Type~II timescale $\sim 1.1 \times 10^5\,H_0^{-1}$).
+          (Type~II timescale $\sim 8.9 \times 10^4\,H_0^{-1}$).
 \end{enumerate}
 No functional form fitted to $P(t)$ can simultaneously satisfy statistical
 adequacy and physical coherence. This \emph{is} the Conundrum, stated
@@ -596,17 +596,18 @@ $P / H$ --- global energy production divided by global computational hashrate
 --- has dimensions of energy per hash, and is an empirical measure of how
 efficiently a civilisation converts energy into irreversible computational
 work. As $P/H \to k_B T \ln 2$ (per bit), a civilisation approaches the
-thermodynamic limit of computation. The variable $z = P / H$ thus inherits
-physical meaning absent from $P$ alone.
+thermodynamic limit of computation. Our physical variable will thus inherit physical meaning absent from $P(t)$ alone.
  
 \textbf{The renormalization.} We define the KSN state variable as:
+
 \begin{equation}
-    z(t) \;=\; \frac{P(t)}{H(t)}
-    \qquad \left[\mathrm{J\,Hash}^{-1} \equiv \mathrm{KarNak}\right]\,,
+    \mathscr{B}(t) \;=\; \frac{P(t)}{\mathcal{H}(t)}
+    \qquad \left[\mathrm{J\,Hash^{-1}} \equiv \mathrm{KN}\right]\,,
     \label{eq:ksn}
 \end{equation}
-where $H(t)$ is the yearly average Bitcoin network hashrate in
-hash\,s$^{-1}$. We use the Bitcoin hashrate because it is the only
+
+where $\mathcal{H}(t)$ is the yearly average Bitcoin network hashrate in
+Hash\,s$^{-1}$. We use the Bitcoin hashrate because it is the only
 \emph{publicly auditable, unforgeable, and continuously updated}
 global measure of computational proof-of-work \citep{Nakamoto2008},
 fulfilling the requirement of \citet{Sagan1973} that the Kardashev state
@@ -620,15 +621,15 @@ $P \to z = P/H$ is not a Box--Cox power transformation of $P$
 functional forms fitted to the original variable. It is instead a
 \emph{ratio normalization} by an external physically motivated quantity,
 taking the analysis outside the Box--Cox family. The KSN variable
-$z(t)$ is our proposal for the correct extensive variable of the
+$\mathscr{B}(t)$.  is our proposal for the correct extensive variable of the
 Kardashev scale.
  
-Figure~\ref{fig:ksn_notitle} shows $z(t)$ for 2009--2024, spanning 16 annual
-data points and 14 orders of magnitude in $z$. The data display a
+Figure~\ref{fig:ksn_notitle} shows $\mathscr{B}(t)$ for 2009--2024, spanning 16 annual
+data points and 14 orders of magnitude in $\mathscr{B}$. The data display a
 monotonically decreasing trend reflecting the rapid improvement in Bitcoin
 proof-of-work energy efficiency from the CPU era (2009) through the GPU era
 (2010--2012) to the ASIC era (2013--2024). The structural breaks between
-these eras preclude a single-exponential description of $z(t)$; a formal
+these eras preclude a single-exponential description of $\mathscr{B}(t)$; a formal
 era-segmented functional fit is deferred to a future paper.
  
 %% -----------------------------------------------
@@ -653,7 +654,7 @@ proposed by \citet{Sagan1973}.
 \centering
 \caption{Type~II civilisation timescales under each model. All timescales
 are measured from 1964. $H_0^{-1} = 13.8\,\mathrm{Gyr}$ is the Hubble time.
-The MCMC exponential uses the posterior mean $r = 2.01\%\,\mathrm{yr}^{-1}$.}
+The MCMC exponential uses the posterior mean $r = 1.85\%\,\mathrm{yr}^{-1}$.}
 \label{tab:timescales}
 \begin{adjustbox}{width=\textwidth,center}
 \begin{tabular}{l l l l}
@@ -661,8 +662,8 @@ The MCMC exponential uses the posterior mean $r = 2.01\%\,\mathrm{yr}^{-1}$.}
 Model & Growth rate & Type~II year (CE) & $\Delta t / H_0^{-1}$ \\
 \midrule
 Kardashev 1964 (fixed $r$)  & $1.00\%\,\mathrm{yr}^{-1}$ & $\sim 5163$ & $\sim 2 \times 10^{-7}$ \\
-Exp.\ free $r$ (MCMC mean)  & $2.01\%\,\mathrm{yr}^{-1}$ & $\sim 3545$ & $\sim 1 \times 10^{-7}$ \\
-Linear OLS                  & $2.44 \times 10^{11}\,\mathrm{W\,yr}^{-1}$ & $\sim 1.6 \times 10^{15}$ & $\sim 1.1 \times 10^{5}$ \\
+Exp.\ free $r$ (MCMC mean)  & $1.85\%\,\mathrm{yr}^{-1}$ & $\sim 3545$ & $\sim 1 \times 10^{-7}$ \\
+Linear OLS                  & $2.44 \times 10^{11}\,\mathrm{W\,yr}^{-1}$ & $\sim 1.6 \times 10^{15}$ & $\sim 8.9 \times 10^{4}$ \\
 KSN ($z = P/H$)             & $z \to k_B T \ln 2$ & \multicolumn{2}{l}{Re-expressed via Landauer limit} \\
 \bottomrule
 \end{tabular}
@@ -687,7 +688,7 @@ possesses memory: infrastructure lock-in, geopolitical constraints,
 technology diffusion rates, and crisis events (2008, 2020) all induce
 path-dependence in the year-on-year increments.
  
-The Shapiro--Wilk result ($W = 0.918$, $p = 0.0007$) provides direct
+The Shapiro--Wilk result ($W = 0.933$, $p = 0.0029$) provides direct
 empirical evidence of this path-dependence. The distribution of $\Delta P$
 is non-Gaussian and negatively skewed, with the two largest negative outliers
 corresponding precisely to the 2008 global financial crisis and the 2020
@@ -733,7 +734,7 @@ $H_0^{-1} = 13.8\,\mathrm{Gyr}$ is the Hubble time.}
 Source & $P_0$ & Type~II timescale \\
 \midrule
 \citet{kar64} (1964 estimate) & $4.00\,\mathrm{TW}$ & $\sim 3.2\,\mathrm{kyr}$ at $r=1\%\,\mathrm{yr}^{-1}$ \\
-OWID \citep{owidenergy} (1965, this work) & $4.95\,\mathrm{TW}$ & $\sim 1.1 \times 10^5\,H_0^{-1}$ (linear OLS) \\
+OWID \citep{owidenergy} (1965, this work) & $7.66\,\mathrm{TW}$ & $\sim 8.9 \times 10^4\,H_0^{-1}$ (linear OLS) \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -800,15 +801,44 @@ OWID \citep{owidenergy} (1965, this work) & $4.95\,\mathrm{TW}$ & $\sim 1.1 \tim
 %Blockchain Oracles may inevitably be used to validate transactions and safeguard value in OAD via data feeds (Eg ADS searches, citations, etc.) that may include guardian nodes. Guardian nodes in the context of blockchain oracles refer to a specific design mechanism used to enhance the security and reliability of data feeds provided by oracles. Blockchain oracles are third-party services that could be built as part of the OAD infrastructure to provide external data to smart contracts on the blockchain. This solves the issue that blockchains cannot access external data directly, so oracles serve as bridges between the off-chain world and the on-chain world.
 %A successful model for Astronomy and Astrophysics Open Development would do well to tie metrics of Open Production in Astronomy not only into Bitcoins base-layer protocol but would do well to provide appropriate incentive mechanism in other layers and blockchains. A tooling mechanism could be used to define metrics by existing governance structures in real institutions to enable Open Astronomical development funding to flow when it is needed. OB should be uncensored so a data protocol standard of best practice through governance of existing institutions and communities must be first defined and consolidation of metrics determined that could use blockchain oracles. Oracles receive feeds and are penalized if they predict incorrect probability distributions of events or facts for Astronomy Development prediction markets. This may include production metrics or paper impact scores, PhD completion rates, specialised and public lecture metrics, as well as other academic and outreach indices.  
 
-\begin{figure}
+\begin{figure*}[t]
     \centering
-    \IfFileExists{figs/KSN_notitle(1).png}{%
-        \includegraphics[width=0.95\linewidth]{figs/KSN_notitle(1).png}%
-    }{%
-        \fbox{\parbox{0.95\linewidth}{\centering Missing figure file: \texttt{figs/KSN\_notitle(1).png}.}}%
-    }
-    \caption{Kardashev--Sagan--Nakamoto (KSN) diagnostic plot (three-panel figure).}
-    \label{fig:ksn_notitle}
+    \includegraphics[width=\textwidth]{figs/KSN_panel1.png}
+    \caption{Global energy production 1965--2024 (OWID dataset) in watts,
+    with the standard Kardashev one-percent exponential model
+    (dashed-orange), the best-fit linear OLS model (solid-red), and the
+    Kardashev Type~I and Type~II civilisation thresholds (Horizontal lines).
+    The Kardashev model diverge visibly from the OLS data fit over
+    the full six-decade time baseline.}
+    \label{fig:ksn_panel1}
+\end{figure*}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/KSN_panel3.png}
+    \caption{Distribution of year-over-year change in energy 
+    $\Delta P = P_i - P_{i-1}$ (histogram), with a fitted
+    normal distribution overlaid. The distribution is
+    non-Gaussian and negatively skewed (Shapiro--Wilk
+    $W = 0.933$, $p = 0.0029$), with the two largest
+    negative outliers corresponding to the 2008 financial
+    crisis and the 2020 COVID-19 pandemic.}
+    \label{fig:ksn_panel3}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/KSN_panel2.png}
+    \caption{The KSN state variable $\mathscr{B}(t) = P(t)/\mathcal{H}(t)$
+    in KarNak units (J\,Hash$^{-1}$) for 2009--2024,
+    spanning 14 orders of magnitude. The monotonically
+    decreasing trend reflects the rapid improvement in
+    Bitcoin proof-of-work energy efficiency from the CPU
+    era (2009) through the GPU era (2010--2012) to the
+    ASIC era (2013--2024). Structural breaks between
+    eras preclude a single-exponential description;
+    a formal fit is deferred to a future paper.}
+    \label{fig:ksn_panel2}
 \end{figure}
 
 %The energy required to operate the Bitcoin Network is within the error budget of the total global energy consumption and although it may be a  cost one must take in mind: (i) this cost is to secure the network (ii) that energy consumption is a lower limit on energy production (iii) that a significant percentage of POW hash-rate is powered by renewable energy sources that could if consensual agreement be reached by miners,  holders, governments and the general community, power the Bitcoin Network using renewable and sustainable stranded energy or even within a carbon credit system. Of course on the topic of energy consumption, the \cite{kar64} model or Energy Use function for civilizations is a useful comparison chart to ascertain the current Energy situation of Civilization on The Earth over as long a time baseline as possible to mitigate sensitivity to low time-scale variance given the potential of wide-use of Bitcoin adoption as analyzed in this paper.
@@ -1055,15 +1085,15 @@ predictions that can in principle be refuted by data
 \citep{Blumer1987}. We identify four concrete falsification
 criteria for the KSN model.
  
-First, the posterior growth rate $r = 2.01\% \pm 0.03\%\,
+First, the posterior growth rate $r = 1.85\% \pm 0.03\%\,
 \mathrm{yr}^{-1}$ is a quantitative prediction: if sustained
 observation of global energy production over the coming
 decades yields a growth rate consistently outside the 95\%
-credible interval $[1.94\%, 2.07\%]$, the exponential component
+credible interval $1.79\%, 1.91\%]$, the exponential component
 of the KSN framework is falsified.
  
 Second, the non-Gaussian structure of $\Delta P$
-(Shapiro--Wilk $W = 0.918$, $p = 0.0007$) establishes that
+(Shapiro--Wilk $W = 0.933$, $p = 0.0029$) establishes that
 year-on-year energy increments exhibit path-dependent behaviour
 driven by identifiable historical events. This is a testable
 claim: if future decades produce a $\Delta P$ distribution
@@ -1110,7 +1140,7 @@ The KSN variable exhibits structural breaks between the
 CPU/GPU era (2009--2012) and the ASIC era (2013--2024),
 reflecting qualitative changes in the technology of
 proof-of-work computation rather than smooth continuous
-evolution. A formal era-segmented fit to $z(t)$ is deferred
+evolution. A formal era-segmented fit to $\mathcal{H}(t)$ is deferred
 to a future paper.
  
 A further limitation concerns the production--consumption
@@ -1142,7 +1172,7 @@ Kardashev model universally cited in the literature
 \citep{gray2020} uses the conservative $1\%$ figure, not
 Kardashev's own central estimate.
  
-Our MCMC posterior growth rate of $r = 2.01\% \pm 0.03\%\,
+Our MCMC posterior growth rate of $r = 1.85\% \pm 0.03\%\,
 \mathrm{yr}^{-1}$ lies within Kardashev's own empirical range
 of $3$--$4\%\,\mathrm{yr}^{-1}$ at the low end, and well
 above his conservative $1\%$ assumption. This is not a
@@ -1184,7 +1214,7 @@ Doomsday Clock to 90 seconds to midnight in 2023 ---
 the closest it has been to civilisational catastrophe in
 the history of the index. The KSN model provides an
 independent quantitative perspective on civilisational
-risk: the dramatic decrease in $z(t)$ observed over
+risk: the dramatic decrease in $\mathcal{H}(t)$ observed over
 2009--2024 reflects an exponential improvement in the
 energy efficiency of global computation, consistent with
 a civilisation moving \emph{toward} the Landauer limit.
@@ -1201,22 +1231,22 @@ eventually be posed.
 We have tested the standard Kardashev one-percent exponential
 model against six decades of global energy production data
 and found it statistically untenable. The posterior growth
-rate from MCMC inference is $r = 2.01\% \pm 0.03\%\,
-\mathrm{yr}^{-1}$ (95\% credible interval $[1.94\%, 2.07\%]$),
+rate from MCMC inference is $r = 1.85\% \pm 0.03\%\,
+\mathrm{yr}^{-1}$ (95\% credible interval $1.79\%, 1.91\%]$),
 placing the Kardashev one-percent value well outside the
 credible interval. The year-on-year energy differences exhibit
 significant non-Gaussian, path-dependent structure
-(Shapiro--Wilk $W = 0.918$, $p = 0.0007$), with negative
+(Shapiro--Wilk $W = 0.933$, $p = 0.0029$), with negative
 skewness attributable to identifiable crisis events (2008, 2020),
 incompatible with the memoryless multiplicative structure
 required by any exponential growth model.
  
-A linear OLS model fits the data excellently ($R^2 = 0.987$)
+A linear OLS model fits the data excellently ($R^2 = 0.983$)
 and is marginally preferred over the free-parameter exponential
 model by the Widely Applicable Information Criterion
-($\Delta\mathrm{WAIC} = 4.1$). However, extrapolation of the
+($\Delta\mathrm{WAIC} = 12.2$). However, extrapolation of the
 linear model to the Kardashev Type~II threshold yields a
-civilisational transition timescale of $\sim 1.1 \times 10^5$
+civilisational transition timescale of $\sim 8.9 \times 10^4$
 Hubble times --- a physical reductio ad absurdum we term
 \textit{Kardashev's Conundrum}. No functional form fitted
 to energy production alone can simultaneously satisfy
@@ -1227,7 +1257,7 @@ a measure of civilisational advancement.
 We have proposed the Kardashev--Sagan--Nakamoto (KSN)
 model as a resolution: renormalising the energy production
 ordinate by the annual average Bitcoin network hashrate
-$H(t)$, yielding the KSN state variable $z = P/H$ in
+$\mathcal{H}(t)$, yielding the KSN state variable $\mathscr{B}(t) \;=\; \frac{P(t)}{\mathcal{H}(t)}$ in
 units of J\,Hash$^{-1}$ --- the KarNak unit. This
 renormalisation adds no free parameters, is physically
 motivated by the Landauer limit connecting energy to
@@ -1242,13 +1272,13 @@ We further note, for the first time in the literature, that
 \citet{kar64} presented two distinct growth rates: an
 empirical estimate of $3$--$4\%\,\mathrm{yr}^{-1}$ and a
 conservative model assumption of $1\%\,\mathrm{yr}^{-1}$.
-Our posterior $r = 2.01\%\,\mathrm{yr}^{-1}$ falls within
+Our posterior $r = 1.85\%\,\mathrm{yr}^{-1}$ falls within
 Kardashev's own empirical range, vindicating his empirical
 judgment while definitively falsifying the conservative
 assumption that the literature has universally adopted as
 the standard model.
  
-A formal era-segmented functional fit to $z(t)$, accounting
+A formal era-segmented functional fit to $\mathcal{H}(t)$, accounting
 for the structural breaks between the CPU, GPU, and ASIC
 eras of Bitcoin mining, is deferred to a future work. The
 KarNak unit is proposed as a universal information-energy
