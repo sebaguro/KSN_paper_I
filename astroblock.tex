@@ -81,9 +81,12 @@ multiplicative structure required by any exponential growth model.
 However, extrapolation of the linear model to the Kardashev Type~II
 threshold --- the total bolometric luminosity of the Sun,
 $L_\odot = 3.828 \times 10^{26}\,\mathrm{W}$ --- yields a
-civilisational transition timescale of $\sim 1.1 \times 10^{5}$
-Hubble times: a physical reductio ad absurdum we term
-\textit{Kardashev's Conundrum}. We demonstrate that no functional
+civilisational transition timescale of $\sim 1.6 \times
+10^{15}$\,yr: approximately $10^5$ times the age of the Universe
+and more than $10^4$ times the remaining main-sequence lifetime
+of the Sun. This is a physical reductio ad absurdum we term
+\textit{Kardashev's Conundrum}.
+ We demonstrate that no functional
 form fitted to energy production alone can simultaneously satisfy
 statistical adequacy and physical coherence, because the Kardashev
 state variable is dimensionally incomplete as a measure of
@@ -218,7 +221,7 @@ other closely over decadal baselines --- the model diverges
 substantially from the data. A linear Ordinary Least-Squares (OLS)
 model fits the same data exquisitely, but when extrapolated to the
 Kardashev Type~II threshold it predicts a civilisational transition
-timescale of $\sim 3.2 \times 10^{8}$ Hubble times: a physical
+timescale of $\sim 1.1 \times 10^{5}$ Hubble times: a physical
 reductio ad absurdum. We term this conflict \textit{Kardashev's
 Conundrum}: no functional form fitted to energy production alone
 can simultaneously satisfy statistical adequacy and physical
@@ -698,19 +701,39 @@ memoryless property is therefore not just a mathematical abstraction: it is a
 testable claim about the generative process, and the evidence is against it.
 
 
+%\begin{table*}[t]
+%\centering
+%\caption{Kardashev data, model \& implication}
+%\label{kard_comp}
+%\begin{adjustbox}{width=\textwidth,center}
+%\begin{tabular}{l l c c}
+%\toprule
+%\multirow{2}{*}{Data Source} & \multirow{2}{*}{$Power_{1965}$} & \multicolumn{2}{c}{Type II Timescale} \\
+%\cmidrule(lr){3-4}
+%                             &                       & Geo Model (kyr) & OLS Model         \\
+%\midrule
+%kard64 \cite{kar64} & 4 TW                   & 3.2             & NA \\
+%OurWorld \cite{owidenergy} & 43307 TW            & 2.3             & $\gg %\frac{1}{H_{0}}$ \\
+%\bottomrule
+%\end{tabular}
+%\end{adjustbox}
+%\end{table*}
+
 \begin{table*}[t]
 \centering
-\caption{Kardashev data, model \& implication}
+\caption{Comparison of energy production baselines and Type~II
+civilisation timescale predictions. $P_0$ is the average
+continuous power at the start of each analysis, converted from
+the reported annual energy via Eq.~(\ref{eq:conversion}).
+$H_0^{-1} = 13.8\,\mathrm{Gyr}$ is the Hubble time.}
 \label{kard_comp}
-\begin{adjustbox}{width=\textwidth,center}
-\begin{tabular}{l l c c}
+\begin{adjustbox}{width=0.7\textwidth,center}
+\begin{tabular}{lll}
 \toprule
-\multirow{2}{*}{Data Source} & \multirow{2}{*}{\textrm{Power\_{1965}}} & \multicolumn{2}{c}{Type II Timescale} \\
-\cmidrule(lr){3-4}
-                             &                       & Geo Model (kyr) & OLS Model         \\
+Source & $P_0$ & Type~II timescale \\
 \midrule
-kard64 \cite{kar64} & 4 TW                   & 3.2             & NA \\
-OurWorld \cite{owidenergy} & 43307 TW            & 2.3             & $\gg \frac{1}{H_{0}}$ \\
+\citet{kar64} (1964 estimate) & $4.00\,\mathrm{TW}$ & $\sim 3.2\,\mathrm{kyr}$ at $r=1\%\,\mathrm{yr}^{-1}$ \\
+OWID \citep{owidenergy} (1965, this work) & $4.95\,\mathrm{TW}$ & $\sim 1.1 \times 10^5\,H_0^{-1}$ (linear OLS) \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -749,10 +772,6 @@ OurWorld \cite{owidenergy} & 43307 TW            & 2.3             & $\gg \frac{
 %    \caption{Histogram showing the rel residual of data}
 %    \label{fig:his_rel_res}
 %\end{figure}
-
-
-%The Skewness of our sample is slightly negative perhaps because of man-made crisis like the 2008 subprime crisis and 2020 pandemic, but it is approximately symmetric. To quantify this further, we perform a test on these data for normality using the Shapiro-Wilk test on Normally Distributed Data and obtain a test statistic and the corresponding p-vale of 0.97 and 0.23, respectively. Since the p-value is not less than 0.05 we can not reject the null hypothesis so the conclude the Power difference sample is approximately consistent with being drawn from a Normal Distribution population. A similar result is obtained via an Anderson-Darling test for which we obtain a test statistic of 0.38, and critical values of 0.54, 0.62, 0.74,0.86 and 1.03, so we reject the null hypothesis at the 15, 10, 5, 2.5 and 1\% significance levels. Evidently, the distribution, although it has some Skewness and Kurtosis can not be ruled out to be derived from a normal distribution.
-
 
 
 
@@ -1245,14 +1264,11 @@ longevity in the context of the Drake equation.
 SG acknowledges the New Virtual Observatory of Argentina (NOVA)
 and his selection as the representative of Argentina on the
 IVOA-exec committee from 2015 to 2024, and the support of all
-his colleagues in the IATE, especially those who administer
-the decentralised supercomputer facility. This work made use
+his colleagues in the IATE. This work made use
 of Astropy, a community-developed core Python package for
 Astronomy \citep{robitaille_astropy:_2013}, and the broader
 open-source scientific software ecosystem including SciPy and
-NumPy. The author sincerely thanks the Chinese Academy of
-Sciences for the MOU signed between the Astronomical Observatory
-of Cordoba and the Shanghai National Astronomical Observatory.
+NumPy. The author also expresses thanks to his colleagues at the IVOA and the astropy team for their support.
  
 \noindent\textbf{Author contributions (CRediT):}
 S.~Gurovich: Conceptualization, Methodology, Software,
