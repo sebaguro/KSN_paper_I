@@ -1,37 +1,90 @@
-# Recalling Kardashev:\\ A straw-person Peer-to-Peer Electronic Cash System base-layer primer for the Open Development of Astronomy and Astrophysics via the open blockchain public ledger}
+# Kardashev's Conundrum: KSN Paper I
 
-Description:
+**Statistical Falsification of the Standard Kardashev Model and the Kardashev–Sagan–Nakamoto Resolution**
 
-This project aims to develop an alternative funding protocol for the Open Development
-of Astronomy and astrophyscs based on open block-chain ledger technology, as a straw-persons model.
+S. Gurovich (IATE–OAC–UNC–CONICET / Western Sydney University)
 
-The main motivation is to stop the hemorrhage or the "brain-drain' of
-Astronomy and Astrophysics grey-matter, as measured over the last
-fifty years in public universities, when the 'large' US Public University
-'Market' is taken as a proxy, but it also aims to foster complimentary
-open development and innovation for Astronomy based on decentralized
-governance.
+Submitted to *Astronomy and Computing* (Elsevier), 2026.
 
+---
 
-It attempts to be a network, that could be run on an "coordinated astropy package", Nostr protocol, subgraph tech etc.,  as validators of astropy modules that are
-part of publications, and other Open Development metrics etc as an alternative funding source based on the "Decentralized Finance
-Movement" liquidity. 
+## Summary
 
-Contributing: Of course contributors are necessary either for the paper, or help with astropy affiliated discussion, development of metrics, etc
+This repository contains the data, code, and manuscript source for KSN Paper I, which:
 
-##############################################
-Internal notes (may be still required)
+1. **Falsifies** the standard Kardashev 1% exponential energy growth model using 60 years of global energy production data (1965–2024) from Our World in Data.
+2. **Identifies Kardashev's Conundrum**: no functional form fitted to energy production alone can simultaneously satisfy statistical adequacy and physical coherence.
+3. **Proposes the KSN resolution**: renormalising power by the Bitcoin network hashrate to define the KSN state variable B(t) = P(t)/H(t) in units of J Hash⁻¹ (the KarNak unit).
 
-Table of Contents: Working on a New Kadashev relation and general tokenomics
+## Key Results
 
-Installation: Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
+| Quantity | Value |
+|---|---|
+| Posterior growth rate (MCMC) | r = 2.01 ± 0.03 % yr⁻¹ |
+| 95% credible interval | [1.94%, 2.08%] |
+| Linear slope | b = 2.44 × 10¹¹ W yr⁻¹ |
+| R² (linear) | 0.987 |
+| ΔWAIC (exp − linear) | 5.5 (linear preferred) |
+| Shapiro–Wilk on ΔP | W = 0.925, p = 0.0014 |
+| Type II timescale (linear) | ~1.6 × 10¹⁵ yr ≈ 1.2 × 10⁵ H₀⁻¹ |
+| B(t) range | 2.15 × 10⁶ to 3.25 × 10⁻⁸ J/Hash (14 orders of magnitude) |
 
-Usage: The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+## Repository Structure
 
-Contributing: Contributors are encouraged to help better the paper, or help with astropy affiliated discussion and development.
+```
+.
+├── astroblock.tex            # Manuscript source (elsarticle format)
+├── astroblock.bib             # BibTeX references
+├── figs/
+│   ├── KSN_panel1.png        # Figure 1: Energy production + models
+│   ├── KSN_panel2.png        # Figure 3: KSN variable B(t)
+│   └── KSN_panel3.png        # Figure 2: Year-over-year ΔP
+├── ksn_figure_optA.py        # Figure generation script (reads OWID JSON)
+├── ksn_mcmc_verify.py        # Independent MCMC verification script
+└── README.md
+```
 
-Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for setting guidelines for repository contributors.
+## Data Sources
 
-Credits: Include a section for credits in order to highlight and link to the authors of your project.
+- **Energy data**: [Our World in Data](https://ourworldindata.org/energy) — `owid-energy-data.json`, direct primary energy method (EI Statistical Review 2025).
+- **Bitcoin hashrate (2009–2013)**: Derived from on-chain difficulty via H = D × 2³²/600, using the logarithmic mean of Jan 1 and Dec 31 difficulty values.
+- **Bitcoin hashrate (2014–2024)**: Blockchain.com / NASDAQ BCHAIN/HRATE annual averages.
 
-License: Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
+## Reproducing the Results
+
+1. Download `owid-energy-data.json` from [OWID GitHub](https://github.com/owid/energy-data).
+2. Run the figure script:
+   ```bash
+   python ksn_figure_optA.py
+   ```
+   Requires: `numpy`, `scipy`, `matplotlib`, `astropy`, `json`
+
+3. Run the independent MCMC verification:
+   ```bash
+   python ksn_mcmc_verify.py
+   ```
+   Requires: `numpy`, `scipy`
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@article{Gurovich2026,
+  author  = {Gurovich, S.},
+  title   = {Kardashev's Conundrum: Statistical Falsification of the
+             Standard Kardashev Model and the Kardashev--Sagan--Nakamoto
+             Resolution},
+  journal = {Astronomy and Computing},
+  year    = {2026},
+  note    = {Submitted}
+}
+```
+
+## License
+
+The manuscript and code are provided for review and reproducibility purposes.
+
+## Contact
+
+Sebastian Gurovich — sgurovich@unc.edu.ar
