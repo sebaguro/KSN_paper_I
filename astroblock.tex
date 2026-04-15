@@ -96,13 +96,13 @@ renormalising the energy production ordinate by the annual average
 Bitcoin network hashrate $\mathcal{H}(t)$, yielding the KSN state variable
 $\mathscr{B}(t) \;=\; P(t)/\mathcal{H}(t)$ in
 units of J\,Hash$^{-1}$ --- the KarNak unit. 
-Any subsequent model fitted to $\mathscr{B}(t)$ carries the same parameter count as the corresponding model fitted to P(t); the variable transformation itself consumes no degrees of freedom and is motivated by the Landauer
+Any subsequent model fitted to $\mathscr{B}(t)$ carries the same parameter count as the corresponding model fitted to $P(t)$; the variable transformation itself consumes no degrees of freedom and is motivated by the Landauer
 limit connecting energy to irreversible computation, and fulfils the
 original requirement that the Kardashev scale be sensitive to the
 information richness of a civilisation. The KSN variable spans 14
 orders of magnitude over 2009--2024, reflecting the dramatic
 improvement in the energy efficiency of Bitcoin proof-of-work
-computation; a formal functional fit to $\mathscr{B}(t)$.  is deferred to a
+computation; a formal functional fit to $\mathscr{B}(t)$ is deferred to a
 future work. We further discuss the implications of the KSN model for
 open astronomy development via decentralised blockchain protocols, and
 propose the KarNak unit as a universal information-energy yardstick
@@ -234,7 +234,7 @@ Section~\ref{sec:discussion} we discuss falsifiability,
 limitations, and implications. Section~\ref{sec:conclusions}
 presents our conclusions.
  
- The ancient Greek astronomers defined the logarithmic magnitude system and introduced concepts of limits and infinitesimals that would become the basis of differential geometry, calculus, and numerical methods. They also paved the way for the Julian Day — the counting yardstick used on the time axis of Figure~\ref{fig:ksn_panel1} — which the Roman empire defined using the 28-year Solar, 19-year Metonic, and 15-year Indiction cycles. Many of these advances are found today in open-source toolkits for astronomy built by community efforts, e.g.\ SciPy, Astropy, and the IVOA standards.
+ The ancient Greek astronomers defined the logarithmic magnitude system and introduced concepts of limits and infinitesimals that would become the basis of differential geometry, calculus, and numerical methods. They also paved the way for the Julian Day — the counting yardstick used on the time axis of Figure~\ref{fig:ksn_panel1} — which the Roman empire defined using the 28-year Solar, 19-year Metonic, and 15-year Indiction (tax) cycles. Many of these advances are found today in open-source toolkits for astronomy built by community efforts, e.g.\ SciPy, Astropy, and the IVOA standards.
  
  It is now known after a plethora of multidisciplinary studies including that of \cite{Freeth2021} that during the `decline' of Ancient Greece the first analogue `Computer' was temporally `lost' to most of the technological world, until when in the fourteenth century comparable `advanced' mechanisms were developed and used in Astronomical clock machinery in Europe. 
  
@@ -386,12 +386,19 @@ We set the origin of the time coordinate at $t_0 = 1964$, the year of the
 Kardashev conjecture \citep{Kardashev1964}, so that
 $t = \mathrm{year} - 1964$ throughout.
  
-The Bitcoin network hashrate data $H(t)$ are yearly averages in
-hash\,s$^{-1}$, compiled from the Blockchain.com public API and the NASDAQ
-BCHAIN/HRATE dataset for 2009--2024. These span the full history of Bitcoin
-mining from the CPU era ($\sim 3\,\mathrm{MH\,s^{-1}}$ in 2009) through the
+The Bitcoin network hashrate data $\mathcal{H}(t)$ are yearly averages in
+hash\,s$^{-1}$ for 2009--2024. These span the full history of Bitcoin
+mining from the CPU era ($\sim 7\,\mathrm{MH\,s^{-1}}$ in 2009) through the
 ASIC era ($\sim 6.2 \times 10^{20}\,\mathrm{H\,s^{-1}}$ in 2024), covering
 16 annual data points and 14 orders of magnitude in hashrate.
+For 2009--2013 (the CPU and GPU eras), no single authoritative
+source of annual-average hashrate exists; we derive yearly
+averages from the on-chain difficulty record using the standard
+relation $\mathcal{H} = D \times 2^{32}/600$, taking the logarithmic mean
+of the January~1 and December~31 difficulty values to obtain a
+time-weighted annual average appropriate for an exponentially
+growing quantity. For 2014--2024 (the ASIC era), we use the
+Blockchain.com and NASDAQ BCHAIN/HRATE annual averages directly.
  
 %% -----------------------------------------------
 \subsection{The Standard Kardashev Model and its Statistical Assessment}
@@ -455,7 +462,7 @@ To assess the normality of the residual structure, we compute the year-over-year
 absolute differences $\Delta P_i = P_i - P_{i-1}$ and apply the Shapiro--Wilk
 normality test \citep{Shapiro1965}. We obtain $W = 0.925$, $p = 0.0014$:
 we reject the null hypothesis that $\Delta P$ is drawn from a Normal
-distribution. The distribution of $\Delta P$ exhibits significant negative
+distribution. The distribution of $\Delta P$ (Figure~\ref{fig:ksn_panel3}) exhibits significant negative
 skewness (skewness $= -0.664$), driven by identifiable exogenous shocks to global energy production
 at 2008 (subprime financial crisis) and 2020 (COVID-19 pandemic). This
 non-Gaussian structure constitutes direct evidence of \emph{path-dependence}
@@ -468,7 +475,7 @@ Notwithstanding its excellent in-sample fit, the linear model fails
 catastrophically on extrapolation. Solving $P_{\rm L}(t^*) = L_\odot$ gives:
 \begin{equation}
     t^* \;=\; \frac{L_\odot - a}{b}
-    \;\approx\; 1.57 \times 10^{15}\,\mathrm{yr}
+    \;\approx\; 1.6 \times 10^{15}\,\mathrm{yr}
     \;\approx\; 1.2 \times 10^{5}\,H_0^{-1}\,,
     \label{eq:linear_typeii}
 \end{equation}
@@ -1108,7 +1115,7 @@ for the first time.
 \subsection{The Doomsday Clock}
  
 The Bulletin of the Atomic Scientists advanced the
-Doomsday Clock to 90 seconds to midnight in 2023 ---
+Doomsday Clock to 85 seconds to midnight in 2026 ---
 the closest it has been to civilisational catastrophe in
 the history of the index. The KSN model provides an
 independent quantitative perspective on civilisational
@@ -1121,7 +1128,14 @@ it will be accompanied by the institutional stability
 required to avoid catastrophe, lies beyond the scope of
 this model --- but the KSN framework provides the
 quantitative language in which such questions can
-eventually be posed.
+eventually be posed. We note that in his 1985
+congressional testimony on climate change,
+\citet{Sagan1985} identified the need for ``a degree of
+international amity which certainly doesn't exist today.''
+We speculate that decentralised proof-of-work protocols,
+by providing trustless cooperation without requiring
+political goodwill, may offer a partial technological
+foundation for the amity Sagan envisioned.
 
 \section{Conclusions}
 \label{sec:conclusions}
@@ -1186,19 +1200,27 @@ longevity in the context of the Drake equation.
  
 
 % =============================================================================
+% SECTION Declarative AI
+% =============================================================================
+\section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
+During the preparation of this work the author used Claude (Anthropic) in order to
+assist with statistical verification, code debugging, dimensional analysis, and
+manuscript editing. After using this tool, the author reviewed and edited the
+content as needed and takes full responsibility for the content of the publication.
+
+% =============================================================================
 % SECTION Acknowledgments
 % =============================================================================
 \section{Acknowledgments}
-SG acknowledges the New Virtual Observatory of Argentina (NOVA)
-and his selection as the representative of Argentina on the
-IVOA-exec committee from 2015 to 2024, as well as the support of some colleagues of the IATE. This work made use
+SG thanks R. Gamen from the New Virtual Observatory of Argentina (NOVA)
+for the opportunity to serve as Argentina's representative on the
+IVOA-exec committee from 2015 to 2024, and  C. Cui from the National Astronomical Observatories, (CAS) for encouragement during the preparation of this work. SG also thanks the support of colleagues from the IATE and the OAC. This work made use
 of Astropy, a community-developed core Python package for
 Astronomy \citep{robitaille_astropy:_2013}, and the broader
 open-source scientific software ecosystem stack including SciPy and
-NumPy. The author expresses thanks to the candid support from his colleagues at the IVOA and Astropy. This research was conducted during a period of unpaid leave 
-from CONICET and the National University of Córdoba, 
-occasioned by austerity measures implemented in 2024. 
-The author notes that the work was not funded.
+NumPy.This research was partially conducted during a period of unpaid leave 
+from CONICET, the Astronomical Observatory of C\'ordoba and the National University of C\'ordoba, 
+occasioned by austerity measures implemented in 2024.
  
 \noindent\textbf{Author contributions (CRediT):}
 S.~Gurovich: Conceptualization, Methodology, Software,
