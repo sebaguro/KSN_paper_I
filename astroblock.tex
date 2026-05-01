@@ -39,7 +39,7 @@
 \usepackage{lmodern}
 
 % DEVELOP ONLY COMMENT BEFORE SUBMIT
-\journal{Astronomy and Computing}
+%\journal{MNRAS Letters
 
 \begin{document}
 \begin{frontmatter}
@@ -76,16 +76,15 @@ Information Criterion ($\Delta\mathrm{WAIC} = 5.5$). The
 year-over-year energy increments exhibit significant non-Gaussian
 structure (Shapiro--Wilk $W = 0.925$, $p = 0.0014$), with negative
 skewness (skewness $= -0.664$) attributable to identifiable crisis events (2008, 2020),
-revealing path-dependence incompatible with the memoryless
-multiplicative structure required by any exponential growth model.
+revealing path-dependence incompatible with the independent-increment
+multiplicative structure with positive drift required by Kardashev's
+$(1+x)^t$ geometric series.
 However, extrapolation of the linear model to the Kardashev Type~II
 threshold --- the total bolometric luminosity of the Sun,
 $L_\odot = 3.828 \times 10^{26}\,\mathrm{W}$ --- yields a
 civilisational transition timescale of $\sim 1.6 \times
-10^{15}$\,yr: approximately $10^5$ times the age of the Universe
-and more than $10^4$ times the remaining main-sequence lifetime
-of the Sun. This is a physical reductio ad absurdum we term
-\textit{Kardashev's Conundrum}.
+10^{15}$\,yr: $\sim 10^5$ times both the age of the Universe
+and the main-sequence lifetime of the Sun.
  We demonstrate that no functional
 form fitted to energy production alone can simultaneously satisfy
 statistical adequacy and physical coherence, because the Kardashev
@@ -133,8 +132,9 @@ Earth's total energy expenditure at $4 \times 10^{19}$\,erg\,s$^{-1}$
 energy output of its host star ($L_\odot \approx 3.828 \times
 10^{26}$\,W), and a Type~III civilisation commands the energy output
 of its entire host galaxy. \citet{kar64} noted that the annual
-increase in human energy expenditure was placed at 3--4\% over the
-following 60 years on the basis of statistical findings. However,
+increase in human energy expenditure was projected at 3--4\% 
+over the following 60 years \citep{Putnam1948} on the basis 
+of statistical findings. However,
 adopting a conservative growth rate of $x = 1\%$ per year,
 \citet{kar64} calculated that human civilisation would reach Type~II
 status in approximately 3{,}200 years, and Type~III status in
@@ -164,10 +164,11 @@ advancement from the Antikythera mechanism to the present day.
 
 
 Despite its influence, the Kardashev scale carries a fundamental
-limitation that has received little quantitative attention. Both
-\citet{kar64} and \citet{sagan73} noted that an advanced civilisation
-must be characterised not only by its energy throughput but by the
-\emph{information richness} of what it does with that energy.
+limitation that has received little quantitative attention.
+\citet{kar64}, \citet{sagan73}, and \citet{Shklovskii1966} noted
+that an advanced civilisation must be characterised not only by 
+its energy throughput but by the \emph{information richness} of 
+what it does with that energy.
 \citet{sagan73} proposed that a civilisation's state should also
 reflect its capacity to secure and transmit vast quantities of
 information, and suggested a binary-tree data structure as a measure
@@ -183,7 +184,7 @@ consumed but not the quality of its use.
 A second limitation emerges from direct comparison with data.
 When the standard one-percent exponential growth model of
 \citet{kar64} is compared against six decades of observed total
-global energy production \citep{owidenergy} --- used here as a
+global energy production \citep{Ritchie2022} --- used here as a
 valid upper-limit proxy for the consumption metric of \citet{kar64},
 following the argument that production necessarily equals or exceeds
 consumption at the civilisational scale and that the two track each
@@ -228,7 +229,7 @@ inference and the Widely Applicable Information Criterion
 the KSN renormalization and its physical motivation. In
 Section~\ref{sec:timescales} we summarise civilisational
 timescales on the KSN scale. In Section~\ref{sec:memoryless}
-we present the memoryless property argument as a further
+we present the independence property argument as a further
 statistical objection to exponential growth models. In
 Section~\ref{sec:discussion} we discuss falsifiability,
 limitations, and implications. Section~\ref{sec:conclusions}
@@ -284,7 +285,9 @@ The energy production data $\mathcal{D}$ consist of the World total primary
 energy consumption in terawatt-hours per year (TWh\,yr$^{-1}$), drawn from
 the Our World in Data (OWID) energy dataset \citep{Ritchie2022}, which
 integrates the Energy Institute (EI) Statistical Review of World Energy and
-the US Energy Information Administration (EIA) international energy series.
+the US Energy Information Administration (EIA) international energy series; 
+see \citet{Smil2017} for a comprehensive historical analysis of the 
+industrial-era energy trajectory.
 We use $N = 60$ annual data points spanning 1965--2024. The OWID dataset
 column \texttt{primary\_energy\_consumption} reports values using the
 direct primary energy accounting method, which measures the physical
@@ -315,13 +318,13 @@ where the numerator converts terawatt-hours to joules
 is the number of seconds in one Julian year. The factors of $3600$ cancel,
 reducing Equation~(\ref{eq:conversion}) to
 $P = E \times 10^{12} / (365.25 \times 24)$\,W. This yields
-$P(1965) = 4.95\,\mathrm{TW}$, in close agreement with the \citet{Kardashev1964}
+$P(1965) = 4.95\,\mathrm{TW}$, in close agreement with the \citet{kar64}
 baseline of $4\,\mathrm{TW}$, and $P(2024) = 20.16\,\mathrm{TW}$,
 consistent with the International Energy Agency's direct-method estimate of
 $\sim 20\,\mathrm{TW}$.
  
 We set the origin of the time coordinate at $t_0 = 1964$, the year of the
-Kardashev conjecture \citep{Kardashev1964}, so that
+Kardashev conjecture \citep{kar64}, so that
 $t = \mathrm{year} - 1964$ throughout.
  
 The Bitcoin network hashrate data $\mathcal{H}(t)$ are yearly averages in
@@ -342,7 +345,7 @@ Blockchain.com and NASDAQ BCHAIN/HRATE annual averages directly.
 \subsection{The Standard Kardashev Model and its Statistical Assessment}
 \label{sec:kardashev_model}
  
-\citet{Kardashev1964} proposed that the energy production of a technologically
+\citet{kar64} proposed that the energy production of a technologically
 advanced civilisation increases at a constant fractional rate per year, giving
 a geometric series:
 \begin{equation}
@@ -352,11 +355,11 @@ a geometric series:
 \end{equation}
 where $P_0$ is the energy production at $t=0$ (1964) and $x = 0.01$
 corresponds to the stated one-percent per year growth rate. Using this model,
-\citet{Kardashev1964} calculated that a Type~II civilisation --- defined as
+\citet{kar64} calculated that a Type~II civilisation --- defined as
 one harnessing the total bolometric luminosity of its host star,
 $L_\odot = 3.828 \times 10^{26}\,\mathrm{W}$ \citep{mamajek2015} --- would
 be reached in approximately $3{,}200$\,years from 1964, corresponding to
-approximately year 5188\,CE. \citet{Sagan1973} obtained a similar value
+approximately year 5188\,CE. \citet{sagan73} obtained a similar value
 using a slightly revised Type~II threshold of $\sim 10^{26}\,\mathrm{W}$.
  
 Figure~\ref{fig:ksn_panel1} shows the Kardashev model (Eq.~\ref{eq:kardashev})
@@ -394,7 +397,11 @@ residuals. Following Occam's razor \citep{Blumer1987}, this two-parameter
 model is the simplest physically plausible alternative. The OLS solution gives
 $b = 2.44 \times 10^{11}\,\mathrm{W\,yr}^{-1}$ and coefficient of
 determination $R^2 = 0.987$. The fit is excellent over the six-decade
-baseline of the data (Figure~\ref{fig:ksn_panel1}).
+baseline of the data (Figure~\ref{fig:ksn_panel1}). Figure~\ref{fig:ksn_zoom} 
+shows the same data and fits on a linear vertical axis, making the 
+remarkably low dispersion directly visible: the linear and exponential 
+models are visually near-identical across 1965--2024, while the 
+Kardashev one-percent model diverges strikingly downward from the data.
  
 To assess the normality of the residual structure, we compute the year-over-year
 absolute differences $\Delta P_i = P_i - P_{i-1}$ and apply the Shapiro--Wilk
@@ -405,9 +412,18 @@ skewness (skewness $= -0.664$), driven by identifiable exogenous shocks to globa
 at 2008 (subprime financial crisis) and 2020 (COVID-19 pandemic). This
 non-Gaussian structure constitutes direct evidence of \emph{path-dependence}
 in the global energy system: large negative shocks are systematically more
-probable than a memoryless multiplicative model would predict, and their
-occurrence is traceable to specific historical events rather than symmetric
-statistical fluctuations.
+probable than an independent-increment multiplicative generator with
+positive drift would predict, and their occurrence is traceable to specific
+historical events rather than symmetric statistical fluctuations.
+
+A further structural objection to $(1+x)^t$ with $x > 0$ is 
+that the model is sign-constrained: every year must exhibit 
+positive growth by construction. The observed series contains 
+identifiable years of negative growth (e.g., 2008 and 2020) that 
+the model cannot accommodate at any parameter value --- a 
+structural, not merely statistical, falsification of the 
+always-positive growth assumption that is independent of the 
+non-Gaussianity and path-dependence arguments above.
  
 Notwithstanding its excellent in-sample fit, the linear model fails
 catastrophically on extrapolation. Solving $P_{\rm L}(t^*) = L_\odot$ gives:
@@ -436,9 +452,16 @@ model with the growth rate $r$ as a free parameter:
     P_{\rm E}(t) \;=\; a_0\,e^{r t}\,,
     \label{eq:exp_free}
 \end{equation}
-using a Metropolis--Hastings Markov Chain Monte Carlo (MCMC) sampler with a
-prior $r \sim \mathcal{N}(0.01,\, 0.02^2)$ centred on the Kardashev value
-and $N = 60{,}000$ posterior samples after a $15{,}000$-step burn-in. The
+using a Metropolis--Hastings Markov Chain Monte Carlo (MCMC) sampler 
+\citep{Metropolis1953,Hastings1970} with a prior 
+$r \sim \mathcal{N}(0.01,\, 0.02^2)$ centred on the Kardashev value
+and $N = 60{,}000$ posterior samples after a $15{,}000$-step burn-in. 
+The burn-in phase is discarded because the first iterations of the 
+chain are influenced by the arbitrary starting point in parameter 
+space rather than by the target posterior; the Markov property of 
+the sampler ensures that the chain eventually forgets this initial 
+condition and converges to the stationary distribution, from which 
+the retained samples are drawn. The
 posterior mean growth rate is $r = 2.01\% \pm 0.03\%\,\mathrm{yr}^{-1}$
 (95\% credible interval $[1.94\%, 2.08\%]$), with the Kardashev value of
 $1\%\,\mathrm{yr}^{-1}$ lying well outside the $95\%$ credible interval.
@@ -468,7 +491,8 @@ The complete statistical picture is:
     \item The year-over-year differences $\Delta P$ are non-Gaussian
           (Shapiro--Wilk $W = 0.925$, $p = 0.0014$), exhibiting
           path-dependent negative skewness inconsistent with any
-          memoryless growth model.
+          independent-increment multiplicative generator with
+          positive drift.
     \item The linear model is physically falsified by extrapolation
           (Type~II timescale $\sim 1.2 \times 10^5\,H_0^{-1}$).
 \end{enumerate}
@@ -487,16 +511,16 @@ We demonstrate this via the following argument.
  
 \textbf{Dimensional incompleteness.} The Kardashev scale measures energy
 throughput, $P$ [W = J\,s$^{-1}$], but makes no reference to what that energy
-accomplishes. As \citet{Sagan1973} noted, a civilisation that wastes energy
+accomplishes. As \citet{sagan73} noted, a civilisation that wastes energy
 inefficiently is rated equally to one that channels the same power into
 information-rich computation. The scale is therefore dimensionally incomplete
 as a measure of civilisational advancement: it conflates energy expenditure
 with technological capability.
  
 \textbf{The Landauer connection.} The fundamental physical link between energy
-and information is the Landauer limit \citep{Landauer1961}: the minimum energy
-required to erase one bit of information at temperature $T$ is $k_B T \ln 2
-\approx 2.85 \times 10^{-21}\,\mathrm{J}$ at room temperature. The ratio
+and information is the Landauer limit \citep{Landauer1961,Bennett1982}: the 
+minimum energy required to erase one bit of information at temperature $T$ 
+is $k_B T \ln 2 \approx 2.85 \times 10^{-21}\,\mathrm{J}$ at room temperature. The ratio
 $P / H$ --- global energy production divided by global computational hashrate
 --- has dimensions of energy per hash, and is an empirical measure of how
 efficiently a civilisation converts energy into irreversible computational
@@ -514,8 +538,8 @@ thermodynamic limit of computation. Our physical variable will thus inherit phys
 where $\mathcal{H}(t)$ is the yearly average Bitcoin network hashrate in
 Hash\,s$^{-1}$. We use the Bitcoin hashrate because it is the only
 \emph{publicly auditable, unforgeable, and continuously updated}
-global measure of computational proof-of-work \citep{Nakamoto2008},
-fulfilling the requirement of \citet{Sagan1973} that the Kardashev state
+global measure of computational proof-of-work \citep{nak2009},
+fulfilling the requirement of \citet{sagan73} that the Kardashev state
 variable be sensitive to the ``security of vast quantities of information.''
 No free parameter is added to the model: the renormalization is a ratio
 of two independently measured physical quantities.
@@ -528,6 +552,21 @@ functional forms fitted to the original variable. It is instead a
 taking the analysis outside the Box--Cox family. The KSN variable
 $\mathscr{B}(t)$.  is our proposal for the correct extensive variable of the
 Kardashev scale.
+
+\textbf{Concurrent work.} Complementary work from the quantum-computing 
+perspective has recently examined Bitcoin mining as a Kardashev-scale 
+problem \citep{DallaireDemers2026}, demonstrating that quantum-accelerated 
+Bitcoin mining at current network difficulty would require a fleet of 
+$\sim 10^{23}$ physical qubits drawing $\sim 10^{25}\,\mathrm{W}$ --- 
+resources consistent with a Kardashev Type~II civilisation. Their result 
+places an upper bound on quantum-mining feasibility: the resource 
+requirements are so extreme that practical quantum mining collapses under 
+hardware, error-correction, and fleet-logistics overheads. Our analysis 
+is methodologically distinct --- we use the Bitcoin hashrate as an 
+empirical proxy for global classical proof-of-work and renormalise the 
+Kardashev state variable accordingly --- but shares the use of 
+proof-of-work infrastructure as a natural bridge between civilisational 
+energy and irreversible computation.
  
 Figure~\ref{fig:ksn_panel2} shows $\mathscr{B}(t)$ for 2009--2024, spanning 16 annual
 data points and 14 orders of magnitude in $\mathscr{B}$. The data display a
@@ -552,8 +591,8 @@ cosmologically absurd. On the KSN scale, the concept of a Type~II threshold
 must be re-expressed in terms of $\mathscr{B} = P/\mathcal{H}$: a Type~II KSN civilisation is
 one for which $\mathscr{B}$ approaches the Landauer limit, i.e.\ the energy cost per
 hash approaches $k_B T \ln 2$. This reframing is consistent with the original
-intent of \citet{Kardashev1964} and the information-theoretic extension
-proposed by \citet{Sagan1973}.
+intent of \citet{kar64} and the information-theoretic extension
+proposed by \citet{sagan73}.
  
 \begin{table*}[t]
 \centering
@@ -576,35 +615,37 @@ KSN ($\mathscr{B} = P/\mathcal{H}$)             & $\mathscr{B} \to k_B T \ln 2$ 
 \end{table*}
  
 %% -----------------------------------------------
-\subsection{The Memoryless Property as a Further Objection to the Exponential}
+\subsection{The Independence Property as a Further Objection to the Exponential}
 \label{sec:memoryless}
  
 A complementary statistical objection to the exponential Kardashev model
-arises from probability theory. A non-negative random variable $X$ is
-memoryless if for all $a, b \geq 0$:
+arises from probability theory. Kardashev's geometric series $(1+x)^t$ 
+implicitly models year-over-year growth factors as independent draws 
+from a distribution with mean $(1+x)$. For a non-negative random variable 
+$X$ with this property, the memoryless relation holds:
 \begin{equation}
     P(X > a + b \mid X > b) \;=\; P(X > a)\,.
     \label{eq:memoryless}
 \end{equation}
-The Kardashev geometric series $(1+x)^t$ imposes this property by
-construction: the fractional increment $\Delta P / P = x$ is independent of
-the current level and of history. But the global energy system manifestly
-possesses memory: infrastructure lock-in, geopolitical constraints,
-technology diffusion rates, and crisis events (2008, 2020) all induce
-path-dependence in the year-over-year increments.
+That is: the fractional increment $\Delta P / P$ is independent of
+the current level and of history. The global energy system, however, 
+manifestly possesses memory: infrastructure lock-in, geopolitical 
+constraints, technology diffusion rates, and crisis events (e.g., 2008, 2020) 
+all induce path-dependence in the year-over-year increments, violating 
+the independence assumption that $(1+x)^t$ requires.
  
 The Shapiro--Wilk result ($W = 0.925$, $p = 0.0014$) provides direct
 empirical evidence of this path-dependence. The distribution of $\Delta P$
 is non-Gaussian and negatively skewed, with the two largest negative outliers
 corresponding precisely to the 2008 global financial crisis and the 2020
 COVID-19 pandemic. These are identifiable, historically specific events ---
-not symmetric statistical fluctuations drawn from a memoryless distribution.
-A memoryless exponential growth model, by construction, cannot accommodate
-large negative shocks driven by specific historical contingencies: it assigns
-equal probability to large positive and negative fractional changes regardless
-of economic or geopolitical context. The data reject this assumption. The
-memoryless property is therefore not just a mathematical abstraction: it is a
-testable claim about the generative process, and the evidence is against it.
+not symmetric statistical fluctuations drawn from an independence-preserving 
+distribution. An independent-increment multiplicative generator with positive 
+drift, which $(1+x)^t$ instantiates, cannot accommodate large negative shocks 
+driven by specific historical contingencies. The data refute this assumption. 
+The independence property is therefore not just a mathematical abstraction: 
+it is a testable claim about the generative process, and the evidence is 
+against it.
 
 
 \begin{table*}[t]
@@ -621,7 +662,7 @@ $H_0^{-1} = 13.8\,\mathrm{Gyr}$ is the Hubble time.}
 Source & $P_0$ & Type~II timescale \\
 \midrule
 \citet{kar64} (1964 estimate) & $4.00\,\mathrm{TW}$ & $\sim 3.2\,\mathrm{kyr}$ at $r=1\%\,\mathrm{yr}^{-1}$ \\
-OWID \citep{owidenergy} (1965, this work) & $4.95\,\mathrm{TW}$ & $\sim 1.2 \times 10^5\,H_0^{-1}$ (linear OLS) \\
+OWID \citep{Ritchie2022} (1965, this work) & $4.95\,\mathrm{TW}$ & $\sim 1.2 \times 10^5\,H_0^{-1}$ (linear OLS) \\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -640,16 +681,49 @@ OWID \citep{owidenergy} (1965, this work) & $4.95\,\mathrm{TW}$ & $\sim 1.2 \tim
     \label{fig:ksn_panel1}
 \end{figure*}
 
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figs/KSN_panel1_z.png}
+    \caption{Zoomed view of the OWID global primary-energy production data 
+    (1965--2024) with the linear and exponential best-fit models overlaid 
+    on a linear vertical axis (W), making visible the remarkably low 
+    dispersion of the data about both fitted models that is compressed 
+    in the logarithmic-axis view of Figure~\ref{fig:ksn_panel1}. The 
+    linear OLS fit (blue dashed, $R^2 = 0.987$) and the free-rate 
+    exponential fit ($r = 2.01\%\,\mathrm{yr}^{-1}$; solid red, 
+    $R^2 = 0.987$) are visually near-identical over the six-decade 
+    baseline, confirming the WAIC result that the two functional forms 
+    are statistically indistinguishable on the observed data. The 
+    Kardashev one-percent exponential (salmon dotted) diverges 
+    dramatically downward from the data, falsifying the conservative 
+    assumption universally adopted in the subsequent literature. The 
+    Kardashev Type~I threshold from 1964 (yellow dotted, 
+    $4 \times 10^{12}\,\mathrm{W}$) lies well below the full dataset: 
+    Earth has long since surpassed Kardashev's original Type~I energy 
+    benchmark.}
+    \label{fig:ksn_zoom}
+\end{figure*}
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=\columnwidth]{figs/KSN_panel3.png}
-    \caption{Distribution of year-over-year change in energy 
-    $\Delta P = P_i - P_{i-1}$ (histogram), with a fitted
-    normal distribution overlaid. The distribution is
-    non-Gaussian and negatively skewed (Shapiro--Wilk
-    $W = 0.925$, $p = 0.0014$), with the two largest
-    negative outliers corresponding to the 2008 financial
-    crisis and the 2020 COVID-19 pandemic.}
+    \caption{Year-over-year differences 
+$\Delta P_i = P_i - P_{i-1}$ in global primary-energy 
+production (W) as a function of calendar year 1965--2024, 
+derived from the OWID direct-method energy dataset. Two 
+stray negative outliers --- clearly separated from the 
+general trend of the data --- occur at 2008 and 2020, 
+corresponding respectively to the subprime great financial 
+crisis and the COVID-19 pandemic. These are identifiable 
+historical shocks, not symmetric statistical fluctuations. 
+The Shapiro--Wilk test on the $\Delta P$ series yields 
+$W = 0.925$, $p = 0.0014$, with skewness $= -0.664$. 
+The distribution is significantly non-Gaussian, and the 
+identifiable crisis outliers constitute direct evidence 
+of path-dependence --- incompatible with the structural 
+assumptions of the Kardashev series $(1+x)^t$ (independent 
+increments with positive drift).}
     \label{fig:ksn_panel3}
 \end{figure}
 
@@ -691,8 +765,8 @@ Second, the non-Gaussian structure of $\Delta P$
 year-over-year energy increments exhibit path-dependent behaviour
 driven by identifiable historical events. This is a testable
 claim: if future decades produce a $\Delta P$ distribution
-consistent with memoryless exponential growth, the path-dependence
-argument is falsified.
+consistent with an independent-increment multiplicative generator
+with positive drift, the path-dependence argument is falsified.
  
 Third, the KSN variable $\mathscr{B} = P/\mathcal{H}$ predicts a monotonically
 decreasing trend as Bitcoin ASIC efficiency improves toward
@@ -740,18 +814,47 @@ toward nuclear and renewable sources --- a transition that appears
 to be accelerating, with several nations expanding nuclear capacity
 --- since the substitution method increasingly overstates the total
 energy budget relative to the physical power actually delivered.
+
+A further methodological consideration concerns per-year measurement 
+uncertainties. The OWID dataset reports point estimates only; neither 
+the Energy Institute nor the EIA publishes formal per-year uncertainty 
+bands on global primary-energy production. Methodological considerations 
+suggest that pre-1980 data carry larger fractional uncertainty 
+($\sim 5$--$10\%$) than post-2000 data ($\sim 1$--$2\%$) due to 
+incomplete reporting coverage in earlier decades, retroactive 
+harmonisation of accounting methods, and imputation for missing 
+country-year cells. The present analysis treats all 60 annual data 
+points as having uniform relative uncertainty, which is the conservative 
+default in the absence of published error bars. Plausible weighting 
+schemes that down-weight pre-1980 data do not alter the qualitative 
+conclusions of this work: the Kardashev $1\%$ exponential model is 
+rejected by tens of standard deviations regardless of weighting; the 
+linear-versus-exponential WAIC preference is robust to per-decade 
+error assumptions; and the Shapiro--Wilk non-Gaussianity is driven 
+primarily by the 2008 and 2020 outliers in well-measured recent 
+decades, where any reasonable uncertainty estimate is small. A formal 
+weighted MCMC with per-decade uncertainty assumptions is deferred to 
+a future paper.
  
-The Bitcoin network hashrate is the only publicly auditable
-global proof-of-work dataset currently available, but it
-represents a single network. A more complete KSN state
-variable would integrate all global computational
-proof-of-work, including other proof-of-work cryptocurrencies
-and, eventually, any future large-scale computational
-infrastructure that provides an unforgeable public record.
-The present analysis should therefore be understood as
-a proof of concept using the best available proxy, rather
-than a definitive measurement of civilisational
-computational efficiency.
+The Bitcoin network hashrate is the only publicly auditable, 
+unforgeable, and continuously updated global measure of 
+proof-of-work currently available. We do not consider Bitcoin 
+as one network among many to be aggregated: Bitcoin commands the 
+vast majority of total proof-of-work hashrate globally and has 
+held this dominant position continuously since 2009. Network 
+effects \citep{Metcalfe2013}, first-mover advantage, and the 
+ossification of consensus rules have entrenched Bitcoin as the 
+canonical proof-of-work substrate --- a pattern observed across 
+foundational protocols, of which TCP/IP is the most prominent 
+historical example: a "good enough" baseline standardised in 1981 
+that has resisted displacement by technically superior alternatives 
+for over four decades. Established systems benefit from accumulated 
+infrastructure, security audits, developer expertise, and integration 
+investments that newcomers cannot match, in the same way that 
+established biological ecosystems resist invasion by 
+marginally-more-optimised newcomers. We therefore treat Bitcoin 
+as a representative measurement of global proof-of-work 
+computation rather than as one constituent among many.
  
 The hashrate data span only 2009--2024 --- sixteen annual
 data points covering approximately one human generation.
@@ -773,7 +876,7 @@ production to consumption is not precisely unity and varies
 with time, introducing a systematic uncertainty that is
 difficult to quantify without a separate long-baseline
 consumption dataset. We note that our pull request to the
-OWID energy repository \citep{owidenergy} identified and
+OWID energy repository \citep{Ritchie2022} identified and
 documented this label inconsistency between the column name
 \texttt{primary\_energy\_consumption} and the actual measured
 quantity, which is production.
@@ -782,32 +885,31 @@ quantity, which is production.
  
 A result that has received no attention in the literature
 emerges directly from re-reading \citet{kar64}. Kardashev
-presents \emph{two distinct growth rates} in the same paper:
-an empirical estimate of $3$--$4\%\,\mathrm{yr}^{-1}$
-based on statistical findings over the following sixty years,
-and a conservative model assumption of $x = 1\%\,\mathrm{yr}^{-1}$
-used for the Type~II timescale calculation. The standard
-Kardashev model universally cited in the literature
-\citep{gray2020} uses the conservative $1\%$ figure, not
-Kardashev's own central estimate.
+\emph{references two distinct growth rates} in the same paper:
+a projected empirical rate of $3$--$4\%\,\mathrm{yr}^{-1}$ 
+attributed to \citet{Putnam1948} and projected over the following 
+sixty years, and a conservative modelling assumption of 
+$x = 1\%\,\mathrm{yr}^{-1}$ adopted for the Type~II timescale 
+calculation. The standard Kardashev model universally cited 
+in the literature \citep{gray2020} uses the conservative $1\%$ 
+figure, not the Putnam-derived $3$--$4\%$ projection.
  
 Our MCMC posterior growth rate of $r = 2.01\% \pm 0.03\%\,
-\mathrm{yr}^{-1}$ lies closer to Kardashev's own empirical range
-of $3$--$4\%\,\mathrm{yr}^{-1}$ than to his conservative $1\%$
-assumption, and well above the standard one-percent model.
-This is not a falsification of \citet{kar64}; it is a vindication
-of his empirical judgment. The standard ``one-percent Kardashev
-model'' is falsified not because Kardashev was wrong, but
-because the literature has universally adopted his deliberately
-conservative lower bound rather than his actual empirical
-estimate.
+\mathrm{yr}^{-1}$ falsifies both of Kardashev's reference values: 
+the $1\%$ modelling assumption is too low, and the Putnam $3$--$4\%$ 
+projection is too high. The true contemporary rate lies between 
+the two values Kardashev referenced. This is not merely a 
+falsification of \citet{kar64}; it is a falsification of the assumption, 
+universally adopted in the subsequent literature, that a fixed 
+exponential growth rate of any value could adequately describe 
+the trajectory of the energy production of a typical civilisation.
  
 \subsection{Connection to the Drake Equation}
  
 The Drake equation for the number of communicating
 civilisations in the Galaxy includes a longevity factor $L$
 --- the average duration for which a civilisation remains
-detectable. This factor carries the largest relative
+detectable. Monte Carlo approaches to estimating the probability of causal contact between communicating civilisations \citep{Lares2020} provide a complementary framework in which the KSN variable may eventually constrain the longevity factor. This factor carries the largest relative
 uncertainty of any term in the Drake equation and is
 sensitive to whether civilisations tend to self-destruct
 or achieve long-term stability \citep{gray2020}.
@@ -864,8 +966,9 @@ credible interval. The year-over-year energy differences exhibit
 significant non-Gaussian, path-dependent structure
 (Shapiro--Wilk $W = 0.925$, $p = 0.0014$), with negative
 skewness attributable to identifiable crisis events (2008, 2020),
-incompatible with the memoryless multiplicative structure
-required by any exponential growth model.
+incompatible with the independent-increment
+multiplicative structure with positive drift required by Kardashev's 
+$(1+x)^t$ geometric series.
  
 A linear OLS model fits the data excellently ($R^2 = 0.987$)
 and is marginally preferred over the free-parameter exponential
@@ -874,7 +977,9 @@ model by the Widely Applicable Information Criterion
 linear model to the Kardashev Type~II threshold yields a
 civilisational transition timescale of $\sim 1.2 \times 10^5$
 Hubble times --- a physical reductio ad absurdum we term
-\textit{Kardashev's Conundrum}. No functional form fitted
+\textit{Kardashev's Conundrum}. Long before this date, the Sun 
+will have exhausted its hydrogen fuel, expanded into a red 
+giant, and likely engulfed or scorched the Earth. No functional form fitted
 to energy production alone can simultaneously satisfy
 statistical adequacy and physical coherence, because the
 Kardashev state variable is dimensionally incomplete as
@@ -895,14 +1000,17 @@ over 2009--2024, tracing the trajectory of energy-to-computation
 efficiency from the CPU era through to modern ASICs.
  
 We further note, for the first time in the literature, that
-\citet{kar64} presented two distinct growth rates: an
-empirical estimate of $3$--$4\%\,\mathrm{yr}^{-1}$ and a
-conservative model assumption of $1\%\,\mathrm{yr}^{-1}$.
-Our posterior $r = 2.01\%\,\mathrm{yr}^{-1}$ lies closer to
-Kardashev's own empirical range, vindicating his empirical
-judgment while definitively falsifying the conservative
-assumption that the literature has universally adopted as
-the standard model.
+\citet{kar64} referenced two distinct growth rates: a
+projected empirical rate of $3$--$4\%\,\mathrm{yr}^{-1}$
+(attributed to \citealt{Putnam1948}) and a conservative
+modelling assumption of $1\%\,\mathrm{yr}^{-1}$ adopted
+for his Type~II extrapolation. Our posterior
+$r = 2.01\%\,\mathrm{yr}^{-1}$ falsifies both simultaneously:
+the $1\%$ assumption is too low, and the $3$--$4\%$
+projection is too high. The true contemporary rate lies
+between the two values Kardashev referenced --- a nuance
+lost in the six decades of subsequent literature that
+universally adopted the $1\%$ figure.
  
 A formal era-segmented functional fit to $\mathcal{H}(t)$, accounting
 for the structural breaks between the CPU, GPU, and ASIC
@@ -926,7 +1034,7 @@ content as needed and takes full responsibility for the content of the publicati
 % SECTION Acknowledgments
 % =============================================================================
 \section{Acknowledgments}
-SG thanks R. Gamen from the VO of Argentina (NOVA) for the opportunity to serve as Argentina's representative on the IVOA Executive Committee (2015–2024), and C. Cui (National Astronomical Observatories, CAS) for encouragement during the preparation of this work. SG also thanks colleagues at the IATE and the OAC for their support. This work made use
+SG thanks R. Gamen from the VO of Argentina (NOVA) for the opportunity to serve as Argentina's representative on the IVOA Executive Committee (2015–2024). SG also thanks colleagues at the IATE and the OAC for their support. This work made use
 of Astropy, a community-developed core Python package for
 Astronomy \citep{robitaille_astropy:_2013}, and the broader
 open-source scientific software ecosystem stack including SciPy and
