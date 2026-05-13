@@ -4,7 +4,7 @@
 
 S. Gurovich (IATE–OAC–UNC–CONICET / Western Sydney University)
 
-Submitted to *Astronomy and Computing* (Elsevier), 2026.
+arXiv:2604.17516 — A shorter version is under review at *MNRAS Letters*.
 
 ---
 
@@ -33,12 +33,13 @@ This repository contains the data, code, and manuscript source for KSN Paper I, 
 
 ```
 .
-├── astroblock.tex            # Manuscript source (elsarticle format)
+├── astroblock.tex            # Manuscript source (MNRAS-Letters version)
 ├── astroblock.bib             # BibTeX references
 ├── figs/
 │   ├── KSN_panel1.png        # Figure 1: Energy production + models
-│   ├── KSN_panel2.png        # Figure 3: KSN variable B(t)
-│   └── KSN_panel3.png        # Figure 2: Year-over-year ΔP
+│   ├── KSN_panel1_zoom.png   # Figure 2: Zoomed linear-axis view
+│   ├── KSN_panel3.png        # Figure 3: Year-over-year ΔP
+│   └── KSN_panel2.png        # Figure 4: KSN variable B(t)
 ├── ksn_figure_optA.py        # Figure generation script (reads OWID JSON)
 ├── ksn_mcmc_verify.py        # Independent MCMC verification script
 └── README.md
@@ -58,7 +59,6 @@ This repository contains the data, code, and manuscript source for KSN Paper I, 
    python ksn_figure_optA.py
    ```
    Requires: `numpy`, `scipy`, `matplotlib`, `astropy`, `json`
-
 3. Run the independent MCMC verification:
    ```bash
    python ksn_mcmc_verify.py
@@ -67,17 +67,20 @@ This repository contains the data, code, and manuscript source for KSN Paper I, 
 
 ## Citation
 
-If you use this work, please cite:
+If you use this work, please cite the arXiv version:
 
 ```bibtex
 @article{Gurovich2026,
-  author  = {Gurovich, S.},
-  title   = {Kardashev's Conundrum: Statistical Falsification of the
-             Standard Kardashev Model and the Kardashev--Sagan--Nakamoto
-             Resolution},
-  journal = {Astronomy and Computing},
-  year    = {2026},
-  note    = {Submitted}
+  author       = {Gurovich, S.},
+  title        = {Kardashev's Conundrum: Statistical Falsification of the
+                  Standard Kardashev Model and the Kardashev--Sagan--Nakamoto
+                  Resolution},
+  journal      = {arXiv preprint},
+  year         = {2026},
+  eprint       = {2604.17516},
+  archivePrefix = {arXiv},
+  primaryClass = {astro-ph.IM},
+  note         = {A shorter version is under review at MNRAS Letters}
 }
 ```
 
